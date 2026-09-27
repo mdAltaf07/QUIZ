@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oceanography NET/JRF Quiz</title>
+    <title>Mathematical Reasoning NET/JRF Quiz</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -113,7 +113,7 @@
 <body>
 
 <div class="quiz-container">
-    <h1>🌊 Oceanography NET/JRF Quiz</h1>
+    <h1>🧩 Mathematical Reasoning Quiz</h1>
     
     <div class="quiz-header">
         <div id="progress"></div>
@@ -131,123 +131,63 @@
 <script>
 const questions = [
     {
-        question: "What is the average slope angle of the Continental Shelf?",
-        hindi: "महाद्वीपीय मग्नतट (Continental Shelf) का औसत ढाल कोण कितना होता है?",
-        options: ["1° to 3°", "2° to 5°", "5° to 10°", "10° to 15°"],
+        question: "Find the missing term in the series: 2, 10, 30, 68, 130, ?",
+        hindi: "दी गई श्रृंखला में लुप्त पद ज्ञात कीजिए: 2, 10, 30, 68, 130, ?",
+        options: ["216", "222", "210", "240"],
+        answer: 1
+    },
+    {
+        question: "In a certain code language, 'TEACHER' is written as 'VGCEJGT'. How will 'CHILDREN' be written in that code?",
+        hindi: "एक निश्चित कूट भाषा में 'TEACHER' को 'VGCEJGT' लिखा जाता है। उसी कूट भाषा में 'CHILDREN' को कैसे लिखा जाएगा?",
+        options: ["EJKNFTGP", "EJKDFTOG", "EJHTLIEN", "FKJNHTGP"],
         answer: 0
     },
     {
-        question: "Which feature occupies the maximum percentage of total ocean floor area?",
-        hindi: "समस्त महासागरीय नितल के क्षेत्रफल के सर्वाधिक भाग पर कौन-सी भू-आकृति विस्तृत है?",
-        options: ["Continental Shelf / महाद्वीपीय मग्नतट", "Continental Slope / महाद्वीपीय मग्नढाल", "Deep Sea Plains / गहरे महासागरीय मैदान", "Oceanic Trenches / महासागरीय गर्त"],
+        question: "If A is the brother of B, B is the sister of C, and C is the father of D, how is A related to D?",
+        hindi: "यदि A, B का भाई है; B, C की बहन है; और C, D का पिता है, तो A का D से क्या संबंध है?",
+        options: ["Father / पिता", "Uncle / चाचा (अंकल)", "Brother / भाई", "Grandfather / दादा"],
+        answer: 1
+    },
+    {
+        question: "A man walks 5 km towards South, then turns right and walks 3 km. He turns left and walks 5 km. In which direction is he now from the starting point?",
+        hindi: "एक व्यक्ति दक्षिण की ओर 5 किमी चलता है, फिर दाएँ मुड़कर 3 किमी चलता है। वह फिर बाएँ मुड़कर 5 किमी चलता है। अब वह प्रारंभिक बिंदु से किस दिशा में है?",
+        options: ["South-West / दक्षिण-पश्चिम", "South-East / दक्षिण-पूर्व", "North-West / उत्तर-पश्चिम", "South / दक्षिण"],
+        answer: 0
+    },
+    {
+        question: "The average of 5 consecutive numbers is 27. What is the product of the largest and the smallest number?",
+        hindi: "5 क्रमागत संख्याओं का औसत 27 है। सबसे बड़ी और सबसे छोटी संख्या का गुणनफल क्या होगा?",
+        options: ["725", "720", "700", "729"],
+        answer: 1
+    },
+    {
+        question: "A train 150 meters long is running at a speed of 54 km/h. How much time will it take to cross a platform of 250 meters long?",
+        hindi: "150 मीटर लंबी एक रेलगाड़ी 54 किमी/घंटा की गति से चल रही है। 250 मीटर लंबे प्लेटफॉर्म को पार करने में इसे कितना समय लगेगा?",
+        options: ["20 seconds / 20 सेकंड", "24 seconds / 24 सेकंड", "26.6 seconds / 26.6 सेकंड", "30 seconds / 30 सेकंड"],
         answer: 2
     },
     {
-        question: "Flat-topped submerged volcanic mountains are known as:",
-        hindi: "सपाट शीर्ष वाले जलमग्न ज्वालामुखीय पर्वतों को किस नाम से जाना जाता है?",
-        options: ["Seamounts / समुद्री पर्वत", "Guyots / गायोट", "Abyssal Hills / अगाध पहाड़ियाँ", "Submarine Canyons / जलमग्न कैनियन"],
+        question: "A person sells an article for ₹480 and incurs a loss of 20%. At what price should he sell it to gain 20% profit?",
+        hindi: "एक व्यक्ति किसी वस्तु को ₹480 में बेचता है और उसे 20% की हानि होती है। 20% का लाभ कमाने के लिए उसे इसे किस मूल्य पर बेचना चाहिए?",
+        options: ["₹600", "₹720", "₹640", "₹700"],
         answer: 1
     },
     {
-        question: "Which ocean has the highest average salinity?",
-        hindi: "किस महासागर की औसत लवणता (Average Salinity) सबसे अधिक है?",
-        options: ["Pacific Ocean / प्रशांत महासागर", "Atlantic Ocean / अटलांटिक महासागर", "Indian Ocean / हिंद महासागर", "Arctic Ocean / आर्कटिक महासागर"],
+        question: "Two numbers are in the ratio 3 : 5. If 9 is subtracted from each, the new ratio becomes 12 : 23. What is the smaller number?",
+        hindi: "दो संख्याएँ 3 : 5 के अनुपात में हैं। यदि प्रत्येक में से 9 घटा दिया जाए, तो नया अनुपात 12 : 23 हो जाता है। छोटी संख्या क्या है?",
+        options: ["27", "33", "48", "55"],
         answer: 1
     },
     {
-        question: "A zone of rapid temperature change in ocean water with depth is called:",
-        hindi: "महासागरीय जल में गहराई के साथ तापमान में तीव्र परिवर्तन की परत को क्या कहा जाता है?",
-        options: ["Halocline / हैलोक्लाइन", "Thermocline / थर्मोक्लाइन", "Pycnocline / पाइकनोक्लाइन", "Isotherm / समताप रेखा"],
+        question: "A sum of money at simple interest doubles itself in 8 years. In how many years will it become 4 times of itself at the same rate of interest?",
+        hindi: "साधारण ब्याज पर कोई धन 8 वर्षों में स्वयं का दोगुना हो जाता है। समान ब्याज दर पर यह कितने वर्षों में स्वयं का 4 गुना हो जाएगा?",
+        options: ["16 years / 16 वर्ष", "24 years / 24 वर्ष", "32 years / 32 वर्ष", "20 years / 20 वर्ष"],
         answer: 1
     },
     {
-        question: "Which of the following is a cold ocean current in the Pacific Ocean?",
-        hindi: "निम्नलिखित में से कौन-सी प्रशांत महासागर की एक ठंडी महासागरीय धारा है?",
-        options: ["Kuroshio Current / क्यूरोशियो धारा", "Oya Shio (Kamchatka) Current / ओयाशियो धारा", "North Equatorial Current / उत्तरी विषुवतीय धारा", "East Australian Current / पूर्वी ऑस्ट्रेलियाई धारा"],
-        answer: 1
-    },
-    {
-        question: "Benguela Current flows along the west coast of which continent?",
-        hindi: "बेंगुएला धारा (Benguela Current) किस महाद्वीप के पश्चिमी तट के सहारे बहती है?",
-        options: ["South America / दक्षिण अमेरिका", "Africa / अफ्रीका", "North America / उत्तर अमेरिका", "Australia / ऑस्ट्रेलिया"],
-        answer: 1
-    },
-    {
-        question: "Sargasso Sea is located in which ocean?",
-        hindi: "सरगासो सागर (Sargasso Sea) किस महासागर में स्थित है?",
-        options: ["North Atlantic Ocean / उत्तरी अटलांटिक महासागर", "South Atlantic Ocean / दक्षिणी अटलांटिक महासागर", "North Pacific Ocean / उत्तरी प्रशांत महासागर", "Indian Ocean / हिंद महासागर"],
-        answer: 0
-    },
-    {
-        question: "The Progressive Wave Theory of Tides was propounded by:",
-        hindi: "ज्वार-भाटा का 'प्रगामी तरंग सिद्धांत' (Progressive Wave Theory) किसके द्वारा प्रतिपादित किया गया था?",
-        options: ["Isaac Newton / आइज़ैक न्यूटन", "William Whewell / विलियम वेवेल", "G.B. Airy / जी.बी. एयरी", "R.A. Harris / आर.ए. हैरिस"],
-        answer: 1
-    },
-    {
-        question: "Stationary Wave Theory for the origin of tides was given by:",
-        hindi: "ज्वार-भाटा की उत्पत्ति से संबंधित 'स्थैतिक तरंग सिद्धांत' (Stationary Wave Theory) किसने दिया था?",
-        options: ["R.A. Harris / आर.ए. हैरिस", "Laplace / लाप्लास", "William Whewell / विलियम वेवेल", "Isaac Newton / आइज़ैक न्यूटन"],
-        answer: 0
-    },
-    {
-        question: "Neap Tides occur when the Sun, Earth, and Moon form an angle of:",
-        hindi: "लघु ज्वार (Neap Tide) तब आते हैं जब सूर्य, पृथ्वी और चंद्रमा परस्पर कितने कोण पर होते हैं?",
-        options: ["180° (Syzygy / युति-वियुति)", "90° (Quadrature / समकोण)", "45°", "0°"],
-        answer: 1
-    },
-    {
-        question: "Which ocean relief feature is 'Challenger Deep' associated with?",
-        hindi: "'चैलेंजर डीप' (Challenger Deep) किस महासागरीय गर्त से संबंधित है?",
-        options: ["Puerto Rico Trench / प्यूर्टो रिको गर्त", "Java Trench / जावा गर्त", "Mariana Trench / मरियाना गर्त", "Sunda Trench / सुंडा गर्त"],
-        answer: 2
-    },
-    {
-        question: "Pelagic deposits that consist of organic remains of plankton are mainly made of:",
-        hindi: "वेलापवर्ती निक्षेप (Pelagic Deposits) जो प्लवक के कार्बनिक अवशेषों से बने होते हैं, मुख्य रूप से किसके बने होते हैं?",
-        options: ["Ooze (Calcareous and Siliceous) / ऊज़ (चूनायुक्त एवं सिलिकायुक्त)", "Red Clay / लाल मृत्तिका", "Terrigenous Mud / स्थलजात पंक", "Volcanic Dust / ज्वालामुखीय धूल"],
-        answer: 0
-    },
-    {
-        question: "Pteropod and Globigerina oozes belong to which type of marine deposit?",
-        hindi: "टेरोपोड (Pteropod) और ग्लोबीजेरीना (Globigerina) ऊज़ किस प्रकार के समुद्री निक्षेप हैं?",
-        options: ["Siliceous Ooze / सिलिकायुक्त ऊज़", "Calcareous Ooze / चूनायुक्त ऊज़", "Terrigenous Deposit / स्थलजात निक्षेप", "Hydrogenous Deposit / जलजात निक्षेप"],
-        answer: 1
-    },
-    {
-        question: "Fringing reefs, Barrier reefs, and Atolls are types of:",
-        hindi: "तटीय प्रवाल भित्ति (Fringing Reef), अवरोधक प्रवाल भित्ति (Barrier Reef) और अटॉल (Atoll) किसके प्रकार हैं?",
-        options: ["Coral Reefs / प्रवाल भित्तियाँ", "Continental Margins / महाद्वीपीय सीमाएँ", "Oceanic Ridges / महासागरीय कटक", "Submarine Canyons / जलमग्न कैनियन"],
-        answer: 0
-    },
-    {
-        question: "Who proposed the 'Subsidence Theory' for the formation of Coral Reefs?",
-        hindi: "प्रवाल भित्तियों के निर्माण से संबंधित 'अवतलन सिद्धांत' (Subsidence Theory) का प्रतिपादन किसने किया था?",
-        options: ["Reginald Daly / रेजिनाल्ड डेली", "Charles Darwin / चार्ल्स डार्विन", "John Murray / जॉन मरे", "W.M. Davis / डब्ल्यू.एम. डेविस"],
-        answer: 1
-    },
-    {
-        question: "The Glacial Control Theory of coral reef formation was given by:",
-        hindi: "प्रवाल भित्तियों के निर्माण का 'हिमनदीय नियंत्रण सिद्धांत' (Glacial Control Theory) किसने दिया था?",
-        options: ["Charles Darwin / चार्ल्स डार्विन", "John Murray / जॉन मरे", "Reginald Daly / रेजिनाल्ड डेली", "L.C. King / एल.सी. किंग"],
-        answer: 2
-    },
-    {
-        question: "Ideal surface temperature range of ocean water required for coral reef survival is:",
-        hindi: "प्रवाल भित्तियों (Corals) के जीवित रहने के लिए महासागरीय जल का आदर्श सतह तापमान कितना होना चाहिए?",
-        options: ["10°C to 15°C", "20°C to 21°C", "30°C to 35°C", "35°C to 40°C"],
-        answer: 1
-    },
-    {
-        question: "Which ocean current is also known as 'El Niño' counter current's extension in Peru region?",
-        hindi: "पेरू तट के निकट चलने वाली किस गरम धारा को एल-नीनो (El Niño) के प्रभाव से जोड़ा जाता है?",
-        options: ["Humboldt Current / हम्बोल्ट धारा", "Counter Equatorial Current / विपरीत विषुवतीय धारा", "Falkland Current / फॉकलैंड धारा", "Agulhas Current / अगुलहास धारा"],
-        answer: 1
-    },
-    {
-        question: "Teleconnections in oceanography and meteorology are most closely related to:",
-        hindi: "समुद्र विज्ञान एवं मौसम विज्ञान में 'दूर-संयोजन' (Teleconnections) का संबंध मुख्य रूप से किससे है?",
-        options: ["ENSO (El Niño Southern Oscillation) / एनसो (ENSO)", "Tsunami formation / सुनामी निर्माण", "Continental Drift / महाद्वीपीय विस्थापन", "Sedimentation / अवसादन"],
+        question: "A and B can complete a work in 12 days and 18 days respectively. They started working together, but A left after 3 days. In how many days will B alone finish the remaining work?",
+        hindi: "A और B किसी काम को क्रमशः 12 दिन और 18 दिन में पूरा कर सकते हैं। वे एक साथ काम शुरू करते हैं, लेकिन 3 दिन बाद A काम छोड़ देता है। शेष काम को B अकेला कितने दिनों में पूरा करेगा?",
+        options: ["10.5 days / 10.5 दिन", "12 days / 12 दिन", "13.5 days / 13.5 दिन", "15 days / 15 दिन"],
         answer: 0
     }
 ];
