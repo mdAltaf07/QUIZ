@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geography NET/JRF Quiz</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    background:#f2f6ff;
+    margin:0;
+    padding:0;
+}
+.quiz-container{
+    width:90%;
+    max-width:750px;
+    margin:50px auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.15);
+}
+h1{
+    text-align:center;
+    color:#1d4ed8;
+}
+#progress{
+    color:#555;
+    font-size:16px;
+    margin-bottom:15px;
+}
+#question{
+    font-size:21px;
+    line-height:1.55;
+    margin:25px 0;
+    font-weight:bold;
+}
+.hindi{
+    color:#374151;
+    font-size:18px;
+    margin-top:8px;
+}
+.option{
+    display:block;
+    width:100%;
+    padding:15px;
+    margin:12px 0;
+    border:2px solid #ddd;
+    border-radius:8px;
+    background:white;
+    cursor:pointer;
+    text-align:left;
+    font-size:16px;
+}
+.option:hover{
+    background:#eef4ff;
+}
+.correct{
+    background:#b7f7c1 !important;
+    border-color:green !important;
+}
+.wrong{
+    background:#ffb7b7 !important;
+    border-color:red !important;
+}
+#answer{
+    margin-top:20px;
+    font-size:17px;
+    line-height:1.7;
+}
+.explanation{
+    background:#f3f6fb;
+    border-left:5px solid #1d4ed8;
+    padding:15px;
+    margin-top:15px;
+    border-radius:7px;
+}
+#nextBtn,#restartBtn{
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    background:#1d4ed8;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+    margin-top:20px;
+}
+#nextBtn:hover,#restartBtn:hover{
+    background:#153da8;
+}
+#nextBtn{
+    display:none;
+}
+#score{
+    text-align:center;
+    font-size:25px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="quiz-container">
+
+<h1>🌍 Geography NET/JRF Quiz</h1>
+
+<div id="progress"></div>
+<div id="question"></div>
+<div id="options"></div>
+<div id="answer"></div>
+
+<button id="nextBtn" onclick="nextQuestion()">Next Question ➡</button>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+
+const questions = [
+
+{
+question:"Which geomorphic process is most closely associated with the formation of pediments in arid and semi-arid regions?",
+hindi:"शुष्क और अर्ध-शुष्क क्षेत्रों में pediment के निर्माण से कौन-सी भू-आकृतिक प्रक्रिया सबसे अधिक संबंधित है?",
+options:[
+"Glacial deposition / हिमानी निक्षेपण",
+"Sheet flood erosion and lateral planation / Sheet flood अपरदन और lateral planation",
+"Marine erosion / समुद्री अपरदन",
+"Coral reef formation / प्रवाल भित्ति निर्माण"
+],
+answer:1,
+explanation:"Pediments are gently sloping rock surfaces developed at the foot of mountain fronts, especially in arid and semi-arid regions. Sheet floods, weathering and lateral erosion/planation are important processes. / Pediment पर्वत-पाद पर बनने वाला हल्के ढाल वाला rock surface है। शुष्क क्षेत्रों में sheet flood, weathering और lateral planation इसके विकास में महत्वपूर्ण हैं।"
+},
+
+{
+question:"In Köppen's climate classification, what does 'Cwb' indicate?",
+hindi:"Köppen जलवायु वर्गीकरण में 'Cwb' किस जलवायु को दर्शाता है?",
+options:[
+"Mediterranean climate / भूमध्यसागरीय जलवायु",
+"Humid subtropical climate without dry season / बिना शुष्क ऋतु की आर्द्र उपोष्ण जलवायु",
+"Subtropical highland climate with dry winter / शुष्क शीत ऋतु वाली उपोष्ण उच्चभूमि जलवायु",
+"Tropical savanna climate / उष्णकटिबंधीय सवाना जलवायु"
+],
+answer:2,
+explanation:"C represents warm temperate climates, w represents dry winter, and b indicates that the warmest month has an average temperature below 22°C. Cwb is commonly found in subtropical highlands. / C warm temperate, w dry winter और b warmest month के 22°C से कम होने को दर्शाता है। यह उपोष्ण उच्चभूमि क्षेत्रों में सामान्य है।"
+},
+
+{
+question:"Isostasy is best described as:",
+hindi:"Isostasy का सबसे सही अर्थ क्या है?",
+options:[
+"Uniform thickness of Earth's crust / पृथ्वी की पर्पटी की समान मोटाई",
+"Gravitational equilibrium between lithosphere and asthenosphere / Lithosphere और asthenosphere के बीच गुरुत्वीय संतुलन",
+"Only horizontal plate movement / केवल प्लेटों की क्षैतिज गति",
+"Permanent sinking of continents / महाद्वीपों का स्थायी धंसना"
+],
+answer:1,
+explanation:"Isostasy refers to gravitational equilibrium of the lithosphere floating over the more ductile asthenosphere. Changes in ice, erosion or sediment load can cause isostatic adjustment. / Isostasy में lithosphere और अपेक्षाकृत ductile asthenosphere के बीच gravitational equilibrium होता है। Ice, erosion और sediment load में बदलाव से isostatic adjustment हो सकता है।"
+},
+
+{
+question:"The Inter-Tropical Convergence Zone (ITCZ) is primarily characterized by:",
+hindi:"Inter-Tropical Convergence Zone (ITCZ) की प्रमुख विशेषता क्या है?",
+options:[
+"Descending air and subtropical high pressure / अवरोही वायु और subtropical high pressure",
+"Convergence of trade winds and rising air / Trade winds का convergence और rising air",
+"Polar easterlies / Polar easterlies",
+"Permanent westerlies / स्थायी westerlies"
+],
+answer:1,
+explanation:"ITCZ is a zone where the northeast and southeast trade winds converge. Strong convection and rising air produce clouds and rainfall. / ITCZ वह क्षेत्र है जहाँ northeast और southeast trade winds मिलती हैं। यहाँ rising air, convection, बादल और वर्षा प्रमुख होते हैं।"
+},
+
+{
+question:"Which drainage pattern is commonly associated with a dome or volcanic cone?",
+hindi:"Dome या volcanic cone से सामान्यतः कौन-सा drainage pattern संबंधित होता है?",
+options:[
+"Dendritic / वृक्षाकार",
+"Radial / अरीय",
+"Trellis / जालीदार",
+"Rectangular / आयताकार"
+],
+answer:1,
+explanation:"Radial drainage develops when streams flow outward in different directions from a central elevated area such as a dome or volcanic cone. / Radial drainage किसी केंद्रीय ऊँचे भाग, जैसे dome या volcanic cone, से streams के अलग-अलग दिशाओं में बाहर बहने पर बनता है।"
+},
+
+{
+question:"Who is most prominently associated with the concept of the 'Primate City'?",
+hindi:"'Primate City' की अवधारणा से प्रमुख रूप से किस भूगोलवेत्ता का नाम जुड़ा है?",
+options:[
+"Walter Christaller",
+"Mark Jefferson",
+"Ernest Burgess",
+"Homer Hoyt"
+],
+answer:1,
+explanation:"Mark Jefferson introduced the concept of the primate city in 1939. A primate city is disproportionately dominant compared with the next-ranking cities in a country's urban system. / Mark Jefferson ने 1939 में primate city concept को प्रमुख रूप से प्रस्तुत किया। इसमें एक शहर national urban system में अन्य शहरों की तुलना में अत्यधिक dominant होता है।"
+},
+
+{
+question:"In Christaller's Central Place Theory, K = 3 represents the:",
+hindi:"Christaller के Central Place Theory में K = 3 किस principle को दर्शाता है?",
+options:[
+"Transport principle / Transport principle",
+"Administrative principle / Administrative principle",
+"Marketing principle / Marketing principle",
+"Industrial principle / Industrial principle"
+],
+answer:2,
+explanation:"K=3 is the marketing principle. It explains the organization of market areas around higher-order central places. / K=3 marketing principle है। यह higher-order central places के आसपास market areas के organization को समझाता है।"
+},
+
+{
+question:"Why is oceanic crust generally younger than continental crust?",
+hindi:"Oceanic crust सामान्यतः continental crust से अधिक युवा क्यों होती है?",
+options:[
+"It is never destroyed / यह कभी नष्ट नहीं होती",
+"It is created at spreading centres and recycled at subduction zones / यह spreading centres पर बनती और subduction zones पर recycle होती है",
+"Continental crust has no erosion / Continental crust में erosion नहीं होता",
+"Oceanic crust contains no basalt / Oceanic crust में basalt नहीं होता"
+],
+answer:1,
+explanation:"New oceanic crust is continuously formed at mid-ocean ridges and older oceanic lithosphere is recycled into the mantle at subduction zones. / Mid-ocean ridges पर नई oceanic crust बनती है और पुरानी oceanic lithosphere subduction zones पर mantle में recycle होती है।"
+},
+
+{
+question:"Which feature best characterizes Stage II of the Demographic Transition Model?",
+hindi:"Demographic Transition Model के Stage II की प्रमुख विशेषता क्या है?",
+options:[
+"High birth rate and rapidly declining death rate / उच्च जन्मदर और तेजी से घटती मृत्युदर",
+"Low birth rate and low death rate / निम्न जन्मदर और निम्न मृत्युदर",
+"Low birth rate and rising death rate / निम्न जन्मदर और बढ़ती मृत्युदर",
+"High birth rate and high death rate / उच्च जन्मदर और उच्च मृत्युदर"
+],
+answer:0,
+explanation:"In Stage II, birth rates remain high while death rates fall rapidly due to improvements in food, sanitation, medicine and public health. This causes rapid natural increase. / Stage II में birth rate ऊँची रहती है लेकिन death rate तेजी से घटती है। Food supply, sanitation, medicine और public health में सुधार के कारण population तेजी से बढ़ती है।"
+},
+
+{
+question:"Rostow's model of development is known as the:",
+hindi:"Rostow का development model किस नाम से जाना जाता है?",
+options:[
+"Five Stages of Economic Growth / आर्थिक विकास के पाँच चरण",
+"Central Place Model / Central Place Model",
+"Core-Periphery Model / Core-Periphery Model",
+"Land Use Ring Model / Land Use Ring Model"
+],
+answer:0,
+explanation:"Rostow proposed five stages: traditional society, preconditions for take-off, take-off, drive to maturity and age of high mass consumption. / Rostow ने पाँच stages बताए: traditional society, preconditions for take-off, take-off, drive to maturity और age of high mass consumption।"
+},
+
+{
+question:"A graded river profile represents:",
+hindi:"Graded river profile किस स्थिति को दर्शाता है?",
+options:[
+"A perfectly straight river / पूरी तरह सीधी नदी",
+"Dynamic balance between erosion, deposition and sediment transport / अपरदन, निक्षेपण और sediment transport के बीच dynamic balance",
+"Only the elevation of the source / केवल source की elevation",
+"Only floodplain width / केवल floodplain की चौड़ाई"
+],
+answer:1,
+explanation:"A graded river profile represents a dynamic adjustment between the river's transporting capacity and sediment load. It is generally concave upward from source to mouth. / Graded profile नदी की transporting capacity और sediment load के बीच dynamic adjustment को दर्शाता है। सामान्यतः source से mouth की ओर profile concave upward होती है।"
+},
+
+{
+question:"Which soil horizon is commonly known as the zone of illuviation?",
+hindi:"किस soil horizon को सामान्यतः illuviation zone कहा जाता है?",
+options:[
+"O horizon",
+"A horizon",
+"B horizon",
+"C horizon"
+],
+answer:2,
+explanation:"The B horizon is commonly the zone of illuviation, where clay, iron, aluminium and other materials leached from upper horizons may accumulate. / B horizon को सामान्यतः illuviation zone माना जाता है, जहाँ ऊपर के horizons से नीचे आए clay, iron और aluminium जैसे पदार्थ जमा हो सकते हैं।"
+},
+
+{
+question:"The rain-shadow effect is primarily caused by:",
+hindi:"Rain-shadow effect मुख्यतः किस कारण उत्पन्न होता है?",
+options:[
+"Convection over flat plains / समतल मैदानों पर convection",
+"Descending and warming air on the leeward side / Leeward side पर descending और warming air",
+"Moisture convergence over oceans only / केवल oceans पर moisture convergence",
+"Descending air on the windward side / Windward side पर descending air"
+],
+answer:1,
+explanation:"Moist air rises on the windward side, cools and produces precipitation. On the leeward side it descends, warms and becomes dry, producing a rain-shadow region. / Moist air windward side पर ऊपर उठती है और precipitation देती है। Leeward side पर air नीचे उतरकर warm और dry हो जाती है, जिससे rain-shadow बनता है।"
+},
+
+{
+question:"Which theory explains concentric agricultural land-use zones around a market based on transport cost and land rent?",
+hindi:"किस theory में market के चारों ओर transport cost और land rent के आधार पर agricultural land-use zones समझाए जाते हैं?",
+options:[
+"Von Thünen's Model",
+"Weber's Industrial Location Theory",
+"Christaller's Central Place Theory",
+"Malthusian Theory"
+],
+answer:0,
+explanation:"Von Thünen's model explains agricultural land-use rings around an isolated market. Transport cost and land rent influence which activities are located near or far from the market. / Von Thünen model isolated market के चारों ओर agricultural land-use rings को समझाता है। Transport cost और land rent location को प्रभावित करते हैं।"
+},
+
+{
+question:"El Niño conditions are most directly associated with:",
+hindi:"El Niño conditions सबसे सीधे किस घटना से संबंधित हैं?",
+options:[
+"Strengthened cold upwelling near Peru / Peru के पास cold upwelling का मजबूत होना",
+"Unusual warming of the central/eastern tropical Pacific / Central/eastern tropical Pacific का असामान्य warming",
+"Permanent strengthening of Walker circulation / Walker circulation का स्थायी strengthening",
+"Strong cooling of eastern Pacific / Eastern Pacific का तीव्र cooling"
+],
+answer:1,
+explanation:"El Niño involves anomalous warming of the central and eastern tropical Pacific, often with weakened trade winds and changes in the Walker circulation. / El Niño में central और eastern tropical Pacific का anomalous warming होता है। अक्सर trade winds कमजोर होती हैं और Walker circulation में बदलाव आता है।"
+},
+
+{
+question:"In geomorphology, a knickpoint is:",
+hindi:"Geomorphology में knickpoint क्या होता है?",
+options:[
+"A flat river section / नदी का समतल भाग",
+"A sudden break or steepening in a river's longitudinal profile / नदी के longitudinal profile में अचानक break या steepening",
+"A depositional island / निक्षेपित द्वीप",
+"A meander cutoff / meander cutoff"
+],
+answer:1,
+explanation:"A knickpoint is an abrupt change in channel gradient. Waterfalls and rapids are common examples. Knickpoints may migrate upstream as the river adjusts its profile. / Knickpoint channel gradient में अचानक परिवर्तन है। Waterfall और rapids इसके सामान्य उदाहरण हैं।"
+},
+
+{
+question:"Which statement about the Coriolis effect is correct?",
+hindi:"Coriolis effect के बारे में कौन-सा कथन सही है?",
+options:[
+"It is strongest at the Equator / यह Equator पर सबसे अधिक होता है",
+"It deflects moving air to the right in the Northern Hemisphere and left in the Southern Hemisphere / यह Northern Hemisphere में right और Southern Hemisphere में left deflect करता है",
+"It changes the mass of air / यह air का mass बदलता है",
+"It acts only on stationary air / यह केवल stationary air पर काम करता है"
+],
+answer:1,
+explanation:"The Coriolis effect results from Earth's rotation. Moving air and water are deflected rightward in the Northern Hemisphere and leftward in the Southern Hemisphere. / Coriolis effect पृथ्वी के rotation से उत्पन्न होता है। Northern Hemisphere में moving air/water right और Southern Hemisphere में left deflect होते हैं।"
+},
+
+{
+question:"In Weber's Industrial Location Theory, the material index compares:",
+hindi:"Weber के Industrial Location Theory में material index किसकी तुलना करता है?",
+options:[
+"Population and urban density / Population और urban density",
+"Weight of localized raw materials and weight of finished product / Localized raw materials और finished product के weight",
+"Exports and imports / Exports और imports",
+"Labour and capital / Labour और capital"
+],
+answer:1,
+explanation:"Material index compares the weight of localized input materials with the weight of the finished product. It helps identify whether an industry tends to be raw-material-oriented or market-oriented. / Material index localized raw materials के weight और finished product के weight की तुलना करता है। इससे industry की raw-material या market orientation समझने में मदद मिलती है।"
+},
+
+{
+question:"The spread of innovations, ideas or cultural traits from one place to another is called:",
+hindi:"Innovations, ideas या cultural traits के एक स्थान से दूसरे स्थान तक फैलाव को क्या कहते हैं?",
+options:[
+"Spatial diffusion / Spatial diffusion",
+"Spatial isolation / Spatial isolation",
+"Site factor / Site factor",
+"Centrality / Centrality"
+],
+answer:0,
+explanation:"Spatial diffusion refers to the spread of a phenomenon through geographic space. Major forms include relocation, expansion, hierarchical and contagious diffusion. / Spatial diffusion का अर्थ geographic space में किसी phenomenon का फैलाव है। इसके प्रमुख forms relocation, expansion, hierarchical और contagious diffusion हैं।"
+},
+
+{
+question:"Which geomorphic landform-process pair is correctly matched?",
+hindi:"कौन-सा geomorphic landform और process का सही मिलान है?",
+options:[
+"Yardang — glacial deposition / Yardang — हिमानी निक्षेपण",
+"Drumlin — wind erosion / Drumlin — पवन अपरदन",
+"U-shaped valley — glacial erosion / U-shaped valley — हिमानी अपरदन",
+"Karst tower — fluvial deposition / Karst tower — नदी निक्षेपण"
+],
+answer:2,
+explanation:"U-shaped valleys are classic products of glacial erosion. Yardangs are wind-eroded features, drumlins are glacial landforms, and karst towers develop mainly through solution of soluble rocks. / U-shaped valley हिमानी अपरदन का classic landform है। Yardang wind erosion, drumlin glacial processes और karst tower soluble rocks के solution से संबंधित है।"
+}
+
+];
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+function loadQuestion(){
+
+    answered = false;
+
+    const q = questions[currentQuestion];
+
+    document.getElementById("progress").innerText =
+        "Question " + (currentQuestion + 1) + " / " + questions.length;
+
+    document.getElementById("question").innerHTML =
+        q.question +
+        "<div class='hindi'>🇮🇳 " + q.hindi + "</div>";
+
+    document.getElementById("answer").innerHTML = "";
+
+    document.getElementById("nextBtn").style.display = "none";
+
+    const optionsDiv = document.getElementById("options");
+    optionsDiv.innerHTML = "";
+
+    q.options.forEach((option,index)=>{
+
+        const button = document.createElement("button");
+
+        button.innerText = option;
+        button.className = "option";
+
+        button.onclick = function(){
+            checkAnswer(index,button);
+        };
+
+        optionsDiv.appendChild(button);
+
+    });
+}
+
+function checkAnswer(selectedIndex,selectedButton){
+
+    if(answered) return;
+
+    answered = true;
+
+    const q = questions[currentQuestion];
+
+    const allOptions = document.querySelectorAll(".option");
+
+    allOptions[q.answer].classList.add("correct");
+
+    if(selectedIndex === q.answer){
+
+        score++;
+
+        document.getElementById("answer").innerHTML =
+            "<strong>✅ Correct Answer!</strong>" +
+            "<div class='explanation'>" +
+            "<b>सही उत्तर:</b> " + q.options[q.answer] +
+            "<br><br>" + q.explanation +
+            "</div>";
+
+    }else{
+
+        selectedButton.classList.add("wrong");
+
+        document.getElementById("answer").innerHTML =
+            "<strong>❌ Wrong Answer!</strong>" +
+            "<div class='explanation'>" +
+            "<b>सही उत्तर:</b> " + q.options[q.answer] +
+            "<br><br>" + q.explanation +
+            "</div>";
+    }
+
+    document.getElementById("nextBtn").style.display = "inline-block";
+
+    if(currentQuestion === questions.length - 1){
+        document.getElementById("nextBtn").innerText =
+            "See Final Result 🎯";
+    }else{
+        document.getElementById("nextBtn").innerText =
+            "Next Question ➡";
+    }
+}
+
+function nextQuestion(){
+
+    currentQuestion++;
+
+    if(currentQuestion < questions.length){
+
+        loadQuestion();
+
+    }else{
+
+        showResult();
+
+    }
+}
+
+function showResult(){
+
+    document.getElementById("question").style.display = "none";
+    document.getElementById("options").style.display = "none";
+    document.getElementById("answer").style.display = "none";
+    document.getElementById("nextBtn").style.display = "none";
+    document.getElementById("progress").style.display = "none";
+
+    document.getElementById("result").innerHTML = `
+
+        <div id="score">
+
+            🎉 Quiz Complete!
+
+            <br><br>
+
+            Your Score: ${score} / ${questions.length}
+
+            <br><br>
+
+            <button id="restartBtn" onclick="restartQuiz()">
+                🔄 Restart Quiz
+            </button>
+
+        </div>
+
+    `;
+}
+
+function restartQuiz(){
+
+    currentQuestion = 0;
+    score = 0;
+
+    document.getElementById("question").style.display = "block";
+    document.getElementById("options").style.display = "block";
+    document.getElementById("answer").style.display = "block";
+    document.getElementById("progress").style.display = "block";
+
+    document.getElementById("result").innerHTML = "";
+
+    loadQuestion();
+}
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>
