@@ -38,14 +38,6 @@
             font-size: 16px;
             font-weight: bold;
         }
-        #timer {
-            font-size: 17px;
-            font-weight: bold;
-            color: #d97706;
-            background: #fef3c7;
-            padding: 6px 14px;
-            border-radius: 20px;
-        }
         #question {
             font-size: 20px;
             line-height: 1.5;
@@ -117,7 +109,6 @@
     
     <div class="quiz-header">
         <div id="progress"></div>
-        <div id="timer">⏱️ Time: 45s</div>
     </div>
 
     <div id="question"></div>
@@ -195,46 +186,6 @@ const questions = [
 let currentQuestion = 0;
 let score = 0;
 let answered = false;
-let timeLeft = 45;
-let timerInterval = null;
-
-function startTimer() {
-    timeLeft = 45;
-    document.getElementById("timer").innerText = "⏱️ Time: " + timeLeft + "s";
-    
-    clearInterval(timerInterval);
-    timerInterval = setInterval(() => {
-        timeLeft--;
-        document.getElementById("timer").innerText = "⏱️ Time: " + timeLeft + "s";
-        
-        if (timeLeft <= 0) {
-            clearInterval(timerInterval);
-            autoTimeOut();
-        }
-    }, 1000);
-}
-
-function autoTimeOut() {
-    if (answered) return;
-    answered = true;
-
-    const q = questions[currentQuestion];
-    const allOptions = document.querySelectorAll(".option");
-
-    allOptions[q.answer].classList.add("correct");
-
-    document.getElementById("answer").innerHTML = 
-        "<strong style='color: #d97706;'>⏰ Time's Up!</strong><br>" +
-        "<b>सही उत्तर:</b> " + q.options[q.answer];
-
-    document.getElementById("nextBtn").style.display = "inline-block";
-    
-    if (currentQuestion === questions.length - 1) {
-        document.getElementById("nextBtn").innerText = "See Final Result 🎯";
-    } else {
-        document.getElementById("nextBtn").innerText = "Next Question ➡";
-    }
-}
 
 function loadQuestion() {
     answered = false;
@@ -261,14 +212,11 @@ function loadQuestion() {
         };
         optionsDiv.appendChild(button);
     });
-
-    startTimer();
 }
 
 function checkAnswer(selectedIndex, selectedButton) {
     if (answered) return;
     answered = true;
-    clearInterval(timerInterval);
 
     const q = questions[currentQuestion];
     const allOptions = document.querySelectorAll(".option");
@@ -306,13 +254,11 @@ function nextQuestion() {
 }
 
 function showResult() {
-    clearInterval(timerInterval);
     document.getElementById("question").style.display = "none";
     document.getElementById("options").style.display = "none";
     document.getElementById("answer").style.display = "none";
     document.getElementById("nextBtn").style.display = "none";
     document.getElementById("progress").style.display = "none";
-    document.getElementById("timer").style.display = "none";
 
     document.getElementById("result").innerHTML = `
         <div id="score">
@@ -335,7 +281,6 @@ function restartQuiz() {
     document.getElementById("options").style.display = "block";
     document.getElementById("answer").style.display = "block";
     document.getElementById("progress").style.display = "block";
-    document.getElementById("timer").style.display = "block";
 
     document.getElementById("result").innerHTML = "";
 
