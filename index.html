@@ -3,58 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geography UGC NET/JRF Quiz</title>
+    <title>Geography Paper-2 Full Syllabus Quiz</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #f0fdf4;
+            background: #f4f6f9;
             margin: 0;
             padding: 0;
         }
         .quiz-container {
             width: 90%;
-            max-width: 750px;
-            margin: 40px auto;
+            max-width: 800px;
+            margin: 30px auto;
             background: white;
             padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         h1 {
             text-align: center;
-            color: #15803d;
+            color: #1e3a8a;
             margin-top: 0;
+            font-size: 24px;
         }
         .quiz-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 12px;
-            margin-bottom: 15px;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        #unit-tag {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
         }
         #progress {
-            color: #475569;
-            font-size: 16px;
+            color: #64748b;
+            font-size: 15px;
             font-weight: bold;
         }
         #question {
-            font-size: 20px;
+            font-size: 19px;
             line-height: 1.5;
-            margin: 20px 0;
+            margin: 15px 0;
             font-weight: bold;
-            color: #1e293b;
+            color: #0f172a;
         }
         .english {
             color: #475569;
-            font-size: 16px;
+            font-size: 15px;
             margin-top: 6px;
             font-weight: normal;
         }
         .option {
             display: block;
             width: 100%;
-            padding: 14px;
+            padding: 12px 15px;
             margin: 10px 0;
             border: 2px solid #cbd5e1;
             border-radius: 8px;
@@ -62,46 +71,47 @@
             cursor: pointer;
             text-align: left;
             font-size: 16px;
+            box-sizing: border-box;
             transition: all 0.2s ease;
         }
         .option:hover {
             background: #f1f5f9;
         }
         .correct {
-            background: #bbf7d0 !important;
+            background: #dcfce7 !important;
             border-color: #16a34a !important;
             font-weight: bold;
             color: #14532d;
         }
         .wrong {
-            background: #fecaca !important;
+            background: #fee2e2 !important;
             border-color: #dc2626 !important;
             color: #7f1d1d;
         }
         #answer {
             margin-top: 15px;
-            font-size: 17px;
+            font-size: 16px;
             line-height: 1.5;
         }
         #nextBtn, #restartBtn {
-            padding: 12px 25px;
+            padding: 12px 24px;
             border: none;
             border-radius: 8px;
-            background: #15803d;
+            background: #2563eb;
             color: white;
-            font-size: 17px;
+            font-size: 16px;
             cursor: pointer;
             margin-top: 20px;
         }
         #nextBtn:hover, #restartBtn:hover {
-            background: #166534;
+            background: #1d4ed8;
         }
         #nextBtn {
             display: none;
         }
         #score {
             text-align: center;
-            font-size: 25px;
+            font-size: 22px;
             font-weight: bold;
             color: #0f172a;
         }
@@ -110,9 +120,10 @@
 <body>
 
 <div class="quiz-container">
-    <h1>🌍 Geography NET/JRF Quiz</h1>
+    <h1>🌐 Geography Paper-2 (Units 1-10) Quiz</h1>
     
     <div class="quiz-header">
+        <span id="unit-tag">Set 1</span>
         <div id="progress"></div>
     </div>
 
@@ -126,65 +137,85 @@
 
 <script>
 const questions = [
+    // Unit 1: Geomorphology
     {
-        question: "'वर्तमान भूत की कुंजी है' (Present is the key to the past) यह कथन किस विद्वान का है?",
-        english: "Who said 'Present is the key to the past'?",
-        options: ["डब्ल्यू. एम. डेविस (W. M. Davis)", "जेम्स हटन (James Hutton)", "वाल्थर पेंक (Walther Penck)", "कार्ल गिलबर्ट (Karl Gilbert)"],
+        unit: "Unit 1: भू-आकृति विज्ञान (Geomorphology)",
+        question: "निम्नलिखित में से कौन सा अपरदन चक्र (Cycle of Erosion) पेंक (Penck) द्वारा प्रस्तुत किया गया था?",
+        english: "Which Cycle of Erosion was proposed by Walther Penck?",
+        options: ["पैनप्लेनेशन (Panplanation)", "प्राइमराम्फ और एन्ड्राम्फ (Primarump & Endrump)", "पेडीप्लेनेशन (Pediplanation)", "पेनेप्लेन (Peneplain)"],
         answer: 1
     },
+    // Unit 2: Climatology
     {
-        question: "कोपेन (Köppen) के जलवायु वर्गीकरण के अनुसार 'Afs' जलवायु किसे प्रदर्शित करती है?",
-        english: "According to Köppen's classification, what does 'Afs' represent?",
-        options: ["मानसून जलवायु", "भूमध्यसागरीय जलवायु", "भूमध्यरेखीय उष्णकटिबंधीय वर्षावन जलवायु", "सवाना जलवायु"],
-        answer: 2
+        unit: "Unit 2: जलवायु विज्ञान (Climatology)",
+        question: "तापीय विलोमता (Thermal Inversion) के लिए निम्नलिखित में से कौन सी दशा सबसे उपयुक्त है?",
+        english: "Which condition is most suitable for Temperature Inversion?",
+        options: ["लंबी रातें, शांत हवा और स्वच्छ आकाश", "छोटी रातें और तेज हवाएं", "मेघाच्छन्न आकाश और आर्द्र हवा", "ग्रीष्म ऋतु की दोपहर"],
+        answer: 0
     },
+    // Unit 3: Oceanography
     {
-        question: "कोरिओलिस बल (Coriolis Force) के संबंध में कौन सा कथन सत्य है?",
-        english: "Which statement is true regarding Coriolis Force?",
-        options: ["यह विषुवत रेखा पर अधिकतम होता है", "यह ध्रुवों पर शून्य होता है", "यह ध्रुवों पर अधिकतम और विषुवत रेखा पर शून्य होता है", "यह पवन की गति को बढ़ाता है"],
-        answer: 2
-    },
-    {
-        question: "निम्नलिखित में से कौन सी ठंडी महासागरीय धारा (Cold Ocean Current) है?",
-        english: "Which of the following is a Cold Ocean Current?",
-        options: ["गल्फ स्ट्रीम (Gulf Stream)", "क्यूरोशियो धारा (Kuroshio)", "कैनारी धारा (Canary Current)", "ब्राजील धारा (Brazil Current)"],
-        answer: 2
-    },
-    {
-        question: "पारिस्थितिकी तंत्र (Ecosystem) शब्द का प्रयोग सर्वप्रथम किसने किया था?",
-        english: "Who coined the term 'Ecosystem'?",
-        options: ["ई. पी. ओडम", "ए. जी. टांसले (A. G. Tansley)", "अर्नेस्ट हेकेल", "रामदेव मिश्र"],
+        unit: "Unit 3: समुद्र विज्ञान (Oceanography)",
+        question: "विश्व की सबसे अधिक लवणता (Salinity) निम्नलिखित में से किस जल निकाय में पाई जाती है?",
+        english: "Which water body has the highest salinity in the world?",
+        options: ["मृत सागर (Dead Sea)", "वान झील (Lake Van)", "ग्रेट साल्ट लेक (Great Salt Lake)", "लाल सागर (Red Sea)"],
         answer: 1
     },
+    // Unit 4: Environmental Geography
     {
-        question: "'अण्डकुण्डे' (Erdkunde) पुस्तक के लेखक कौन हैं?",
-        english: "Who is the author of the book 'Erdkunde'?",
-        options: ["अलेक्जेंडर वॉन हम्बोल्ट", "कार्ल रिटर (Carl Ritter)", "फ्रेडरिक रेटजेल", "अल्फेर्ड हेटनर"],
+        unit: "Unit 4: पर्यावरण भूगोल (Environmental Geography)",
+        question: "मॉन्ट्रियल प्रोटोकॉल (Montreal Protocol, 1987) का मुख्य उद्देश्य क्या था?",
+        english: "What was the main objective of the Montreal Protocol (1987)?",
+        options: ["जैविक विविधता संरक्षण", "ओजोन परत को नुकसान पहुंचाने वाले पदार्थों पर नियंत्रण", "ग्रीनहाउस गैसों में कमी", "सतत विकास"],
         answer: 1
     },
+    // Unit 5: Population & Settlement Geography
     {
-        question: "क्रिस्टॉलर (Christaller) के केंद्रीय स्थल सिद्धांत में प्रशासनिक नियम (Administrative Principle) के लिए K का मान क्या है?",
-        english: "What is the K-value for Administrative Principle in Christaller's Central Place Theory?",
-        options: ["K = 3", "K = 4", "K = 7", "K = 9"],
-        answer: 2
-    },
-    {
-        question: "अल्फेर्ड वेबर के औद्योगिक अवस्थिति सिद्धांत में 'आइसोडापेन' (Isodapane) रेखाएँ क्या दर्शाती हैं?",
-        english: "In Weber's theory, what do 'Isodapane' lines represent?",
-        options: ["समान कच्चा माल लागत", "समान परिवहन लागत (Equal Transport Cost)", "समान श्रम लागत", "समान बाजार मूल्य"],
+        unit: "Unit 5: जनसंख्या एवं अधिवास भूगोल",
+        question: "जनसंख्या के 'माइग्रेशन के नियम' (Laws of Migration) का प्रतिपादन सर्वप्रथम किसने किया था?",
+        english: "Who first formulated the 'Laws of Migration'?",
+        options: ["जी. के. ज़िफ (G. K. Zipf)", "ई. जी. रेवेन्स्टीन (E. G. Ravenstein)", "डब्ल्यू. ज़ेलिंस्की (W. Zelinsky)", "सैम्युअल स्टोफ़र"],
         answer: 1
     },
+    // Unit 6: Economic & Regional Geography
     {
-        question: "भारत की कौन सी नदी कर्क रेखा (Tropic of Cancer) को दो बार काटती है?",
-        english: "Which river in India crosses the Tropic of Cancer twice?",
-        options: ["नर्मदा नदी", "ताप्ती नदी", "माही नदी (Mahi River)", "साबरमती नदी"],
-        answer: 2
-    },
-    {
-        question: "'हार्टलैंड सिद्धांत' (Heartland Theory) का प्रतिपादन किसने किया था?",
-        english: "Who proposed the 'Heartland Theory'?",
-        options: ["एन. जे. स्पाइकमेन", "एच. जे. मैकिंडर (H. J. Mackinder)", "ए. टी. महान", "सेवेरस्की"],
+        unit: "Unit 6: आर्थिक एवं प्रादेशिक भूगोल",
+        question: "थॉनेन के कृषि अवस्थिति सिद्धांत (Von Thünen's Model) में केंद्रीय नगर के सबसे निकट कौन सी वलय (Ring) होती है?",
+        english: "In Von Thünen's model, which belt is located closest to the central city?",
+        options: ["ईंधन लकड़ी और भवन निर्माण लकड़ी", "सघन बागाती कृषि एवं दुग्ध उत्पादन", "अनाज उत्पादन", "पशुपालन"],
         answer: 1
+    },
+    // Unit 7: Cultural, Social & Political Geography
+    {
+        unit: "Unit 7: सांस्कृतिक, सामाजिक एवं राजनीतिक भूगोल",
+        question: "एन. जे. स्पाइकमेन (N. J. Spykman) द्वारा प्रतिपादित भू-राजनीतिक सिद्धांत का नाम क्या है?",
+        english: "What is the name of the geopolitical theory proposed by N. J. Spykman?",
+        options: ["हार्टलैंड सिद्धांत (Heartland Theory)", "रिम्लैंड सिद्धांत (Rimland Theory)", "वायु शक्ति सिद्धांत (Air Power Theory)", "समुद्री शक्ति सिद्धांत"],
+        answer: 1
+    },
+    // Unit 8: Geographical Thought
+    {
+        unit: "Unit 8: भौगोलिक चिंतन (Geographical Thought)",
+        question: "'कॉस्मोस' (Cosmos) नामक महान कृति के लेखक कौन से जर्मन भूगोलवेत्ता हैं?",
+        english: "Which German geographer wrote the famous work 'Cosmos'?",
+        options: ["इमैनुएल कांट", "अलेक्जेंडर वॉन हम्बोल्ट (Alexander von Humboldt)", "कार्ल रिटर", "ओस्कर पेशेल"],
+        answer: 1
+    },
+    // Unit 9: Geographical Techniques
+    {
+        unit: "Unit 9: भौगोलिक तकनीकें (Cartography & GIS)",
+        question: "आर.एफ. (R.F.) 1:50,000 वाले मानचत्रि पर 2 सेमी की दूरी वास्तव में धरातल पर कितनी दूरी दर्शाती है?",
+        english: "On a map with R.F. 1:50,000, a distance of 2 cm represents how much actual ground distance?",
+        options: ["1 किमी (1 km)", "2 किमी (2 km)", "5 किमी (5 km)", "10 किमी (10 km)"],
+        answer: 0
+    },
+    // Unit 10: Geography of India
+    {
+        unit: "Unit 10: भारत का भूगोल (Geography of India)",
+        question: "निम्नलिखित में से कौन सी पर्वत श्रृंखला भारत में उत्तर से दक्षिण के क्रम में सही है?",
+        english: "Which mountain range sequence is correct from North to South in India?",
+        options: ["काराकोरम - लद्दाख - जास्कर - पीर पंजाल", "लद्दाख - काराकोरम - पीर पंजाल - जास्कर", "जास्कर - लद्दाख - पीर पंजाल - काराकोरम", "पीर पंजाल - जास्कर - लद्दाख - काराकोरम"],
+        answer: 0
     }
 ];
 
@@ -196,6 +227,7 @@ function loadQuestion() {
     answered = false;
     const q = questions[currentQuestion];
 
+    document.getElementById("unit-tag").innerText = q.unit;
     document.getElementById("progress").innerText = 
         "Question " + (currentQuestion + 1) + " / " + questions.length;
 
@@ -232,7 +264,7 @@ function checkAnswer(selectedIndex, selectedButton) {
         score++;
         document.getElementById("answer").innerHTML = 
             "<strong style='color: #16a34a;'>✅ सही उत्तर! (Correct)</strong><br>" +
-            "<b>सही उत्तर:</b> " + q.options[q.answer];
+            "<b>उत्तर:</b> " + q.options[q.answer];
     } else {
         selectedButton.classList.add("wrong");
         document.getElementById("answer").innerHTML = 
@@ -243,9 +275,9 @@ function checkAnswer(selectedIndex, selectedButton) {
     document.getElementById("nextBtn").style.display = "inline-block";
 
     if (currentQuestion === questions.length - 1) {
-        document.getElementById("nextBtn").innerText = "परिणाम देखें (See Result) 🎯";
+        document.getElementById("nextBtn").innerText = "परिणाम देखें (See Final Score) 🎯";
     } else {
-        document.getElementById("nextBtn").innerText = "अगला प्रश्न (Next) ➡";
+        document.getElementById("nextBtn").innerText = "अगला प्रश्न (Next Question) ➡";
     }
 }
 
@@ -264,15 +296,16 @@ function showResult() {
     document.getElementById("answer").style.display = "none";
     document.getElementById("nextBtn").style.display = "none";
     document.getElementById("progress").style.display = "none";
+    document.getElementById("unit-tag").style.display = "none";
 
     document.getElementById("result").innerHTML = `
         <div id="score">
-            🎉 क्विज़ पूरा हुआ!
+            🎉 पहला सेट पूरा हुआ!
             <br><br>
             आपका स्कोर: ${score} / ${questions.length}
             <br><br>
             <button id="restartBtn" onclick="restartQuiz()">
-                🔄 दोबारा शुरू करें (Restart)
+                🔄 इसे पुनः हल करें (Restart)
             </button>
         </div>
     `;
@@ -286,6 +319,7 @@ function restartQuiz() {
     document.getElementById("options").style.display = "block";
     document.getElementById("answer").style.display = "block";
     document.getElementById("progress").style.display = "block";
+    document.getElementById("unit-tag").style.display = "inline-block";
 
     document.getElementById("result").innerHTML = "";
 
