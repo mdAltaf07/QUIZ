@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mathematical Reasoning NET/JRF Quiz</title>
+    <title>Geography UGC NET/JRF Quiz</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #f2f6ff;
+            background: #f0fdf4;
             margin: 0;
             padding: 0;
         }
@@ -22,19 +22,19 @@
         }
         h1 {
             text-align: center;
-            color: #1d4ed8;
+            color: #15803d;
             margin-top: 0;
         }
         .quiz-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid #eef4ff;
+            border-bottom: 2px solid #e2e8f0;
             padding-bottom: 12px;
             margin-bottom: 15px;
         }
         #progress {
-            color: #555;
+            color: #475569;
             font-size: 16px;
             font-weight: bold;
         }
@@ -43,18 +43,20 @@
             line-height: 1.5;
             margin: 20px 0;
             font-weight: bold;
+            color: #1e293b;
         }
-        .hindi {
-            color: #374151;
-            font-size: 18px;
-            margin-top: 8px;
+        .english {
+            color: #475569;
+            font-size: 16px;
+            margin-top: 6px;
+            font-weight: normal;
         }
         .option {
             display: block;
             width: 100%;
             padding: 14px;
             margin: 10px 0;
-            border: 2px solid #ddd;
+            border: 2px solid #cbd5e1;
             border-radius: 8px;
             background: white;
             cursor: pointer;
@@ -63,34 +65,36 @@
             transition: all 0.2s ease;
         }
         .option:hover {
-            background: #eef4ff;
+            background: #f1f5f9;
         }
         .correct {
-            background: #b7f7c1 !important;
-            border-color: green !important;
+            background: #bbf7d0 !important;
+            border-color: #16a34a !important;
             font-weight: bold;
+            color: #14532d;
         }
         .wrong {
-            background: #ffb7b7 !important;
-            border-color: red !important;
+            background: #fecaca !important;
+            border-color: #dc2626 !important;
+            color: #7f1d1d;
         }
         #answer {
             margin-top: 15px;
-            font-size: 18px;
+            font-size: 17px;
             line-height: 1.5;
         }
         #nextBtn, #restartBtn {
             padding: 12px 25px;
             border: none;
             border-radius: 8px;
-            background: #1d4ed8;
+            background: #15803d;
             color: white;
             font-size: 17px;
             cursor: pointer;
             margin-top: 20px;
         }
         #nextBtn:hover, #restartBtn:hover {
-            background: #153da8;
+            background: #166534;
         }
         #nextBtn {
             display: none;
@@ -99,13 +103,14 @@
             text-align: center;
             font-size: 25px;
             font-weight: bold;
+            color: #0f172a;
         }
     </style>
 </head>
 <body>
 
 <div class="quiz-container">
-    <h1>🧩 Mathematical Reasoning Quiz</h1>
+    <h1>🌍 Geography NET/JRF Quiz</h1>
     
     <div class="quiz-header">
         <div id="progress"></div>
@@ -115,71 +120,71 @@
     <div id="options"></div>
     <div id="answer"></div>
     
-    <button id="nextBtn" onclick="nextQuestion()">Next Question ➡</button>
+    <button id="nextBtn" onclick="nextQuestion()">अगला प्रश्न (Next) ➡</button>
     <div id="result"></div>
 </div>
 
 <script>
 const questions = [
     {
-        question: "Find the missing term in the series: 2, 10, 30, 68, 130, ?",
-        hindi: "दी गई श्रृंखला में लुप्त पद ज्ञात कीजिए: 2, 10, 30, 68, 130, ?",
-        options: ["216", "222", "210", "240"],
+        question: "'वर्तमान भूत की कुंजी है' (Present is the key to the past) यह कथन किस विद्वान का है?",
+        english: "Who said 'Present is the key to the past'?",
+        options: ["डब्ल्यू. एम. डेविस (W. M. Davis)", "जेम्स हटन (James Hutton)", "वाल्थर पेंक (Walther Penck)", "कार्ल गिलबर्ट (Karl Gilbert)"],
         answer: 1
     },
     {
-        question: "In a certain code language, 'TEACHER' is written as 'VGCEJGT'. How will 'CHILDREN' be written in that code?",
-        hindi: "एक निश्चित कूट भाषा में 'TEACHER' को 'VGCEJGT' लिखा जाता है। उसी कूट भाषा में 'CHILDREN' को कैसे लिखा जाएगा?",
-        options: ["EJKNFTGP", "EJKDFTOG", "EJHTLIEN", "FKJNHTGP"],
-        answer: 0
-    },
-    {
-        question: "If A is the brother of B, B is the sister of C, and C is the father of D, how is A related to D?",
-        hindi: "यदि A, B का भाई है; B, C की बहन है; और C, D का पिता है, तो A का D से क्या संबंध है?",
-        options: ["Father / पिता", "Uncle / चाचा (अंकल)", "Brother / भाई", "Grandfather / दादा"],
-        answer: 1
-    },
-    {
-        question: "A man walks 5 km towards South, then turns right and walks 3 km. He turns left and walks 5 km. In which direction is he now from the starting point?",
-        hindi: "एक व्यक्ति दक्षिण की ओर 5 किमी चलता है, फिर दाएँ मुड़कर 3 किमी चलता है। वह फिर बाएँ मुड़कर 5 किमी चलता है। अब वह प्रारंभिक बिंदु से किस दिशा में है?",
-        options: ["South-West / दक्षिण-पश्चिम", "South-East / दक्षिण-पूर्व", "North-West / उत्तर-पश्चिम", "South / दक्षिण"],
-        answer: 0
-    },
-    {
-        question: "The average of 5 consecutive numbers is 27. What is the product of the largest and the smallest number?",
-        hindi: "5 क्रमागत संख्याओं का औसत 27 है। सबसे बड़ी और सबसे छोटी संख्या का गुणनफल क्या होगा?",
-        options: ["725", "720", "700", "729"],
-        answer: 1
-    },
-    {
-        question: "A train 150 meters long is running at a speed of 54 km/h. How much time will it take to cross a platform of 250 meters long?",
-        hindi: "150 मीटर लंबी एक रेलगाड़ी 54 किमी/घंटा की गति से चल रही है। 250 मीटर लंबे प्लेटफॉर्म को पार करने में इसे कितना समय लगेगा?",
-        options: ["20 seconds / 20 सेकंड", "24 seconds / 24 सेकंड", "26.6 seconds / 26.6 सेकंड", "30 seconds / 30 सेकंड"],
+        question: "कोपेन (Köppen) के जलवायु वर्गीकरण के अनुसार 'Afs' जलवायु किसे प्रदर्शित करती है?",
+        english: "According to Köppen's classification, what does 'Afs' represent?",
+        options: ["मानसून जलवायु", "भूमध्यसागरीय जलवायु", "भूमध्यरेखीय उष्णकटिबंधीय वर्षावन जलवायु", "सवाना जलवायु"],
         answer: 2
     },
     {
-        question: "A person sells an article for ₹480 and incurs a loss of 20%. At what price should he sell it to gain 20% profit?",
-        hindi: "एक व्यक्ति किसी वस्तु को ₹480 में बेचता है और उसे 20% की हानि होती है। 20% का लाभ कमाने के लिए उसे इसे किस मूल्य पर बेचना चाहिए?",
-        options: ["₹600", "₹720", "₹640", "₹700"],
+        question: "कोरिओलिस बल (Coriolis Force) के संबंध में कौन सा कथन सत्य है?",
+        english: "Which statement is true regarding Coriolis Force?",
+        options: ["यह विषुवत रेखा पर अधिकतम होता है", "यह ध्रुवों पर शून्य होता है", "यह ध्रुवों पर अधिकतम और विषुवत रेखा पर शून्य होता है", "यह पवन की गति को बढ़ाता है"],
+        answer: 2
+    },
+    {
+        question: "निम्नलिखित में से कौन सी ठंडी महासागरीय धारा (Cold Ocean Current) है?",
+        english: "Which of the following is a Cold Ocean Current?",
+        options: ["गल्फ स्ट्रीम (Gulf Stream)", "क्यूरोशियो धारा (Kuroshio)", "कैनारी धारा (Canary Current)", "ब्राजील धारा (Brazil Current)"],
+        answer: 2
+    },
+    {
+        question: "पारिस्थितिकी तंत्र (Ecosystem) शब्द का प्रयोग सर्वप्रथम किसने किया था?",
+        english: "Who coined the term 'Ecosystem'?",
+        options: ["ई. पी. ओडम", "ए. जी. टांसले (A. G. Tansley)", "अर्नेस्ट हेकेल", "रामदेव मिश्र"],
         answer: 1
     },
     {
-        question: "Two numbers are in the ratio 3 : 5. If 9 is subtracted from each, the new ratio becomes 12 : 23. What is the smaller number?",
-        hindi: "दो संख्याएँ 3 : 5 के अनुपात में हैं। यदि प्रत्येक में से 9 घटा दिया जाए, तो नया अनुपात 12 : 23 हो जाता है। छोटी संख्या क्या है?",
-        options: ["27", "33", "48", "55"],
+        question: "'अण्डकुण्डे' (Erdkunde) पुस्तक के लेखक कौन हैं?",
+        english: "Who is the author of the book 'Erdkunde'?",
+        options: ["अलेक्जेंडर वॉन हम्बोल्ट", "कार्ल रिटर (Carl Ritter)", "फ्रेडरिक रेटजेल", "अल्फेर्ड हेटनर"],
         answer: 1
     },
     {
-        question: "A sum of money at simple interest doubles itself in 8 years. In how many years will it become 4 times of itself at the same rate of interest?",
-        hindi: "साधारण ब्याज पर कोई धन 8 वर्षों में स्वयं का दोगुना हो जाता है। समान ब्याज दर पर यह कितने वर्षों में स्वयं का 4 गुना हो जाएगा?",
-        options: ["16 years / 16 वर्ष", "24 years / 24 वर्ष", "32 years / 32 वर्ष", "20 years / 20 वर्ष"],
+        question: "क्रिस्टॉलर (Christaller) के केंद्रीय स्थल सिद्धांत में प्रशासनिक नियम (Administrative Principle) के लिए K का मान क्या है?",
+        english: "What is the K-value for Administrative Principle in Christaller's Central Place Theory?",
+        options: ["K = 3", "K = 4", "K = 7", "K = 9"],
+        answer: 2
+    },
+    {
+        question: "अल्फेर्ड वेबर के औद्योगिक अवस्थिति सिद्धांत में 'आइसोडापेन' (Isodapane) रेखाएँ क्या दर्शाती हैं?",
+        english: "In Weber's theory, what do 'Isodapane' lines represent?",
+        options: ["समान कच्चा माल लागत", "समान परिवहन लागत (Equal Transport Cost)", "समान श्रम लागत", "समान बाजार मूल्य"],
         answer: 1
     },
     {
-        question: "A and B can complete a work in 12 days and 18 days respectively. They started working together, but A left after 3 days. In how many days will B alone finish the remaining work?",
-        hindi: "A और B किसी काम को क्रमशः 12 दिन और 18 दिन में पूरा कर सकते हैं। वे एक साथ काम शुरू करते हैं, लेकिन 3 दिन बाद A काम छोड़ देता है। शेष काम को B अकेला कितने दिनों में पूरा करेगा?",
-        options: ["10.5 days / 10.5 दिन", "12 days / 12 दिन", "13.5 days / 13.5 दिन", "15 days / 15 दिन"],
-        answer: 0
+        question: "भारत की कौन सी नदी कर्क रेखा (Tropic of Cancer) को दो बार काटती है?",
+        english: "Which river in India crosses the Tropic of Cancer twice?",
+        options: ["नर्मदा नदी", "ताप्ती नदी", "माही नदी (Mahi River)", "साबरमती नदी"],
+        answer: 2
+    },
+    {
+        question: "'हार्टलैंड सिद्धांत' (Heartland Theory) का प्रतिपादन किसने किया था?",
+        english: "Who proposed the 'Heartland Theory'?",
+        options: ["एन. जे. स्पाइकमेन", "एच. जे. मैकिंडर (H. J. Mackinder)", "ए. टी. महान", "सेवेरस्की"],
+        answer: 1
     }
 ];
 
@@ -195,7 +200,7 @@ function loadQuestion() {
         "Question " + (currentQuestion + 1) + " / " + questions.length;
 
     document.getElementById("question").innerHTML = 
-        q.question + "<div class='hindi'>🇮🇳 " + q.hindi + "</div>";
+        q.question + "<div class='english'>🇬🇧 " + q.english + "</div>";
 
     document.getElementById("answer").innerHTML = "";
     document.getElementById("nextBtn").style.display = "none";
@@ -226,21 +231,21 @@ function checkAnswer(selectedIndex, selectedButton) {
     if (selectedIndex === q.answer) {
         score++;
         document.getElementById("answer").innerHTML = 
-            "<strong style='color: green;'>✅ Correct Answer!</strong><br>" +
+            "<strong style='color: #16a34a;'>✅ सही उत्तर! (Correct)</strong><br>" +
             "<b>सही उत्तर:</b> " + q.options[q.answer];
     } else {
         selectedButton.classList.add("wrong");
         document.getElementById("answer").innerHTML = 
-            "<strong style='color: red;'>❌ Wrong Answer!</strong><br>" +
+            "<strong style='color: #dc2626;'>❌ गलत उत्तर! (Wrong)</strong><br>" +
             "<b>सही उत्तर:</b> " + q.options[q.answer];
     }
 
     document.getElementById("nextBtn").style.display = "inline-block";
 
     if (currentQuestion === questions.length - 1) {
-        document.getElementById("nextBtn").innerText = "See Final Result 🎯";
+        document.getElementById("nextBtn").innerText = "परिणाम देखें (See Result) 🎯";
     } else {
-        document.getElementById("nextBtn").innerText = "Next Question ➡";
+        document.getElementById("nextBtn").innerText = "अगला प्रश्न (Next) ➡";
     }
 }
 
@@ -262,12 +267,12 @@ function showResult() {
 
     document.getElementById("result").innerHTML = `
         <div id="score">
-            🎉 Quiz Complete!
+            🎉 क्विज़ पूरा हुआ!
             <br><br>
-            Your Score: ${score} / ${questions.length}
+            आपका स्कोर: ${score} / ${questions.length}
             <br><br>
             <button id="restartBtn" onclick="restartQuiz()">
-                🔄 Restart Quiz
+                🔄 दोबारा शुरू करें (Restart)
             </button>
         </div>
     `;
