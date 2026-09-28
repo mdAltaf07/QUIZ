@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geography Paper-2 Full Syllabus Quiz</title>
+    <title>Geography Paper-2 (50 Questions Quiz)</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: #f4f6f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f4f8;
             margin: 0;
             padding: 0;
         }
@@ -18,7 +18,7 @@
             background: white;
             padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
         h1 {
             text-align: center;
@@ -31,13 +31,13 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 10px;
+            padding-bottom: 12px;
             margin-bottom: 20px;
         }
         #unit-tag {
             background: #dbeafe;
             color: #1e40af;
-            padding: 4px 12px;
+            padding: 6px 14px;
             border-radius: 20px;
             font-size: 14px;
             font-weight: bold;
@@ -120,10 +120,10 @@
 <body>
 
 <div class="quiz-container">
-    <h1>🌐 Geography Paper-2 (Units 1-10) Quiz</h1>
+    <h1>🌍 Geography Paper-2 (50 Questions Full Quiz)</h1>
     
     <div class="quiz-header">
-        <span id="unit-tag">Set 1</span>
+        <span id="unit-tag">Unit Name</span>
         <div id="progress"></div>
     </div>
 
@@ -137,84 +137,373 @@
 
 <script>
 const questions = [
-    // Unit 1: Geomorphology
+    // UNIT 1: GEOMORPHOLOGY (Q1 - Q5)
     {
         unit: "Unit 1: भू-आकृति विज्ञान (Geomorphology)",
-        question: "निम्नलिखित में से कौन सा अपरदन चक्र (Cycle of Erosion) पेंक (Penck) द्वारा प्रस्तुत किया गया था?",
-        english: "Which Cycle of Erosion was proposed by Walther Penck?",
-        options: ["पैनप्लेनेशन (Panplanation)", "प्राइमराम्फ और एन्ड्राम्फ (Primarump & Endrump)", "पेडीप्लेनेशन (Pediplanation)", "पेनेप्लेन (Peneplain)"],
+        question: "निम्नलिखित में से कौन सी आकृति हिमानी (Glacial) अपरदन द्वारा नहीं बनती है?",
+        english: "Which of the following landforms is NOT formed by glacial erosion?",
+        options: ["सर्क (Cirque)", "हॉर्न (Horn)", "ड्रमलिन (Drumlin)", "अरेत (Arête)"],
+        answer: 2
+    },
+    {
+        unit: "Unit 1: भू-आकृति विज्ञान (Geomorphology)",
+        question: "सम्प्राप्य मैदान (Peneplain) की अवधारणा किसने प्रस्तुत की थी?",
+        english: "Who introduced the concept of 'Peneplain'?",
+        options: ["डब्ल्यू. एम. डेविस (W. M. Davis)", "वाल्थर पेंक (Walther Penck)", "एल. सी. किंग (L. C. King)", "जे. टी. हॉक (J. T. Hack)"],
+        answer: 0
+    },
+    {
+        unit: "Unit 1: भू-आकृति विज्ञान (Geomorphology)",
+        question: "प्लेट विवर्तनिकी सिद्धांत (Plate Tectonics) के अनुसार महाद्वीपीय विस्थापन के लिए मुख्य रूप से कौन उत्तरदायी है?",
+        english: "According to Plate Tectonics, what is primarily responsible for continental drift?",
+        options: ["संवहन धाराएं (Convection Currents)", "ज्वारीय बल (Tidal Force)", "गुरुत्वाकर्षण बल", "कोरिओलिस बल"],
+        answer: 0
+    },
+    {
+        unit: "Unit 1: भू-आकृति विज्ञान (Geomorphology)",
+        question: "'यारडांग' (Yardang) किस प्रकार के अपरदन का प्रतिफल है?",
+        english: "'Yardang' is a result of which type of erosion?",
+        options: ["पवन अपरदन (Wind Erosion)", "नदी अपरदन (Fluvial Erosion)", "हिमानी अपरदन", "भूमिगत जल अपरदन"],
+        answer: 0
+    },
+    {
+        unit: "Unit 1: भू-आकृति विज्ञान (Geomorphology)",
+        question: "भूकंपीय तरंगों में सबसे तीव्र गति से चलने वाली तरंगें कौन सी हैं?",
+        english: "Which are the fastest traveling seismic waves?",
+        options: ["S-तरंगें (S-Waves)", "P-तरंगें (P-Waves)", "L-तरंगें (L-Waves)", "सतही तरंगें"],
         answer: 1
     },
-    // Unit 2: Climatology
+
+    // UNIT 2: CLIMATOLOGY (Q6 - Q10)
     {
         unit: "Unit 2: जलवायु विज्ञान (Climatology)",
-        question: "तापीय विलोमता (Thermal Inversion) के लिए निम्नलिखित में से कौन सी दशा सबसे उपयुक्त है?",
-        english: "Which condition is most suitable for Temperature Inversion?",
-        options: ["लंबी रातें, शांत हवा और स्वच्छ आकाश", "छोटी रातें और तेज हवाएं", "मेघाच्छन्न आकाश और आर्द्र हवा", "ग्रीष्म ऋतु की दोपहर"],
+        question: "वायुमंडल की किस परत में मौसम संबंधी समस्त घटनाएँ घटित होती हैं?",
+        english: "In which layer of the atmosphere do all weather phenomena occur?",
+        options: ["समताप मंडल (Stratosphere)", "क्षोभमंडल (Troposphere)", "मध्यमंडल (Mesosphere)", "आयनमंडल (Ionosphere)"],
+        answer: 1
+    },
+    {
+        unit: "Unit 2: जलवायु विज्ञान (Climatology)",
+        question: "कोपेन के वर्गीकरण के अनुसार 'Cwg' जलवायु भारत के किस क्षेत्र में पाई जाती है?",
+        english: "According to Köppen's classification, where is 'Cwg' climate found in India?",
+        options: ["गंगा का मैदान (Ganga Plain)", "पश्चिमी तटीय मैदान", "थार का मरुस्थल", "अरुणाचल प्रदेश"],
         answer: 0
     },
-    // Unit 3: Oceanography
+    {
+        unit: "Unit 2: जलवायु विज्ञान (Climatology)",
+        question: "चक्रवात में उत्तरी गोलार्ध (Northern Hemisphere) में पवनों की दिशा कैसी होती है?",
+        english: "What is the direction of winds in a cyclone in the Northern Hemisphere?",
+        options: ["घड़ी की सुई के अनुकूल (Clockwise)", "घड़ी की सुई के विपरीत (Counter-clockwise)", "सीधी रेखा में", "ध्रुवों की ओर"],
+        answer: 1
+    },
+    {
+        unit: "Unit 2: जलवायु विज्ञान (Climatology)",
+        question: "'एल नीनो' (El Niño) घटना का संबंध किस महासागर से है?",
+        english: "The 'El Niño' phenomenon is associated with which ocean?",
+        options: ["अंध महासागर (Atlantic)", "प्रशांत महासागर (Pacific Ocean)", "हिंद महासागर (Indian Ocean)", "आर्कटिक महासागर"],
+        answer: 1
+    },
+    {
+        unit: "Unit 2: जलवायु विज्ञान (Climatology)",
+        question: "सापेक्षिक आर्द्रता (Relative Humidity) को मापने के लिए किस उपकरण का उपयोग किया जाता है?",
+        english: "Which instrument is used to measure Relative Humidity?",
+        options: ["बैरोमीटर (Barometer)", "हाइग्रोमीटर (Hygrometer)", "एनीमोमीटर (Anemometer)", "थर्मामीटर"],
+        answer: 1
+    },
+
+    // UNIT 3: OCEANOGRAPHY (Q11 - Q15)
     {
         unit: "Unit 3: समुद्र विज्ञान (Oceanography)",
-        question: "विश्व की सबसे अधिक लवणता (Salinity) निम्नलिखित में से किस जल निकाय में पाई जाती है?",
-        english: "Which water body has the highest salinity in the world?",
-        options: ["मृत सागर (Dead Sea)", "वान झील (Lake Van)", "ग्रेट साल्ट लेक (Great Salt Lake)", "लाल सागर (Red Sea)"],
-        answer: 1
-    },
-    // Unit 4: Environmental Geography
-    {
-        unit: "Unit 4: पर्यावरण भूगोल (Environmental Geography)",
-        question: "मॉन्ट्रियल प्रोटोकॉल (Montreal Protocol, 1987) का मुख्य उद्देश्य क्या था?",
-        english: "What was the main objective of the Montreal Protocol (1987)?",
-        options: ["जैविक विविधता संरक्षण", "ओजोन परत को नुकसान पहुंचाने वाले पदार्थों पर नियंत्रण", "ग्रीनहाउस गैसों में कमी", "सतत विकास"],
-        answer: 1
-    },
-    // Unit 5: Population & Settlement Geography
-    {
-        unit: "Unit 5: जनसंख्या एवं अधिवास भूगोल",
-        question: "जनसंख्या के 'माइग्रेशन के नियम' (Laws of Migration) का प्रतिपादन सर्वप्रथम किसने किया था?",
-        english: "Who first formulated the 'Laws of Migration'?",
-        options: ["जी. के. ज़िफ (G. K. Zipf)", "ई. जी. रेवेन्स्टीन (E. G. Ravenstein)", "डब्ल्यू. ज़ेलिंस्की (W. Zelinsky)", "सैम्युअल स्टोफ़र"],
-        answer: 1
-    },
-    // Unit 6: Economic & Regional Geography
-    {
-        unit: "Unit 6: आर्थिक एवं प्रादेशिक भूगोल",
-        question: "थॉनेन के कृषि अवस्थिति सिद्धांत (Von Thünen's Model) में केंद्रीय नगर के सबसे निकट कौन सी वलय (Ring) होती है?",
-        english: "In Von Thünen's model, which belt is located closest to the central city?",
-        options: ["ईंधन लकड़ी और भवन निर्माण लकड़ी", "सघन बागाती कृषि एवं दुग्ध उत्पादन", "अनाज उत्पादन", "पशुपालन"],
-        answer: 1
-    },
-    // Unit 7: Cultural, Social & Political Geography
-    {
-        unit: "Unit 7: सांस्कृतिक, सामाजिक एवं राजनीतिक भूगोल",
-        question: "एन. जे. स्पाइकमेन (N. J. Spykman) द्वारा प्रतिपादित भू-राजनीतिक सिद्धांत का नाम क्या है?",
-        english: "What is the name of the geopolitical theory proposed by N. J. Spykman?",
-        options: ["हार्टलैंड सिद्धांत (Heartland Theory)", "रिम्लैंड सिद्धांत (Rimland Theory)", "वायु शक्ति सिद्धांत (Air Power Theory)", "समुद्री शक्ति सिद्धांत"],
-        answer: 1
-    },
-    // Unit 8: Geographical Thought
-    {
-        unit: "Unit 8: भौगोलिक चिंतन (Geographical Thought)",
-        question: "'कॉस्मोस' (Cosmos) नामक महान कृति के लेखक कौन से जर्मन भूगोलवेत्ता हैं?",
-        english: "Which German geographer wrote the famous work 'Cosmos'?",
-        options: ["इमैनुएल कांट", "अलेक्जेंडर वॉन हम्बोल्ट (Alexander von Humboldt)", "कार्ल रिटर", "ओस्कर पेशेल"],
-        answer: 1
-    },
-    // Unit 9: Geographical Techniques
-    {
-        unit: "Unit 9: भौगोलिक तकनीकें (Cartography & GIS)",
-        question: "आर.एफ. (R.F.) 1:50,000 वाले मानचत्रि पर 2 सेमी की दूरी वास्तव में धरातल पर कितनी दूरी दर्शाती है?",
-        english: "On a map with R.F. 1:50,000, a distance of 2 cm represents how much actual ground distance?",
-        options: ["1 किमी (1 km)", "2 किमी (2 km)", "5 किमी (5 km)", "10 किमी (10 km)"],
+        question: "सार्गासो सागर (Sargasso Sea) किस महासागर में स्थित है?",
+        english: "In which ocean is the Sargasso Sea located?",
+        options: ["उत्तरी अटलांटिक महासागर (North Atlantic)", "दक्षिणी अटलांटिक महासागर", "प्रशांत महासागर", "हिंद महासागर"],
         answer: 0
     },
-    // Unit 10: Geography of India
+    {
+        unit: "Unit 3: समुद्र विज्ञान (Oceanography)",
+        question: "विश्व की सबसे गहरी महासागरीय गर्त 'मरियाना गर्त' (Mariana Trench) कहाँ स्थित है?",
+        english: "Where is the deepest oceanic trench 'Mariana Trench' located?",
+        options: ["हिंद महासागर", "अटलांटिक महासागर", "प्रशांत महासागर (Pacific Ocean)", "आर्कटिक महासागर"],
+        answer: 2
+    },
+    {
+        unit: "Unit 3: समुद्र विज्ञान (Oceanography)",
+        question: "महासागरीय जल की औसत लवणता (Average Salinity) कितनी होती है?",
+        english: "What is the average salinity of ocean water?",
+        options: ["30‰", "35‰", "40‰", "45‰"],
+        answer: 1
+    },
+    {
+        unit: "Unit 3: समुद्र विज्ञान (Oceanography)",
+        question: "निम्नलिखित में से कौन सी गर्म महासागरीय धारा (Warm Ocean Current) है?",
+        english: "Which of the following is a Warm Ocean Current?",
+        options: ["लेब्राडोर धारा (Labrador)", "पेरू/हम्बोल्ट धारा (Peru/Humboldt)", "गल्फ स्ट्रीम (Gulf Stream)", "कैलिफोर्निया धारा"],
+        answer: 2
+    },
+    {
+        unit: "Unit 3: समुद्र विज्ञान (Oceanography)",
+        question: "बृहत् ज्वार (Spring Tide) कब आता है?",
+        english: "When does a Spring Tide occur?",
+        options: ["अमावस्या और पूर्णिमा को (New & Full Moon)", "सप्तमी को", "अष्टमी को", "केवल अमावस्या को"],
+        answer: 0
+    },
+
+    // UNIT 4: ENVIRONMENTAL GEOGRAPHY (Q16 - Q20)
+    {
+        unit: "Unit 4: पर्यावरण भूगोल (Environmental Geography)",
+        question: "'जैव विविधता हॉटस्पॉट' (Biodiversity Hotspot) की अवधारणा किसने प्रस्तुत की?",
+        english: "Who introduced the concept of 'Biodiversity Hotspots'?",
+        options: ["नॉर्मन मायर्स (Norman Myers)", "इ. ओ. विल्सन", "ए. जी. टांसले", "चार्ल्स एल्टन"],
+        answer: 0
+    },
+    {
+        unit: "Unit 4: पर्यावरण भूगोल (Environmental Geography)",
+        question: "क्योटो प्रोटोकॉल (Kyoto Protocol, 1997) मुख्य रूप से किससे संबंधित है?",
+        english: "What is the Kyoto Protocol (1997) primarily related to?",
+        options: ["ग्रीनहाउस गैसों की कमी (Greenhouse Gas Reduction)", "ओजोन संरक्षण", "जल प्रदूषण", "मृदा संरक्षण"],
+        answer: 0
+    },
+    {
+        unit: "Unit 4: पर्यावरण भूगोल (Environmental Geography)",
+        question: "पारिस्थितिकी पिरामिड (Ecological Pyramid) की अवधारणा सर्वप्रथम किसने दी थी?",
+        english: "Who first developed the concept of Ecological Pyramids?",
+        options: ["चार्ल्स एल्टन (Charles Elton)", "रेमंड लिंडमैन", "ई. पी. ओडम", "आर्थर टांसले"],
+        answer: 0
+    },
+    {
+        unit: "Unit 4: पर्यावरण भूगोल (Environmental Geography)",
+        question: "निम्नलिखित में से कौन सा प्राथमिक उपभोक्ता (Primary Consumer) है?",
+        english: "Which of the following is a Primary Consumer?",
+        options: ["शेर", "शाकाहारी जीव जैसे हिरण (Herbivores)", "चील", "जीवाणु"],
+        answer: 1
+    },
+    {
+        unit: "Unit 4: पर्यावरण भूगोल (Environmental Geography)",
+        question: "भारत में 'प्रोजेक्ट टाइगर' (Project Tiger) किस वर्ष प्रारंभ किया गया था?",
+        english: "In which year was 'Project Tiger' launched in India?",
+        options: ["1972", "1973", "1981", "1992"],
+        answer: 1
+    },
+
+    // UNIT 5: POPULATION & SETTLEMENT GEOGRAPHY (Q21 - Q25)
+    {
+        unit: "Unit 5: जनसंख्या एवं अधिवास भूगोल",
+        question: "माल्थस के जनसंख्या सिद्धांत (Malthusian Theory) के अनुसार जनसंख्या किस दर से बढ़ती है?",
+        english: "According to Malthusian Theory, at what rate does population grow?",
+        options: ["अंकगणितीय (Arithmetic)", "ज्यामितीय (Geometric)", "घेरदार (Cyclic)", "स्थिर rate"],
+        answer: 1
+    },
+    {
+        unit: "Unit 5: जनसंख्या एवं अधिवास भूगोल",
+        question: "रैंक-साइज नियम (Rank-Size Rule) का प्रतिपादन किसने किया था?",
+        english: "Who formulated the Rank-Size Rule?",
+        options: ["जी. के. ज़िफ (G. K. Zipf)", "मार्क जेफरसन (Mark Jefferson)", "क्रिस्टॉलर", "अगस्ट लॉश"],
+        answer: 0
+    },
+    {
+        unit: "Unit 5: जनसंख्या एवं अधिवास भूगोल",
+        question: "'प्राइमेट सिटी' (Primate City) की अवधारणा किसने दी?",
+        english: "Who gave the concept of 'Primate City'?",
+        options: ["मार्क जेफरसन (Mark Jefferson)", "जी. के. ज़िफ", "गार्डन चान्डलर", "लुईस ममफोर्ड"],
+        answer: 0
+    },
+    {
+        unit: "Unit 5: जनसंख्या एवं अधिवास भूगोल",
+        question: "2011 की जनगणना के अनुसार भारत का लिंगानुपाद (Sex Ratio) कितना था?",
+        english: "What was the Sex Ratio of India according to 2011 Census?",
+        options: ["933", "940", "943", "950"],
+        answer: 2
+    },
+    {
+        unit: "Unit 5: जनसंख्या एवं अधिवास भूगोल",
+        question: "सन्नगर (Conurbation) शब्द का प्रयोग सर्वप्रथम किसने किया था?",
+        english: "Who coined the term 'Conurbation'?",
+        options: ["पेट्रिक गेडिज (Patrick Geddes)", "जीन गोटमैन", "लुईस ममफोर्ड", "सी. ए. डॉक्सियाडिस"],
+        answer: 0
+    },
+
+    // UNIT 6: ECONOMIC & REGIONAL GEOGRAPHY (Q26 - Q30)
+    {
+        unit: "Unit 6: आर्थिक एवं प्रादेशिक भूगोल",
+        question: "वेबर के न्यूनतम लागत सिद्धांत में 'पदार्थ सूचकांक' (Material Index) यदि 1 से अधिक है, तो उद्योग कहाँ स्थापित होगा?",
+        english: "In Weber's theory, if Material Index is > 1, where will the industry be located?",
+        options: ["कच्चे माल के स्रोत के निकट (Near Raw Material)", "बाजार के निकट", "मध्यवर्ती स्थान पर", "कहीं भी"],
+        answer: 0
+    },
+    {
+        unit: "Unit 6: आर्थिक एवं प्रादेशिक भूगोल",
+        question: "रोस्टोव (Rostow) के आर्थिक विकास के चरणों में से कौन सा तीसरा चरण है?",
+        english: "Which is the third stage in Rostow's stages of Economic Growth?",
+        options: ["पारंपरिक समाज", "टेक ऑफ अवस्था (Take-off stage)", "परिपक्वता की ओर", "उच्च जन उपभोग"],
+        answer: 1
+    },
+    {
+        unit: "Unit 6: आर्थिक एवं प्रादेशिक भूगोल",
+        question: "निम्नलिखित में से कौन सा प्राथमिक आर्थिक क्रियाकलाप (Primary Economic Activity) नहीं है?",
+        english: "Which of the following is NOT a Primary Economic Activity?",
+        options: ["कृषि", "मत्स्य पालन", "वस्त्र निर्माण (Textile Manufacturing)", "खनन"],
+        answer: 2
+    },
+    {
+        unit: "Unit 6: आर्थिक एवं प्रादेशिक भूगोल",
+        question: "अंतर्राष्ट्रीय व्यापार का 'सुलभ साधन सिद्धांत' (Heckscher-Ohlin Theory) किसने दिया?",
+        english: "Who developed the Factor Endowment Theory of International Trade?",
+        options: ["हेक्शर और ओहलिन (Heckscher & Ohlin)", "एडम स्मिथ", "डेविड रिकार्डो", "ए. ओ. हिर्शमैन"],
+        answer: 0
+    },
+    {
+        unit: "Unit 6: आर्थिक एवं प्रादेशिक भूगोल",
+        question: "गुन्नार मिर्डल (Gunnar Myrdal) का 'संचयी कारणता सिद्धांत' (Cumulative Causation) किससे संबंधित है?",
+        english: "Gunnar Myrdal's Cumulative Causation model is related to?",
+        options: ["क्षेत्रीय असमानता (Regional Inequality)", "कृषि क्रांति", "जनसंख्या नियंत्रण", "परिवहन मॉडल"],
+        answer: 0
+    },
+
+    // UNIT 7: CULTURAL, SOCIAL & POLITICAL GEOGRAPHY (Q31 - Q35)
+    {
+        unit: "Unit 7: सांस्कृतिक, सामाजिक एवं राजनीतिक भूगोल",
+        question: "'सांस्कृतिक परिदृश्य' (Cultural Landscape) की अवधारणा का विकास किस अमेरिकी भूगोलवेत्ता ने किया?",
+        english: "Which American geographer developed the concept of 'Cultural Landscape'?",
+        options: ["कार्ल सॉर (Carl Sauer)", "ग्रिफिथ टेलर", "हार्टशोर्न", "इसाया बोउमैन"],
+        answer: 0
+    },
+    {
+        unit: "Unit 7: सांस्कृतिक, सामाजिक एवं राजनीतिक भूगोल",
+        question: "मैकिंडर के 'हार्टलैंड सिद्धांत' (1904) में 'Pivot Area' किसे कहा गया था?",
+        english: "What was called the 'Pivot Area' in Mackinder's Heartland Theory (1904)?",
+        options: ["आंतरिक यूूरेशिया (Inner Eurasia)", "उत्तर अमेरिका", "दक्षिण पूर्व एशिया", "ब्रिटिश द्वीप समूह"],
+        answer: 0
+    },
+    {
+        unit: "Unit 7: सांस्कृतिक, सामाजिक एवं राजनीतिक भूगोल",
+        question: "निम्नलिखित में से कौन सी भारत की सबसे बड़ी जनजातीय आबादी (Tribal Population) है?",
+        english: "Which is the largest tribal group in India (as per census)?",
+        options: ["भील (Bhil)", "गोंड (Gond)", "संथाल", "मुंडा"],
+        answer: 0
+    },
+    {
+        unit: "Unit 7: सांस्कृतिक, सामाजिक एवं राजनीतिक भूगोल",
+        question: "राजनीतिक भूगोल में 'ऑर्गेनिक थ्योरी ऑफ स्टेट' (Organic Theory of State) किसने प्रस्तुत की?",
+        english: "Who presented the 'Organic Theory of State' in Political Geography?",
+        options: ["फ्रेडरिक रेटजेल (Friedrich Ratzel)", "मैकिंडर", "स्पाइकमेन", "हाउसहोफर"],
+        answer: 0
+    },
+    {
+        unit: "Unit 7: सांस्कृतिक, सामाजिक एवं राजनीतिक भूगोल",
+        question: "'बफर स्टेट' (Buffer State) का प्राथमिक कार्य क्या होता है?",
+        english: "What is the primary function of a 'Buffer State'?",
+        options: ["दो विशाल विरोधी शक्तियों के बीच संघर्ष को रोकना", "व्यापार बढ़ाना", "समुद्री मार्ग सुरक्षा", "सांस्कृतिक आदान-प्रदान"],
+        answer: 0
+    },
+
+    // UNIT 8: GEOGRAPHICAL THOUGHT (Q36 - Q40)
+    {
+        unit: "Unit 8: भौगोलिक चिंतन (Geographical Thought)",
+        question: "'एन्थ्रोपोगेोग्राफी' (Anthropogeographie) पुस्तक के लेखक कौन हैं?",
+        english: "Who wrote the book 'Anthropogeographie'?",
+        options: ["फ्रेडरिक रेटजेल (Friedrich Ratzel)", "विडाल डी ला ब्लाश", "जीन ब्रुंस", "एलेन चर्चिल सेम्पल"],
+        answer: 0
+    },
+    {
+        unit: "Unit 8: भौगोलिक चिंतन (Geographical Thought)",
+        question: "संभववाद (Possibilism) की विचारधारा का जनक किसे माना जाता है?",
+        english: "Who is considered the founding father of Possibilism?",
+        options: ["विडाल डी ला ब्लाश (Vidal de la Blache)", "रेटजेल", "हम्बोल्ट", "इमैनुएल कांट"],
+        answer: 0
+    },
+    {
+        unit: "Unit 8: भौगोलिक चिंतन (Geographical Thought)",
+        question: "'मात्रात्मक क्रांति' (Quantitative Revolution) भूगोल में किस दशक में चरम पर थी?",
+        english: "In which decade did the Quantitative Revolution peak in Geography?",
+        options: ["1950-1960 के दशक में", "1980 के दशक में", "1930 के दशक में", "2000 के बाद"],
+        answer: 0
+    },
+    {
+        unit: "Unit 8: भौगोलिक चिंतन (Geographical Thought)",
+        question: "'अल-बरूनी' किस देश के निवासी/भूगोलवेत्ता थे?",
+        english: "Al-Biruni belonged to which region/origin?",
+        options: ["अरब/फारस (Arab/Persian)", "ग्रीस", "रोम", "चीन"],
+        answer: 0
+    },
+    {
+        unit: "Unit 8: भौगोलिक चिंतन (Geographical Thought)",
+        question: "किताब 'नेचर ऑफ ज्योग्राफी' (The Nature of Geography) किसने लिखी थी?",
+        english: "Who wrote the famous book 'The Nature of Geography'?",
+        options: ["रिचर्ड हार्टशोर्न (Richard Hartshorne)", "एफ. के. शेफर", "डेविड हार्वे", "विलियम बंगे"],
+        answer: 0
+    },
+
+    // UNIT 9: GEOGRAPHICAL TECHNIQUES (Q41 - Q45)
+    {
+        unit: "Unit 9: भौगोलिक तकनीकें (Cartography & GIS)",
+        question: "जीपीएस (GPS) प्रणाली में पृथ्वी पर सटीक स्थिति निर्धारित करने के लिए न्यूनतम कितने उपग्रहों की आवश्यकता होती है?",
+        english: "Minimum how many satellites are required to determine precise location in GPS?",
+        options: ["3", "4", "24", "12"],
+        answer: 1
+    },
+    {
+        unit: "Unit 9: भौगोलिक तकनीकें (Cartography & GIS)",
+        question: "मानचित्र पर समान वर्षा वाले स्थानों को मिलाने वाली रेखा को क्या कहते हैं?",
+        english: "What are lines connecting places of equal rainfall on a map called?",
+        options: ["आइसोहाइट (Isohyet)", "आइसोथर्म (Isotherm)", "आइसोबार (Isobar)", "आइसोबथ"],
+        answer: 0
+    },
+    {
+        unit: "Unit 9: भौगोलिक तकनीकें (Cartography & GIS)",
+        question: "जीआईएस (GIS) में वेक्टर डेटा (Vector Data) किस रूप में प्रस्तुत किया जाता है?",
+        english: "In GIS, how is Vector Data represented?",
+        options: ["बिंदु, रेखा और बहुभुज (Point, Line, Polygon)", "पिक्सेल और ग्रिड", "केवल डिजिटल इमेज", "केवल टेबल"],
+        answer: 0
+    },
+    {
+        unit: "Unit 9: भौगोलिक तकनीकें (Cartography & GIS)",
+        question: "सुदूर संवेदन (Remote Sensing) में प्रयुक्त आईआरएस (IRS) उपग्रह श्रृंखला किस देश की है?",
+        english: "The IRS satellite series used in remote sensing belongs to which country?",
+        options: ["भारत (India)", "अमेरिका", "रूस", "चीन"],
+        answer: 0
+    },
+    {
+        unit: "Unit 9: भौगोलिक तकनीकें (Cartography & GIS)",
+        question: "विषम वितरण को दर्शाने के लिए उपयोग किए जाने वाले पाई आरेख (Pie Chart) में वृत्त के कुल कोण का मान कितना होता है?",
+        english: "What is the total central angle of a circle in a Pie Chart?",
+        options: ["180°", "360°", "90°", "100°"],
+        answer: 1
+    },
+
+    // UNIT 10: GEOGRAPHY OF INDIA (Q46 - Q50)
     {
         unit: "Unit 10: भारत का भूगोल (Geography of India)",
-        question: "निम्नलिखित में से कौन सी पर्वत श्रृंखला भारत में उत्तर से दक्षिण के क्रम में सही है?",
-        english: "Which mountain range sequence is correct from North to South in India?",
-        options: ["काराकोरम - लद्दाख - जास्कर - पीर पंजाल", "लद्दाख - काराकोरम - पीर पंजाल - जास्कर", "जास्कर - लद्दाख - पीर पंजाल - काराकोरम", "पीर पंजाल - जास्कर - लद्दाख - काराकोरम"],
+        question: "भारत की सबसे लंबी तटरेखा (Coastline) वाला राज्य कौन सा है?",
+        english: "Which Indian state has the longest coastline?",
+        options: ["गुजरात (Gujarat)", "आंध्र प्रदेश", "तमिलनाडु", "महाराष्ट्र"],
+        answer: 0
+    },
+    {
+        unit: "Unit 10: भारत का भूगोल (Geography of India)",
+        question: "भारत में दक्षिण-पश्चिम मानसून सबसे पहले किस राज्य में प्रवेश करता है?",
+        english: "In which state does the South-West Monsoon enter first in India?",
+        options: ["केरल (Kerala)", "तमिलनाडु", "गोवा", "पश्चिम बंगाल"],
+        answer: 0
+    },
+    {
+        unit: "Unit 10: भारत का भूगोल (Geography of India)",
+        question: "पश्चिम की ओर बहने वाली भारत की दो प्रमुख नदियाँ कौन सी हैं?",
+        english: "Which are the two major west-flowing rivers of India?",
+        options: ["नर्मदा और ताप्ती (Narmada & Tapi)", "गोदावरी और कृष्णा", "गंगा और यमुना", "महानदी और कावेरी"],
+        answer: 0
+    },
+    {
+        unit: "Unit 10: भारत का भूगोल (Geography of India)",
+        question: "भारत में 'रेगुर मृदा' (Regur Soil) के नाम से किसे जाना जाता है?",
+        english: "Which soil is known as 'Regur Soil' in India?",
+        options: ["काली मिट्टी (Black Soil)", "जलोढ़ मिट्टी", "लाल मिट्टी", "लैटेराइट मिट्टी"],
+        answer: 0
+    },
+    {
+        unit: "Unit 10: भारत का भूगोल (Geography of India)",
+        question: "भारत का एकमात्र सक्रिय ज्वालामुखी 'बैरेन द्वीप' (Barren Island) कहाँ स्थित है?",
+        english: "Where is India's only active volcano 'Barren Island' located?",
+        options: ["अंडमान और निकोबार द्वीप समूह (Andaman & Nicobar)", "लक्षद्वीप", "न्यू मूर द्वीप", "मझुली"],
         answer: 0
     }
 ];
@@ -275,7 +564,7 @@ function checkAnswer(selectedIndex, selectedButton) {
     document.getElementById("nextBtn").style.display = "inline-block";
 
     if (currentQuestion === questions.length - 1) {
-        document.getElementById("nextBtn").innerText = "परिणाम देखें (See Final Score) 🎯";
+        document.getElementById("nextBtn").innerText = "अंतिम परिणाम देखें (See Final Result) 🎯";
     } else {
         document.getElementById("nextBtn").innerText = "अगला प्रश्न (Next Question) ➡";
     }
@@ -298,14 +587,22 @@ function showResult() {
     document.getElementById("progress").style.display = "none";
     document.getElementById("unit-tag").style.display = "none";
 
+    let percentage = (score / questions.length) * 100;
+    let remarks = "";
+    if (percentage >= 80) remarks = "🌟 उत्कृष्ट प्रदर्शन! (Excellent)";
+    else if (percentage >= 60) remarks = "👍 अच्छा प्रयास! (Good)";
+    else remarks = "📚 और अभ्यास की आवश्यकता है। (Keep Learning)";
+
     document.getElementById("result").innerHTML = `
         <div id="score">
-            🎉 पहला सेट पूरा हुआ!
+            🎉 50 प्रश्नों की क्विज़ पूरी हुई!
             <br><br>
-            आपका स्कोर: ${score} / ${questions.length}
+            आपका कुल स्कोर: ${score} / ${questions.length} (${percentage.toFixed(1)}%)
             <br><br>
+            <div style="font-size: 18px; color: #1e40af;">${remarks}</div>
+            <br>
             <button id="restartBtn" onclick="restartQuiz()">
-                🔄 इसे पुनः हल करें (Restart)
+                🔄 इसे पुनः हल करें (Restart Quiz)
             </button>
         </div>
     `;
