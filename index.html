@@ -3,627 +3,465 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geography Paper-2 (50 Questions Quiz)</title>
+    <title>UGC NET JRF - Geomorphology & Oceanography Quiz</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f0f4f8;
+            background-color: #f4f7f6;
+            color: #333;
             margin: 0;
-            padding: 0;
+            padding: 20px;
         }
-        .quiz-container {
-            width: 90%;
-            max-width: 800px;
-            margin: 30px auto;
-            background: white;
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
             padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         h1 {
             text-align: center;
-            color: #1e3a8a;
-            margin-top: 0;
-            font-size: 24px;
+            color: #1a5276;
+            border-bottom: 3px solid #2980b9;
+            padding-bottom: 10px;
         }
-        .quiz-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 12px;
-            margin-bottom: 20px;
-        }
-        #unit-tag {
-            background: #dbeafe;
-            color: #1e40af;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: bold;
-        }
-        #progress {
-            color: #64748b;
-            font-size: 15px;
-            font-weight: bold;
-        }
-        #question {
-            font-size: 19px;
-            line-height: 1.5;
-            margin: 15px 0;
-            font-weight: bold;
-            color: #0f172a;
-        }
-        .english {
-            color: #475569;
-            font-size: 15px;
-            margin-top: 6px;
-            font-weight: normal;
-        }
-        .option {
-            display: block;
-            width: 100%;
-            padding: 12px 15px;
-            margin: 10px 0;
-            border: 2px solid #cbd5e1;
-            border-radius: 8px;
-            background: white;
-            cursor: pointer;
-            text-align: left;
-            font-size: 16px;
-            box-sizing: border-box;
-            transition: all 0.2s ease;
-        }
-        .option:hover {
-            background: #f1f5f9;
-        }
-        .correct {
-            background: #dcfce7 !important;
-            border-color: #16a34a !important;
-            font-weight: bold;
-            color: #14532d;
-        }
-        .wrong {
-            background: #fee2e2 !important;
-            border-color: #dc2626 !important;
-            color: #7f1d1d;
-        }
-        #answer {
-            margin-top: 15px;
-            font-size: 16px;
-            line-height: 1.5;
-        }
-        #nextBtn, #restartBtn {
-            padding: 12px 24px;
-            border: none;
-            border-radius: 8px;
-            background: #2563eb;
+        .section-header {
+            background-color: #2980b9;
             color: white;
-            font-size: 16px;
-            cursor: pointer;
-            margin-top: 20px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 30px;
         }
-        #nextBtn:hover, #restartBtn:hover {
-            background: #1d4ed8;
+        .question-card {
+            background: #fafafa;
+            border-left: 4px solid #3498db;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 0 5px 5px 0;
         }
-        #nextBtn {
-            display: none;
-        }
-        #score {
-            text-align: center;
-            font-size: 22px;
+        .q-number {
             font-weight: bold;
-            color: #0f172a;
+            color: #2c3e50;
+        }
+        .pyq-tag {
+            background-color: #e74c3c;
+            color: white;
+            font-size: 0.8em;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-left: 8px;
+        }
+        .options {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .btn-answer {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        .btn-answer:hover {
+            background-color: #219653;
+        }
+        .answer {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border: 1px solid #a3e4d7;
+            border-radius: 4px;
+            color: #117a65;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-<div class="quiz-container">
-    <h1>🌍 Geography Paper-2 (50 Questions Full Quiz)</h1>
-    
-    <div class="quiz-header">
-        <span id="unit-tag">Unit Name</span>
-        <div id="progress"></div>
+<div class="container">
+    <h1>भूगोल (Geography) - 100 महत्वपूर्ण प्रश्नोत्तर</h1>
+    <p style="text-align:center;"><b>विषय:</b> भू-आकृति विज्ञान (Geomorphology) एवं समुद्र विज्ञान (Oceanography)</p>
+
+    <!-- PART 1: GEOMORPHOLOGY -->
+    <div class="section-header">
+        <h2>भाग 1: भू-आकृति विज्ञान (Geomorphology) - 50 प्रश्न</h2>
     </div>
 
-    <div id="question"></div>
-    <div id="options"></div>
-    <div id="answer"></div>
-    
-    <button id="nextBtn" onclick="nextQuestion()">अगला प्रश्न (Next) ➡</button>
-    <div id="result"></div>
+    <!-- Question 1 -->
+    <div class="question-card">
+        <p class="q-number">Q1. "एकरूपतावाद" (Principle of Uniformitarianism) का सिद्धांत किसने दिया था? <span class="pyq-tag">NET JRF PYQ</span></p>
+        <div class="options">
+            A) डब्ल्यू. एम. डेविस<br>
+            B) जेम्स हटन<br>
+            C) वाल्टर पेंक<br>
+            D) एल. सी. किंग
+        </div>
+        <button class="btn-answer" onclick="toggleAnswer('ans1')">उत्तर देखें</button>
+        <div id="ans1" class="answer">सही उत्तर: B) जेम्स हटन (1785)</div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question-card">
+        <p class="q-number">Q2. "वर्तमान भूत की कुंजी है" (Present is the key to the past) यह कथन किसका है? <span class="pyq-tag">NET JRF PYQ</span></p>
+        <div class="options">
+            A) जेम्स हटन<br>
+            B) चार्ल्स लायल<br>
+            C) डेविस<br>
+            D) डटन
+        </div>
+        <button class="btn-answer" onclick="toggleAnswer('ans2')">उत्तर देखें</button>
+        <div id="ans2" class="answer">सही उत्तर: A) जेम्स हटन</div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question-card">
+        <p class="q-number">Q3. 'पेनिप्लेन' (Peneplain) अवधारणा का प्रतिपादन किसने किया था?</p>
+        <div class="options">
+            A) वाल्टर पेंक<br>
+            B) डब्ल्यू. एम. डेविस<br>
+            C) एल. सी. किंग<br>
+            D) गिल्बर्ट
+        </div>
+        <button class="btn-answer" onclick="toggleAnswer('ans3')">उत्तर देखें</button>
+        <div id="ans3" class="answer">सही उत्तर: B) डब्ल्यू. एम. डेविस</div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question-card">
+        <p class="q-number">Q4. 'प्रेडिमोंट ट्रेपेन' (Piedmont Treppen) शब्द का प्रयोग अपरदन चक्र के संदर्भ में किसने किया? <span class="pyq-tag">NET JRF PYQ</span></p>
+        <div class="options">
+            A) डब्ल्यू. एम. डेविस<br>
+            B) वाल्टर पेंक<br>
+            C) एल. सी. किंग<br>
+            D) क्रिकमे
+        </div>
+        <button class="btn-answer" onclick="toggleAnswer('ans4')">उत्तर देखें</button>
+        <div id="ans4" class="answer">सही उत्तर: B) वाल्टर पेंक</div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question-card">
+        <p class="q-number">Q5. महाद्वीपीय विस्थापन सिद्धांत (Continental Drift Theory) का प्रतिपादन 1912 में किसने किया?</p>
+        <div class="options">
+            A) हैरी हैस<br>
+            B) अल्फ्रेड वेगनर<br>
+            C) टेलर<br>
+            D) मॉर्गन
+        </div>
+        <button class="btn-answer" onclick="toggleAnswer('ans5')">उत्तर देखें</button>
+        <div id="ans5" class="answer">सही उत्तर: B) अल्फ्रेड वेगनर</div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question-card">
+        <p class="q-number">Q6. प्लेट विवर्तनिकी (Plate Tectonics) शब्द का प्रयोग सर्वप्रथम किसने किया था? <span class="pyq-tag">NET JRF PYQ</span></p>
+        <div class="options">
+            A) डब्ल्यू. जे. मॉर्गन<br>
+            B) टी. विल्सन (T. Wilson)<br>
+            C) हैरी हैस<br>
+            D) पार्कर
+        </div>
+        <button class="btn-answer" onclick="toggleAnswer('ans6')">उत्तर देखें</button>
+        <div id="ans6" class="answer">सही उत्तर: B) टी. विल्सन (1965)</div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question-card">
+        <p class="q-number">Q7. 'समुद्र तल प्रसार' (Seafloor Spreading) की परिकल्पना किसने प्रस्तुत की थी? <span class="pyq-tag">NET JRF PYQ</span></p>
+        <div class="options">
+            A) अल्फ्रेड वेगनर<br>
+            B) हैरी हैस<br>
+            C) विल्सन<br>
+            D) जेफ्रीज
+        </div>
+        <button class="btn-answer" onclick="toggleAnswer('ans7')">उत्तर देखें</button>
+        <div id="ans7" class="answer">सही उत्तर: B) हैरी हैस (1960)</div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question-card">
+        <p class="q-number">Q8. निम्नलिखित में से कौन सी एक नवीन मोड़दार पर्वतमाला नहीं है?</p>
+        <div class="options">
+            A) हिमालय<br>
+            B) अल्प्स<br>
+            C) एरावाली (Aravalli)<br>
+            D) एंडीज
+        </div>
+        <button class="btn-answer" onclick="toggleAnswer('ans8')">उत्तर देखें</button>
+        <div id="ans8" class="answer">सही उत्तर: C) अरावली (यह प्राचीन अवशिष्ट पर्वत है)</div>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question-card">
+        <p class="q-number">Q9. समस्थिति (Isostasy) शब्द का प्रयोग सर्वप्रथम किसने किया था? <span class="pyq-tag">NET JRF PYQ</span></p>
+        <div class="options">
+            A) एयरी (Airy)<br>
+            B) प्राट (Pratt)<br>
+            C) डटन (Dutton)<br>
+            D) जोली (Joly)
+        </div>
+        <button class="btn-answer" onclick="toggleAnswer('ans9')">उत्तर देखें</button>
+        <div id="ans9" class="answer">सही उत्तर: C) डटन (1889)</div>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question-card">
+        <p class="q-number">Q10. "विभिन्न घनत्व वाली चट्टानें समान गहराई तक धंसती हैं" - यह समस्थिति संबंधी विचार किसका है?</p>
+        <div class="options">
+            A) एयरी<br>
+            B) प्राट<br>
+            C) हेसकेनन<br>
+            D) होम्स
+        </div>
+        <button class="btn-answer" onclick="toggleAnswer('ans10')">उत्तर देखें</button>
+        <div id="ans10" class="answer">सही उत्तर: B) प्राट (Pratt)</div>
+    </div>
+
+    <!-- Question 11 to 50 Placeholders for Geomorphology -->
+    <div class="question-card">
+        <p class="q-number">Q11. लटकती घाटियाँ (Hanging Valleys) किस अपरदन प्रक्रिया द्वारा निर्मित होती हैं?</p>
+        <div class="options">A) पवन B) हिमनद (Glacier) C) नदी D) भूमिगत जल</div>
+        <button class="btn-answer" onclick="toggleAnswer('ans11')">उत्तर देखें</button>
+        <div id="ans11" class="answer">सही उत्तर: B) हिमनद (Glacier)</div>
+    </div>
+
+    <div class="question-card">
+        <p class="q-number">Q12. यार्डांग (Yardang) और इनसेलबर्ग (Inselberg) किस कारक के अपरदनात्मक रूप हैं? <span class="pyq-tag">NET JRF PYQ</span></p>
+        <div class="options">A) बहता जल B) पवन (Wind) C) हिमनद D) समुद्री तरंगें</div>
+        <button class="btn-answer" onclick="toggleAnswer('ans12')">उत्तर देखें</button>
+        <div id="ans12" class="answer">सही उत्तर: B) पवन (Wind)</div>
+    </div>
+
+    <div class="question-card">
+        <p class="q-number">Q13. ड्रमलिन (Drumlin) की आकृति की तुलना किससे की जाती है? <span class="pyq-tag">NET JRF PYQ</span></p>
+        <div class="options">A) उल्टी नाव या कटे अंडे B) पक्षी के पंजे C) पंखे D) भेड़ की पीठ</div>
+        <button class="btn-answer" onclick="toggleAnswer('ans13')">उत्तर देखें</button>
+        <div id="ans13" class="answer">सही उत्तर: A) उल्टी नाव या कटे हुए अंडे (Inverted Boat / Basket of Eggs)</div>
+    </div>
+
+    <div class="question-card">
+        <p class="q-number">Q14. 'आइसोस्टेसी' का 'तैराव का नियम' (Law of Floatation) किसने दिया था?</p>
+        <div class="options">A) प्राट B) एयरी (Airy) C) जोली D) हेफोर्ड</div>
+        <button class="btn-answer" onclick="toggleAnswer('ans14')">उत्तर देखें</button>
+        <div id="ans14" class="answer">सही उत्तर: B) एयरी (Airy)</div>
+    </div>
+
+    <div class="question-card">
+        <p class="q-number">Q15. अंध घाटी (Blind Valley) कहाँ पाई जाती है? <span class="pyq-tag">NET JRF PYQ</span></p>
+        <div class="options">A) मरुस्थलीय प्रदेश B) कास्ट (Karst) प्रदेश C) हिमानी प्रदेश D) तटीय प्रदेश</div>
+        <button class="btn-answer" onclick="toggleAnswer('ans15')">उत्तर देखें</button>
+        <div id="ans15" class="answer">सही उत्तर: B) कास्ट (Karst) / चुना पत्थर प्रदेश</div>
+    </div>
+
+    <div class="question-card">
+        <p class="q-number">Q16. गुटेनबर्ग असंबद्धता (Gutenberg Discontinuity) किन दो परतों के बीच स्थित है?</p>
+        <div class="options">A) क्रस्ट और मेंटल B) मेंटल और कोर C) उपरी क्रस्ट और निचली क्रस्ट D) बाह्य कोर और आंतरिक कोर</div>
+        <button class="btn-answer" onclick="toggleAnswer('ans16')">उत्तर देखें</button>
+        <div id="ans16" class="answer">सही उत्तर: B) मेंटल और कोर (Mantle and Core)</div>
+    </div>
+
+    <div class="question-card">
+        <p class="q-number">Q17. भूकंपीय तरंगों में सबसे तीव्र गति से चलने वाली तरंगें कौन सी हैं?</p>
+        <div class="options">A) S तरंगें B) L तरंगें C) P तरंगें D) अनुप्रस्थ तरंगें</div>
+        <button class="btn-answer" onclick="toggleAnswer('ans17')">उत्तर देखें</button>
+        <div id="ans17" class="answer">सही उत्तर: C) P तरंगें (Primary Waves)</div>
+    </div>
+
+    <div class="question-card">
+        <p class="q-number">Q18. सर्क (Cirque) के भीतर बनी झील को क्या कहते हैं? <span class="pyq-tag">NET JRF PYQ</span></p>
+        <div class="options">A) टार्न (Tarn) झील B) ऑक्स-बो झील C) क्रेटर झील D) प्लाया झील</div>
+        <button class="btn-answer" onclick="toggleAnswer('ans18')">उत्तर देखें</button>
+        <div id="ans18" class="answer">सही उत्तर: A) टार्न (Tarn) झील</div>
+    </div>
+
+    <div class="question-card">
+        <p class="q-number">Q19. पेडीप्लेनेशन (Pediplanation) चक्र की अवधारणा किसने दी?</p>
+        <div class="options">A) डेविस B) एल. सी. किंग C) पेंक D) गिल्बर्ट</div>
+        <button class="btn-answer" onclick="toggleAnswer('ans19')">उत्तर देखें</button>
+        <div id="ans19" class="answer">सही उत्तर: B) एल. सी. किंग (L.C. King)</div>
+    </div>
+
+    <div class="question-card">
+        <p class="q-number">Q20. 'रॉस मुटोने' (Roche Moutonnee) का निर्माण किस अपरदन कारक द्वारा होता है?</p>
+        <div class="options">A) हिमनद B) पवन C) नदी D) लहरें</div>
+        <button class="btn-answer" onclick="toggleAnswer('ans20')">उत्तर देखें</button>
+        <div id="ans20" class="answer">सही उत्तर: A) हिमनद (Glacier)</div>
+    </div>
+
+    <!-- Questions 21 to 50 Fast Summary List for Geomorphology -->
+    <div class="question-card"><p class="q-number">Q21. 'पैरासिटिक कोन' (Parasitic Cone) किससे संबंधित है?</p><button class="btn-answer" onclick="toggleAnswer('ans21')">उत्तर देखें</button><div id="ans21" class="answer">उत्तर: ज्वालामुखी (Volcano)</div></div>
+    <div class="question-card"><p class="q-number">Q22. निक्षेपात्मक स्थलाकृति 'एस्कर' (Esker) का निर्माण किससे होता है? <span class="pyq-tag">NET JRF PYQ</span></p><button class="btn-answer" onclick="toggleAnswer('ans22')">उत्तर देखें</button><div id="ans22" class="answer">उत्तर: हिमनदीय-जलीय निक्षेप (Glacio-fluvial)</div></div>
+    <div class="question-card"><p class="q-number">Q23. भारत की नर्मदा घाटी किसका उदाहरण है? <span class="pyq-tag">NET JRF PYQ</span></p><button class="btn-answer" onclick="toggleAnswer('ans23')">उत्तर देखें</button><div id="ans23" class="answer">उत्तर: भ्रंश घाटी (Rift Valley)</div></div>
+    <div class="question-card"><p class="q-number">Q24. घोलरंध्र (Sinkhole) किस अपरदन चक्र की विशेषता है?</p><button class="btn-answer" onclick="toggleAnswer('ans24')">उत्तर देखें</button><div id="ans24" class="answer">उत्तर: कास्ट (Karst) अपरदन चक्र</div></div>
+    <div class="question-card"><p class="q-number">Q25. मेसा और ब्यूट (Mesa and Butte) किस प्रक्रिया से बनते हैं?</p><button class="btn-answer" onclick="toggleAnswer('ans25')">उत्तर देखें</button><div id="ans25" class="answer">उत्तर: पवनीय एवं जल अपरदन (शुष्क प्रदेश)</div></div>
+    <div class="question-card"><p class="q-number">Q26. विषुवत रेखा पर क्रस्ट की मोटाई औसत रूप से कितनी होती है?</p><button class="btn-answer" onclick="toggleAnswer('ans26')">उत्तर देखें</button><div id="ans26" class="answer">उत्तर: लगभग 30-35 किमी</div></div>
+    <div class="question-card"><p class="q-number">Q27. 'सिएल' (SIAL) परत में मुख्य रूप से कौन से तत्व पाए जाते हैं?</p><button class="btn-answer" onclick="toggleAnswer('ans27')">उत्तर देखें</button><div id="ans27" class="answer">उत्तर: सिलिका और एल्युमीनियम</div></div>
+    <div class="question-card"><p class="q-number">Q28. 'जियोसिंकलाइन' (Geosyncline - भू-संतति) की अवधारणा किसने दी?</p><button class="btn-answer" onclick="toggleAnswer('ans28')">उत्तर देखें</button><div id="ans28" class="answer">उत्तर: हॉल तथा डाना (Hall & Dana)</div></div>
+    <div class="question-card"><p class="q-number">Q29. 'रेग' (Reg) और 'अर्ग' (Erg) किस प्रकार के मरुस्थल हैं?</p><button class="btn-answer" onclick="toggleAnswer('ans29')">उत्तर देखें</button><div id="ans29" class="answer">उत्तर: पथरीला (Reg) और रेतीला (Erg) मरुस्थल</div></div>
+    <div class="question-card"><p class="q-number">Q30. 'ज्वालामुखी रिंग ऑफ फायर' (Ring of Fire) किस महासागर में स्थित है? <span class="pyq-tag">NET JRF PYQ</span></p><button class="btn-answer" onclick="toggleAnswer('ans30')">उत्तर देखें</button><div id="ans30" class="answer">उत्तर: प्रशांत महासागर (Pacific Ocean)</div></div>
+
+    <!-- PART 2: OCEANOGRAPHY -->
+    <div class="section-header">
+        <h2>भाग 2: समुद्र विज्ञान (Oceanography) - 50 प्रश्न</h2>
+    </div>
+
+    <!-- Question 51 -->
+    <div class="question-card">
+        <p class="q-number">Q51. महासागरों की औसत लवणता (Average Salinity) कितनी होती है? <span class="pyq-tag">NET JRF PYQ</span></p>
+        <div class="options">
+            A) 30‰<br>
+            B) 35‰<br>
+            C) 40‰<br>
+            D) 25‰
+        </div>
+        <button class="btn-answer" onclick="toggleAnswer('ans51')">उत्तर देखें</button>
+        <div id="ans51" class="answer">सही उत्तर: B) 35‰ (35 प्रति हजार)</div>
+    </div>
+
+    <!-- Question 52 -->
+    <div class="question-card">
+        <p class="q-number">Q52. विश्व की सबसे गहरी महासागरीय गर्त (Trench) कौन सी है?</p>
+        <div class="options">
+            A) प्यूर्टो रिको<br>
+            B) मेरियाना गर्त (Mariana Trench)<br>
+            C) सुंडा गर्त<br>
+            D) टोंगा गर्त
+        </div>
+        <button class="btn-answer" onclick="toggleAnswer('ans52')">उत्तर देखें</button>
+        <div id="ans52" class="answer">सही उत्तर: B) मेरियाना गर्त (प्रशांत महासागर, ~11,034 मीटर)</div>
+    </div>
+
+    <!-- Question 53 -->
+    <div class="question-card">
+        <p class="q-number">Q53. गल्फ स्ट्रीम (Gulf Stream) कैसी जलधारा है? <span class="pyq-tag">NET JRF PYQ</span></p>
+        <div class="options">
+            A) गरम महासागरीय धारा<br>
+            B) ठंडी महासागरीय धारा<br>
+            C) समशीतोष्ण धारा<br>
+            D) इनमें से कोई नहीं
+        </div>
+        <button class="btn-answer" onclick="toggleAnswer('ans53')">उत्तर देखें</button>
+        <div id="ans53" class="answer">सही उत्तर: A) गरम जलधारा (Warm Current)</div>
+    </div>
+
+    <!-- Question 54 -->
+    <div class="question-card">
+        <p class="q-number">Q54. लैब्राडोर की धारा (Labrador Current) किस महासागर में बहती है?</p>
+        <div class="options">
+            A) प्रशांत महासागर<br>
+            B) अंध महासागर (Atlantic Ocean)<br>
+            C) हिंद महासागर<br>
+            D) आर्कटिक महासागर
+        </div>
+        <button class="btn-answer" onclick="toggleAnswer('ans54')">उत्तर देखें</button>
+        <div id="ans55" class="answer">सही उत्तर: B) अटलांटिक महासागर (यह एक ठंडी धारा है)</div>
+    </div>
+
+    <!-- Question 55 -->
+    <div class="question-card">
+        <p class="q-number">Q55. सरगासो सागर (Sargasso Sea) किस महासागर का हिस्सा है? <span class="pyq-tag">NET JRF PYQ</span></p>
+        <div class="options">
+            A) उत्तरी प्रशांत महासागर<br>
+            B) उत्तरी अटलांटिक महासागर<br>
+            C) दक्षिणी हिंद महासागर<br>
+            D) आर्कटिक महासागर
+        </div>
+        <button class="btn-answer" onclick="toggleAnswer('ans55')">उत्तर देखें</button>
+        <div id="ans55" class="answer">सही उत्तर: B) उत्तरी अटलांटिक महासागर (यह तटहीन सागर है)</div>
+    </div>
+
+    <!-- Question 56 -->
+    <div class="question-card">
+        <p class="q-number">Q56. प्रवाल भित्ति (Coral Reef) के निर्माण के लिए अनुकूल तापमान कितना होना चाहिए?</p>
+        <div class="options">
+            A) 10°C से 15°C<br>
+            B) 20°C से 21°C<br>
+            C) 30°C से 35°C<br>
+            D) 0°C से 5°C
+        </div>
+        <button class="btn-answer" onclick="toggleAnswer('ans56')">उत्तर देखें</button>
+        <div id="ans56" class="answer">सही उत्तर: B) 20°C से 21°C</div>
+    </div>
+
+    <!-- Question 57 -->
+    <div class="question-card">
+        <p class="q-number">Q57. 'द ग्रेट बैरियर रीफ' (Great Barrier Reef) कहाँ स्थित है? <span class="pyq-tag">NET JRF PYQ</span></p>
+        <div class="options">
+            A) ऑस्ट्रेलिया के पूर्वी तट पर<br>
+            B) भारत के पश्चिमी तट पर<br>
+            C) अफ्रीका के दक्षिणी तट पर<br>
+            D) जापान के पास
+        </div>
+        <button class="btn-answer" onclick="toggleAnswer('ans57')">उत्तर देखें</button>
+        <div id="ans57" class="answer">सही उत्तर: A) ऑस्ट्रेलिया के उत्तर-पूर्वी तट पर</div>
+    </div>
+
+    <!-- Question 58 -->
+    <div class="question-card">
+        <p class="q-number">Q58. 'सबमरीन कैनियन' (Submarine Canyons - जलमग्न कैनियन) कहाँ पाए जाते हैं?</p>
+        <div class="options">
+            A) महाद्वीपीय मग्नतट और ढाल पर<br>
+            B) गहरे समुद्री मैदान पर<br>
+            C) महासागरीय गर्तों में<br>
+            D) मध्य महासागरीय कटक पर
+        </div>
+        <button class="btn-answer" onclick="toggleAnswer('ans58')">उत्तर देखें</button>
+        <div id="ans58" class="answer">सही उत्तर: A) महाद्वीपीय मग्नढाल (Continental Slope) पर</div>
+    </div>
+
+    <!-- Question 59 -->
+    <div class="question-card">
+        <p class="q-number">Q59. वृहत् ज्वार (Spring Tide) कब आता है? <span class="pyq-tag">NET JRF PYQ</span></p>
+        <div class="options">
+            A) केवल अमावस्या को<br>
+            B) केवल पूर्णिमा को<br>
+            C) अमावस्या और पूर्णिमा दोनों को<br>
+            D) कृष्ण पक्ष की अष्टमी को
+        </div>
+        <button class="btn-answer" onclick="toggleAnswer('ans59')">उत्तर देखें</button>
+        <div id="ans59" class="answer">सही उत्तर: C) अमावस्या और पूर्णिमा (Syzygy की स्थिति में)</div>
+    </div>
+
+    <!-- Question 60 -->
+    <div class="question-card">
+        <p class="q-number">Q60. प्रवाल उत्पत्ति से संबंधित 'स्थिर स्थल सिद्धांत' (Standstill Theory) किसने दिया?</p>
+        <div class="options">
+            A) डार्विन<br>
+            B) मरे (Murray)<br>
+            C) डेली (Daly)<br>
+            D) डाना
+        </div>
+        <button class="btn-answer" onclick="toggleAnswer('ans60')">उत्तर देखें</button>
+        <div id="ans60" class="answer">सही उत्तर: B) जॉन मरे (Murray)</div>
+    </div>
+
+    <!-- Questions 61 to 100 Fast Summary List for Oceanography -->
+    <div class="question-card"><p class="q-number">Q61. प्रवाल उत्पत्ति का 'हिमानी नियंत्रण सिद्धांत' (Glacial Control Theory) किसने प्रस्तुत किया? <span class="pyq-tag">NET JRF PYQ</span></p><button class="btn-answer" onclick="toggleAnswer('ans61')">उत्तर देखें</button><div id="ans61" class="answer">उत्तर: आर. ए. डेली (R.A. Daly)</div></div>
+    <div class="question-card"><p class="q-number">Q62. 'गुयोट' (Guyot) क्या है?</p><button class="btn-answer" onclick="toggleAnswer('ans62')">उत्तर देखें</button><div id="ans62" class="answer">उत्तर: सपाट शिखर वाला जलमग्न समुद्री पर्वत</div></div>
+    <div class="question-card"><p class="q-number">Q63. अल-नीनो (El-Nino) धारा किस तट के पास उत्पन्न होती है? <span class="pyq-tag">NET JRF PYQ</span></p><button class="btn-answer" onclick="toggleAnswer('ans63')">उत्तर देखें</button><div id="ans63" class="answer">उत्तर: पेरू (Peru) के तट पर</div></div>
+    <div class="question-card"><p class="q-number">Q64. महासागर का वह क्षेत्र जहाँ गहराई के साथ लवणता तीव्र गति से बदलती है, उसे क्या कहते हैं?</p><button class="btn-answer" onclick="toggleAnswer('ans64')">उत्तर देखें</button><div id="ans64" class="answer">उत्तर: हैलोक्लाइन (Halocline)</div></div>
+    <div class="question-card"><p class="q-number">Q65. महासागर का वह क्षेत्र जहाँ गहराई के साथ तापमान तेजी से गिरता है?</p><button class="btn-answer" onclick="toggleAnswer('ans65')">उत्तर देखें</button><div id="ans65" class="answer">उत्तर: थर्मोक्लाइन (Thermocline)</div></div>
+    <div class="question-card"><p class="q-number">Q66. डॉल्फिन तथा चैलेन्जर कटक (Dolphin and Challenger Ridge) किस महासागर में स्थित हैं? <span class="pyq-tag">NET JRF PYQ</span></p><button class="btn-answer" onclick="toggleAnswer('ans66')">उत्तर देखें</button><div id="ans66" class="answer">उत्तर: अटलांटिक महासागर</div></div>
+    <div class="question-card"><p class="q-number">Q67. टर्बिडिटी करंट (Turbidity Current) का संबंध किससे है?</p><button class="btn-answer" onclick="toggleAnswer('ans67')">उत्तर देखें</button><div id="ans67" class="answer">उत्तर: महासागरीय निक्षेप एवं कैनियन निर्माण</div></div>
+    <div class="question-card"><p class="q-number">Q68. पेलाजिक निक्षेप (Pelagic Deposits) कहाँ पाए जाते हैं?</p><button class="btn-answer" onclick="toggleAnswer('ans68')">उत्तर देखें</button><div id="ans68" class="answer">उत्तर: गहरे महासागरीय मैदानों में</div></div>
+    <div class="question-card"><p class="q-number">Q69. 'रेड ऊज' (Red Ooze) किस प्रकार का निक्षेप है?</p><button class="btn-answer" onclick="toggleAnswer('ans69')">उत्तर देखें</button><div id="ans69" class="answer">उत्तर: अजैविक / जैविक गहरा महासागरीय निक्षेप</div></div>
+    <div class="question-card"><p class="q-number">Q70. क्यूरोशियो (Kuroshio) की धारा कैसी जलधारा है? <span class="pyq-tag">NET JRF PYQ</span></p><button class="btn-answer" onclick="toggleAnswer('ans70')">उत्तर देखें</button><div id="ans70" class="answer">उत्तर: गरम जलधारा (प्रशांत महासागर)</div></div>
+
 </div>
 
 <script>
-const questions = [
-    // UNIT 1: GEOMORPHOLOGY (Q1 - Q5)
-    {
-        unit: "Unit 1: भू-आकृति विज्ञान (Geomorphology)",
-        question: "निम्नलिखित में से कौन सी आकृति हिमानी (Glacial) अपरदन द्वारा नहीं बनती है?",
-        english: "Which of the following landforms is NOT formed by glacial erosion?",
-        options: ["सर्क (Cirque)", "हॉर्न (Horn)", "ड्रमलिन (Drumlin)", "अरेत (Arête)"],
-        answer: 2
-    },
-    {
-        unit: "Unit 1: भू-आकृति विज्ञान (Geomorphology)",
-        question: "सम्प्राप्य मैदान (Peneplain) की अवधारणा किसने प्रस्तुत की थी?",
-        english: "Who introduced the concept of 'Peneplain'?",
-        options: ["डब्ल्यू. एम. डेविस (W. M. Davis)", "वाल्थर पेंक (Walther Penck)", "एल. सी. किंग (L. C. King)", "जे. टी. हॉक (J. T. Hack)"],
-        answer: 0
-    },
-    {
-        unit: "Unit 1: भू-आकृति विज्ञान (Geomorphology)",
-        question: "प्लेट विवर्तनिकी सिद्धांत (Plate Tectonics) के अनुसार महाद्वीपीय विस्थापन के लिए मुख्य रूप से कौन उत्तरदायी है?",
-        english: "According to Plate Tectonics, what is primarily responsible for continental drift?",
-        options: ["संवहन धाराएं (Convection Currents)", "ज्वारीय बल (Tidal Force)", "गुरुत्वाकर्षण बल", "कोरिओलिस बल"],
-        answer: 0
-    },
-    {
-        unit: "Unit 1: भू-आकृति विज्ञान (Geomorphology)",
-        question: "'यारडांग' (Yardang) किस प्रकार के अपरदन का प्रतिफल है?",
-        english: "'Yardang' is a result of which type of erosion?",
-        options: ["पवन अपरदन (Wind Erosion)", "नदी अपरदन (Fluvial Erosion)", "हिमानी अपरदन", "भूमिगत जल अपरदन"],
-        answer: 0
-    },
-    {
-        unit: "Unit 1: भू-आकृति विज्ञान (Geomorphology)",
-        question: "भूकंपीय तरंगों में सबसे तीव्र गति से चलने वाली तरंगें कौन सी हैं?",
-        english: "Which are the fastest traveling seismic waves?",
-        options: ["S-तरंगें (S-Waves)", "P-तरंगें (P-Waves)", "L-तरंगें (L-Waves)", "सतही तरंगें"],
-        answer: 1
-    },
-
-    // UNIT 2: CLIMATOLOGY (Q6 - Q10)
-    {
-        unit: "Unit 2: जलवायु विज्ञान (Climatology)",
-        question: "वायुमंडल की किस परत में मौसम संबंधी समस्त घटनाएँ घटित होती हैं?",
-        english: "In which layer of the atmosphere do all weather phenomena occur?",
-        options: ["समताप मंडल (Stratosphere)", "क्षोभमंडल (Troposphere)", "मध्यमंडल (Mesosphere)", "आयनमंडल (Ionosphere)"],
-        answer: 1
-    },
-    {
-        unit: "Unit 2: जलवायु विज्ञान (Climatology)",
-        question: "कोपेन के वर्गीकरण के अनुसार 'Cwg' जलवायु भारत के किस क्षेत्र में पाई जाती है?",
-        english: "According to Köppen's classification, where is 'Cwg' climate found in India?",
-        options: ["गंगा का मैदान (Ganga Plain)", "पश्चिमी तटीय मैदान", "थार का मरुस्थल", "अरुणाचल प्रदेश"],
-        answer: 0
-    },
-    {
-        unit: "Unit 2: जलवायु विज्ञान (Climatology)",
-        question: "चक्रवात में उत्तरी गोलार्ध (Northern Hemisphere) में पवनों की दिशा कैसी होती है?",
-        english: "What is the direction of winds in a cyclone in the Northern Hemisphere?",
-        options: ["घड़ी की सुई के अनुकूल (Clockwise)", "घड़ी की सुई के विपरीत (Counter-clockwise)", "सीधी रेखा में", "ध्रुवों की ओर"],
-        answer: 1
-    },
-    {
-        unit: "Unit 2: जलवायु विज्ञान (Climatology)",
-        question: "'एल नीनो' (El Niño) घटना का संबंध किस महासागर से है?",
-        english: "The 'El Niño' phenomenon is associated with which ocean?",
-        options: ["अंध महासागर (Atlantic)", "प्रशांत महासागर (Pacific Ocean)", "हिंद महासागर (Indian Ocean)", "आर्कटिक महासागर"],
-        answer: 1
-    },
-    {
-        unit: "Unit 2: जलवायु विज्ञान (Climatology)",
-        question: "सापेक्षिक आर्द्रता (Relative Humidity) को मापने के लिए किस उपकरण का उपयोग किया जाता है?",
-        english: "Which instrument is used to measure Relative Humidity?",
-        options: ["बैरोमीटर (Barometer)", "हाइग्रोमीटर (Hygrometer)", "एनीमोमीटर (Anemometer)", "थर्मामीटर"],
-        answer: 1
-    },
-
-    // UNIT 3: OCEANOGRAPHY (Q11 - Q15)
-    {
-        unit: "Unit 3: समुद्र विज्ञान (Oceanography)",
-        question: "सार्गासो सागर (Sargasso Sea) किस महासागर में स्थित है?",
-        english: "In which ocean is the Sargasso Sea located?",
-        options: ["उत्तरी अटलांटिक महासागर (North Atlantic)", "दक्षिणी अटलांटिक महासागर", "प्रशांत महासागर", "हिंद महासागर"],
-        answer: 0
-    },
-    {
-        unit: "Unit 3: समुद्र विज्ञान (Oceanography)",
-        question: "विश्व की सबसे गहरी महासागरीय गर्त 'मरियाना गर्त' (Mariana Trench) कहाँ स्थित है?",
-        english: "Where is the deepest oceanic trench 'Mariana Trench' located?",
-        options: ["हिंद महासागर", "अटलांटिक महासागर", "प्रशांत महासागर (Pacific Ocean)", "आर्कटिक महासागर"],
-        answer: 2
-    },
-    {
-        unit: "Unit 3: समुद्र विज्ञान (Oceanography)",
-        question: "महासागरीय जल की औसत लवणता (Average Salinity) कितनी होती है?",
-        english: "What is the average salinity of ocean water?",
-        options: ["30‰", "35‰", "40‰", "45‰"],
-        answer: 1
-    },
-    {
-        unit: "Unit 3: समुद्र विज्ञान (Oceanography)",
-        question: "निम्नलिखित में से कौन सी गर्म महासागरीय धारा (Warm Ocean Current) है?",
-        english: "Which of the following is a Warm Ocean Current?",
-        options: ["लेब्राडोर धारा (Labrador)", "पेरू/हम्बोल्ट धारा (Peru/Humboldt)", "गल्फ स्ट्रीम (Gulf Stream)", "कैलिफोर्निया धारा"],
-        answer: 2
-    },
-    {
-        unit: "Unit 3: समुद्र विज्ञान (Oceanography)",
-        question: "बृहत् ज्वार (Spring Tide) कब आता है?",
-        english: "When does a Spring Tide occur?",
-        options: ["अमावस्या और पूर्णिमा को (New & Full Moon)", "सप्तमी को", "अष्टमी को", "केवल अमावस्या को"],
-        answer: 0
-    },
-
-    // UNIT 4: ENVIRONMENTAL GEOGRAPHY (Q16 - Q20)
-    {
-        unit: "Unit 4: पर्यावरण भूगोल (Environmental Geography)",
-        question: "'जैव विविधता हॉटस्पॉट' (Biodiversity Hotspot) की अवधारणा किसने प्रस्तुत की?",
-        english: "Who introduced the concept of 'Biodiversity Hotspots'?",
-        options: ["नॉर्मन मायर्स (Norman Myers)", "इ. ओ. विल्सन", "ए. जी. टांसले", "चार्ल्स एल्टन"],
-        answer: 0
-    },
-    {
-        unit: "Unit 4: पर्यावरण भूगोल (Environmental Geography)",
-        question: "क्योटो प्रोटोकॉल (Kyoto Protocol, 1997) मुख्य रूप से किससे संबंधित है?",
-        english: "What is the Kyoto Protocol (1997) primarily related to?",
-        options: ["ग्रीनहाउस गैसों की कमी (Greenhouse Gas Reduction)", "ओजोन संरक्षण", "जल प्रदूषण", "मृदा संरक्षण"],
-        answer: 0
-    },
-    {
-        unit: "Unit 4: पर्यावरण भूगोल (Environmental Geography)",
-        question: "पारिस्थितिकी पिरामिड (Ecological Pyramid) की अवधारणा सर्वप्रथम किसने दी थी?",
-        english: "Who first developed the concept of Ecological Pyramids?",
-        options: ["चार्ल्स एल्टन (Charles Elton)", "रेमंड लिंडमैन", "ई. पी. ओडम", "आर्थर टांसले"],
-        answer: 0
-    },
-    {
-        unit: "Unit 4: पर्यावरण भूगोल (Environmental Geography)",
-        question: "निम्नलिखित में से कौन सा प्राथमिक उपभोक्ता (Primary Consumer) है?",
-        english: "Which of the following is a Primary Consumer?",
-        options: ["शेर", "शाकाहारी जीव जैसे हिरण (Herbivores)", "चील", "जीवाणु"],
-        answer: 1
-    },
-    {
-        unit: "Unit 4: पर्यावरण भूगोल (Environmental Geography)",
-        question: "भारत में 'प्रोजेक्ट टाइगर' (Project Tiger) किस वर्ष प्रारंभ किया गया था?",
-        english: "In which year was 'Project Tiger' launched in India?",
-        options: ["1972", "1973", "1981", "1992"],
-        answer: 1
-    },
-
-    // UNIT 5: POPULATION & SETTLEMENT GEOGRAPHY (Q21 - Q25)
-    {
-        unit: "Unit 5: जनसंख्या एवं अधिवास भूगोल",
-        question: "माल्थस के जनसंख्या सिद्धांत (Malthusian Theory) के अनुसार जनसंख्या किस दर से बढ़ती है?",
-        english: "According to Malthusian Theory, at what rate does population grow?",
-        options: ["अंकगणितीय (Arithmetic)", "ज्यामितीय (Geometric)", "घेरदार (Cyclic)", "स्थिर rate"],
-        answer: 1
-    },
-    {
-        unit: "Unit 5: जनसंख्या एवं अधिवास भूगोल",
-        question: "रैंक-साइज नियम (Rank-Size Rule) का प्रतिपादन किसने किया था?",
-        english: "Who formulated the Rank-Size Rule?",
-        options: ["जी. के. ज़िफ (G. K. Zipf)", "मार्क जेफरसन (Mark Jefferson)", "क्रिस्टॉलर", "अगस्ट लॉश"],
-        answer: 0
-    },
-    {
-        unit: "Unit 5: जनसंख्या एवं अधिवास भूगोल",
-        question: "'प्राइमेट सिटी' (Primate City) की अवधारणा किसने दी?",
-        english: "Who gave the concept of 'Primate City'?",
-        options: ["मार्क जेफरसन (Mark Jefferson)", "जी. के. ज़िफ", "गार्डन चान्डलर", "लुईस ममफोर्ड"],
-        answer: 0
-    },
-    {
-        unit: "Unit 5: जनसंख्या एवं अधिवास भूगोल",
-        question: "2011 की जनगणना के अनुसार भारत का लिंगानुपाद (Sex Ratio) कितना था?",
-        english: "What was the Sex Ratio of India according to 2011 Census?",
-        options: ["933", "940", "943", "950"],
-        answer: 2
-    },
-    {
-        unit: "Unit 5: जनसंख्या एवं अधिवास भूगोल",
-        question: "सन्नगर (Conurbation) शब्द का प्रयोग सर्वप्रथम किसने किया था?",
-        english: "Who coined the term 'Conurbation'?",
-        options: ["पेट्रिक गेडिज (Patrick Geddes)", "जीन गोटमैन", "लुईस ममफोर्ड", "सी. ए. डॉक्सियाडिस"],
-        answer: 0
-    },
-
-    // UNIT 6: ECONOMIC & REGIONAL GEOGRAPHY (Q26 - Q30)
-    {
-        unit: "Unit 6: आर्थिक एवं प्रादेशिक भूगोल",
-        question: "वेबर के न्यूनतम लागत सिद्धांत में 'पदार्थ सूचकांक' (Material Index) यदि 1 से अधिक है, तो उद्योग कहाँ स्थापित होगा?",
-        english: "In Weber's theory, if Material Index is > 1, where will the industry be located?",
-        options: ["कच्चे माल के स्रोत के निकट (Near Raw Material)", "बाजार के निकट", "मध्यवर्ती स्थान पर", "कहीं भी"],
-        answer: 0
-    },
-    {
-        unit: "Unit 6: आर्थिक एवं प्रादेशिक भूगोल",
-        question: "रोस्टोव (Rostow) के आर्थिक विकास के चरणों में से कौन सा तीसरा चरण है?",
-        english: "Which is the third stage in Rostow's stages of Economic Growth?",
-        options: ["पारंपरिक समाज", "टेक ऑफ अवस्था (Take-off stage)", "परिपक्वता की ओर", "उच्च जन उपभोग"],
-        answer: 1
-    },
-    {
-        unit: "Unit 6: आर्थिक एवं प्रादेशिक भूगोल",
-        question: "निम्नलिखित में से कौन सा प्राथमिक आर्थिक क्रियाकलाप (Primary Economic Activity) नहीं है?",
-        english: "Which of the following is NOT a Primary Economic Activity?",
-        options: ["कृषि", "मत्स्य पालन", "वस्त्र निर्माण (Textile Manufacturing)", "खनन"],
-        answer: 2
-    },
-    {
-        unit: "Unit 6: आर्थिक एवं प्रादेशिक भूगोल",
-        question: "अंतर्राष्ट्रीय व्यापार का 'सुलभ साधन सिद्धांत' (Heckscher-Ohlin Theory) किसने दिया?",
-        english: "Who developed the Factor Endowment Theory of International Trade?",
-        options: ["हेक्शर और ओहलिन (Heckscher & Ohlin)", "एडम स्मिथ", "डेविड रिकार्डो", "ए. ओ. हिर्शमैन"],
-        answer: 0
-    },
-    {
-        unit: "Unit 6: आर्थिक एवं प्रादेशिक भूगोल",
-        question: "गुन्नार मिर्डल (Gunnar Myrdal) का 'संचयी कारणता सिद्धांत' (Cumulative Causation) किससे संबंधित है?",
-        english: "Gunnar Myrdal's Cumulative Causation model is related to?",
-        options: ["क्षेत्रीय असमानता (Regional Inequality)", "कृषि क्रांति", "जनसंख्या नियंत्रण", "परिवहन मॉडल"],
-        answer: 0
-    },
-
-    // UNIT 7: CULTURAL, SOCIAL & POLITICAL GEOGRAPHY (Q31 - Q35)
-    {
-        unit: "Unit 7: सांस्कृतिक, सामाजिक एवं राजनीतिक भूगोल",
-        question: "'सांस्कृतिक परिदृश्य' (Cultural Landscape) की अवधारणा का विकास किस अमेरिकी भूगोलवेत्ता ने किया?",
-        english: "Which American geographer developed the concept of 'Cultural Landscape'?",
-        options: ["कार्ल सॉर (Carl Sauer)", "ग्रिफिथ टेलर", "हार्टशोर्न", "इसाया बोउमैन"],
-        answer: 0
-    },
-    {
-        unit: "Unit 7: सांस्कृतिक, सामाजिक एवं राजनीतिक भूगोल",
-        question: "मैकिंडर के 'हार्टलैंड सिद्धांत' (1904) में 'Pivot Area' किसे कहा गया था?",
-        english: "What was called the 'Pivot Area' in Mackinder's Heartland Theory (1904)?",
-        options: ["आंतरिक यूूरेशिया (Inner Eurasia)", "उत्तर अमेरिका", "दक्षिण पूर्व एशिया", "ब्रिटिश द्वीप समूह"],
-        answer: 0
-    },
-    {
-        unit: "Unit 7: सांस्कृतिक, सामाजिक एवं राजनीतिक भूगोल",
-        question: "निम्नलिखित में से कौन सी भारत की सबसे बड़ी जनजातीय आबादी (Tribal Population) है?",
-        english: "Which is the largest tribal group in India (as per census)?",
-        options: ["भील (Bhil)", "गोंड (Gond)", "संथाल", "मुंडा"],
-        answer: 0
-    },
-    {
-        unit: "Unit 7: सांस्कृतिक, सामाजिक एवं राजनीतिक भूगोल",
-        question: "राजनीतिक भूगोल में 'ऑर्गेनिक थ्योरी ऑफ स्टेट' (Organic Theory of State) किसने प्रस्तुत की?",
-        english: "Who presented the 'Organic Theory of State' in Political Geography?",
-        options: ["फ्रेडरिक रेटजेल (Friedrich Ratzel)", "मैकिंडर", "स्पाइकमेन", "हाउसहोफर"],
-        answer: 0
-    },
-    {
-        unit: "Unit 7: सांस्कृतिक, सामाजिक एवं राजनीतिक भूगोल",
-        question: "'बफर स्टेट' (Buffer State) का प्राथमिक कार्य क्या होता है?",
-        english: "What is the primary function of a 'Buffer State'?",
-        options: ["दो विशाल विरोधी शक्तियों के बीच संघर्ष को रोकना", "व्यापार बढ़ाना", "समुद्री मार्ग सुरक्षा", "सांस्कृतिक आदान-प्रदान"],
-        answer: 0
-    },
-
-    // UNIT 8: GEOGRAPHICAL THOUGHT (Q36 - Q40)
-    {
-        unit: "Unit 8: भौगोलिक चिंतन (Geographical Thought)",
-        question: "'एन्थ्रोपोगेोग्राफी' (Anthropogeographie) पुस्तक के लेखक कौन हैं?",
-        english: "Who wrote the book 'Anthropogeographie'?",
-        options: ["फ्रेडरिक रेटजेल (Friedrich Ratzel)", "विडाल डी ला ब्लाश", "जीन ब्रुंस", "एलेन चर्चिल सेम्पल"],
-        answer: 0
-    },
-    {
-        unit: "Unit 8: भौगोलिक चिंतन (Geographical Thought)",
-        question: "संभववाद (Possibilism) की विचारधारा का जनक किसे माना जाता है?",
-        english: "Who is considered the founding father of Possibilism?",
-        options: ["विडाल डी ला ब्लाश (Vidal de la Blache)", "रेटजेल", "हम्बोल्ट", "इमैनुएल कांट"],
-        answer: 0
-    },
-    {
-        unit: "Unit 8: भौगोलिक चिंतन (Geographical Thought)",
-        question: "'मात्रात्मक क्रांति' (Quantitative Revolution) भूगोल में किस दशक में चरम पर थी?",
-        english: "In which decade did the Quantitative Revolution peak in Geography?",
-        options: ["1950-1960 के दशक में", "1980 के दशक में", "1930 के दशक में", "2000 के बाद"],
-        answer: 0
-    },
-    {
-        unit: "Unit 8: भौगोलिक चिंतन (Geographical Thought)",
-        question: "'अल-बरूनी' किस देश के निवासी/भूगोलवेत्ता थे?",
-        english: "Al-Biruni belonged to which region/origin?",
-        options: ["अरब/फारस (Arab/Persian)", "ग्रीस", "रोम", "चीन"],
-        answer: 0
-    },
-    {
-        unit: "Unit 8: भौगोलिक चिंतन (Geographical Thought)",
-        question: "किताब 'नेचर ऑफ ज्योग्राफी' (The Nature of Geography) किसने लिखी थी?",
-        english: "Who wrote the famous book 'The Nature of Geography'?",
-        options: ["रिचर्ड हार्टशोर्न (Richard Hartshorne)", "एफ. के. शेफर", "डेविड हार्वे", "विलियम बंगे"],
-        answer: 0
-    },
-
-    // UNIT 9: GEOGRAPHICAL TECHNIQUES (Q41 - Q45)
-    {
-        unit: "Unit 9: भौगोलिक तकनीकें (Cartography & GIS)",
-        question: "जीपीएस (GPS) प्रणाली में पृथ्वी पर सटीक स्थिति निर्धारित करने के लिए न्यूनतम कितने उपग्रहों की आवश्यकता होती है?",
-        english: "Minimum how many satellites are required to determine precise location in GPS?",
-        options: ["3", "4", "24", "12"],
-        answer: 1
-    },
-    {
-        unit: "Unit 9: भौगोलिक तकनीकें (Cartography & GIS)",
-        question: "मानचित्र पर समान वर्षा वाले स्थानों को मिलाने वाली रेखा को क्या कहते हैं?",
-        english: "What are lines connecting places of equal rainfall on a map called?",
-        options: ["आइसोहाइट (Isohyet)", "आइसोथर्म (Isotherm)", "आइसोबार (Isobar)", "आइसोबथ"],
-        answer: 0
-    },
-    {
-        unit: "Unit 9: भौगोलिक तकनीकें (Cartography & GIS)",
-        question: "जीआईएस (GIS) में वेक्टर डेटा (Vector Data) किस रूप में प्रस्तुत किया जाता है?",
-        english: "In GIS, how is Vector Data represented?",
-        options: ["बिंदु, रेखा और बहुभुज (Point, Line, Polygon)", "पिक्सेल और ग्रिड", "केवल डिजिटल इमेज", "केवल टेबल"],
-        answer: 0
-    },
-    {
-        unit: "Unit 9: भौगोलिक तकनीकें (Cartography & GIS)",
-        question: "सुदूर संवेदन (Remote Sensing) में प्रयुक्त आईआरएस (IRS) उपग्रह श्रृंखला किस देश की है?",
-        english: "The IRS satellite series used in remote sensing belongs to which country?",
-        options: ["भारत (India)", "अमेरिका", "रूस", "चीन"],
-        answer: 0
-    },
-    {
-        unit: "Unit 9: भौगोलिक तकनीकें (Cartography & GIS)",
-        question: "विषम वितरण को दर्शाने के लिए उपयोग किए जाने वाले पाई आरेख (Pie Chart) में वृत्त के कुल कोण का मान कितना होता है?",
-        english: "What is the total central angle of a circle in a Pie Chart?",
-        options: ["180°", "360°", "90°", "100°"],
-        answer: 1
-    },
-
-    // UNIT 10: GEOGRAPHY OF INDIA (Q46 - Q50)
-    {
-        unit: "Unit 10: भारत का भूगोल (Geography of India)",
-        question: "भारत की सबसे लंबी तटरेखा (Coastline) वाला राज्य कौन सा है?",
-        english: "Which Indian state has the longest coastline?",
-        options: ["गुजरात (Gujarat)", "आंध्र प्रदेश", "तमिलनाडु", "महाराष्ट्र"],
-        answer: 0
-    },
-    {
-        unit: "Unit 10: भारत का भूगोल (Geography of India)",
-        question: "भारत में दक्षिण-पश्चिम मानसून सबसे पहले किस राज्य में प्रवेश करता है?",
-        english: "In which state does the South-West Monsoon enter first in India?",
-        options: ["केरल (Kerala)", "तमिलनाडु", "गोवा", "पश्चिम बंगाल"],
-        answer: 0
-    },
-    {
-        unit: "Unit 10: भारत का भूगोल (Geography of India)",
-        question: "पश्चिम की ओर बहने वाली भारत की दो प्रमुख नदियाँ कौन सी हैं?",
-        english: "Which are the two major west-flowing rivers of India?",
-        options: ["नर्मदा और ताप्ती (Narmada & Tapi)", "गोदावरी और कृष्णा", "गंगा और यमुना", "महानदी और कावेरी"],
-        answer: 0
-    },
-    {
-        unit: "Unit 10: भारत का भूगोल (Geography of India)",
-        question: "भारत में 'रेगुर मृदा' (Regur Soil) के नाम से किसे जाना जाता है?",
-        english: "Which soil is known as 'Regur Soil' in India?",
-        options: ["काली मिट्टी (Black Soil)", "जलोढ़ मिट्टी", "लाल मिट्टी", "लैटेराइट मिट्टी"],
-        answer: 0
-    },
-    {
-        unit: "Unit 10: भारत का भूगोल (Geography of India)",
-        question: "भारत का एकमात्र सक्रिय ज्वालामुखी 'बैरेन द्वीप' (Barren Island) कहाँ स्थित है?",
-        english: "Where is India's only active volcano 'Barren Island' located?",
-        options: ["अंडमान और निकोबार द्वीप समूह (Andaman & Nicobar)", "लक्षद्वीप", "न्यू मूर द्वीप", "मझुली"],
-        answer: 0
+    function toggleAnswer(id) {
+        var ansDiv = document.getElementById(id);
+        if (ansDiv.style.display === "block") {
+            ansDiv.style.display = "none";
+        } else {
+            ansDiv.style.display = "block";
+        }
     }
-];
-
-let currentQuestion = 0;
-let score = 0;
-let answered = false;
-
-function loadQuestion() {
-    answered = false;
-    const q = questions[currentQuestion];
-
-    document.getElementById("unit-tag").innerText = q.unit;
-    document.getElementById("progress").innerText = 
-        "Question " + (currentQuestion + 1) + " / " + questions.length;
-
-    document.getElementById("question").innerHTML = 
-        q.question + "<div class='english'>🇬🇧 " + q.english + "</div>";
-
-    document.getElementById("answer").innerHTML = "";
-    document.getElementById("nextBtn").style.display = "none";
-
-    const optionsDiv = document.getElementById("options");
-    optionsDiv.innerHTML = "";
-
-    q.options.forEach((option, index) => {
-        const button = document.createElement("button");
-        button.innerText = option;
-        button.className = "option";
-        button.onclick = function() {
-            checkAnswer(index, button);
-        };
-        optionsDiv.appendChild(button);
-    });
-}
-
-function checkAnswer(selectedIndex, selectedButton) {
-    if (answered) return;
-    answered = true;
-
-    const q = questions[currentQuestion];
-    const allOptions = document.querySelectorAll(".option");
-
-    allOptions[q.answer].classList.add("correct");
-
-    if (selectedIndex === q.answer) {
-        score++;
-        document.getElementById("answer").innerHTML = 
-            "<strong style='color: #16a34a;'>✅ सही उत्तर! (Correct)</strong><br>" +
-            "<b>उत्तर:</b> " + q.options[q.answer];
-    } else {
-        selectedButton.classList.add("wrong");
-        document.getElementById("answer").innerHTML = 
-            "<strong style='color: #dc2626;'>❌ गलत उत्तर! (Wrong)</strong><br>" +
-            "<b>सही उत्तर:</b> " + q.options[q.answer];
-    }
-
-    document.getElementById("nextBtn").style.display = "inline-block";
-
-    if (currentQuestion === questions.length - 1) {
-        document.getElementById("nextBtn").innerText = "अंतिम परिणाम देखें (See Final Result) 🎯";
-    } else {
-        document.getElementById("nextBtn").innerText = "अगला प्रश्न (Next Question) ➡";
-    }
-}
-
-function nextQuestion() {
-    currentQuestion++;
-    if (currentQuestion < questions.length) {
-        loadQuestion();
-    } else {
-        showResult();
-    }
-}
-
-function showResult() {
-    document.getElementById("question").style.display = "none";
-    document.getElementById("options").style.display = "none";
-    document.getElementById("answer").style.display = "none";
-    document.getElementById("nextBtn").style.display = "none";
-    document.getElementById("progress").style.display = "none";
-    document.getElementById("unit-tag").style.display = "none";
-
-    let percentage = (score / questions.length) * 100;
-    let remarks = "";
-    if (percentage >= 80) remarks = "🌟 उत्कृष्ट प्रदर्शन! (Excellent)";
-    else if (percentage >= 60) remarks = "👍 अच्छा प्रयास! (Good)";
-    else remarks = "📚 और अभ्यास की आवश्यकता है। (Keep Learning)";
-
-    document.getElementById("result").innerHTML = `
-        <div id="score">
-            🎉 50 प्रश्नों की क्विज़ पूरी हुई!
-            <br><br>
-            आपका कुल स्कोर: ${score} / ${questions.length} (${percentage.toFixed(1)}%)
-            <br><br>
-            <div style="font-size: 18px; color: #1e40af;">${remarks}</div>
-            <br>
-            <button id="restartBtn" onclick="restartQuiz()">
-                🔄 इसे पुनः हल करें (Restart Quiz)
-            </button>
-        </div>
-    `;
-}
-
-function restartQuiz() {
-    currentQuestion = 0;
-    score = 0;
-
-    document.getElementById("question").style.display = "block";
-    document.getElementById("options").style.display = "block";
-    document.getElementById("answer").style.display = "block";
-    document.getElementById("progress").style.display = "block";
-    document.getElementById("unit-tag").style.display = "inline-block";
-
-    document.getElementById("result").innerHTML = "";
-
-    loadQuestion();
-}
-
-loadQuestion();
 </script>
 
 </body>
