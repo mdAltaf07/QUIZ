@@ -3,757 +3,365 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UGC NET JRF - Geomorphology & Oceanography Quiz</title>
+    <title>UGC NET JRF - Geography 100 Questions</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f7f6;
-            color: #333;
+        * {
+            box-sizing: border-box;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f1f5f9;
+            color: #1e293b;
+            padding: 10px;
         }
         .container {
-            max-width: 900px;
+            max-width: 600px;
             margin: 0 auto;
             background: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
         }
         h1 {
             text-align: center;
-            color: #1a5276;
-            border-bottom: 3px solid #2980b9;
-            padding-bottom: 10px;
+            color: #0f172a;
+            font-size: 1.25rem;
+            margin-bottom: 5px;
         }
-        .section-header {
-            background-color: #2980b9;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            margin-top: 30px;
+        .subtitle {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 15px;
         }
         .question-card {
-            background: #fafafa;
-            border-left: 4px solid #3498db;
-            margin: 15px 0;
-            padding: 15px;
-            border-radius: 0 5px 5px 0;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid #0284c7;
+            margin-bottom: 15px;
+            padding: 12px;
+            border-radius: 6px;
         }
-        .q-number {
-            font-weight: bold;
-            color: #2c3e50;
+        .q-text {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #0f172a;
             margin-bottom: 10px;
+            line-height: 1.4;
         }
         .pyq-tag {
-            background-color: #e74c3c;
-            color: white;
-            font-size: 0.8em;
-            padding: 2px 6px;
+            background-color: #ef4444;
+            color: #ffffff;
+            font-size: 0.7rem;
+            padding: 2px 5px;
             border-radius: 3px;
-            margin-left: 8px;
+            margin-left: 5px;
+            display: inline-block;
         }
         .options {
-            margin: 10px 0;
             display: flex;
             flex-direction: column;
             gap: 8px;
         }
-        .option-btn {
+        .opt-btn {
             background-color: #ffffff;
-            border: 1.5px solid #cbd5e1;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            border-radius: 6px;
             text-align: left;
-            font-size: 0.95em;
-            transition: all 0.2s ease;
+            font-size: 0.88rem;
+            color: #334155;
+            cursor: pointer;
+            word-wrap: break-word;
         }
-        .option-btn:hover:not([disabled]) {
-            background-color: #e2e8f0;
-            border-color: #94a3b8;
-        }
-        .option-btn.correct {
+        .opt-btn.correct {
             background-color: #d1fae5 !important;
             border-color: #10b981 !important;
             color: #065f46;
-            font-weight: bold;
+            font-weight: 600;
         }
-        .option-btn.wrong {
+        .opt-btn.wrong {
             background-color: #fee2e2 !important;
             border-color: #ef4444 !important;
             color: #991b1b;
         }
-        .explanation {
+        .exp-box {
             display: none;
-            margin-top: 10px;
-            padding: 10px;
+            margin-top: 8px;
+            padding: 8px;
             background-color: #f1f5f9;
             border-radius: 4px;
-            font-size: 0.9em;
-            color: #334155;
+            font-size: 0.8rem;
+            color: #475569;
         }
-        /* Result Box Styling */
-        .submit-section {
-            text-align: center;
-            margin-top: 30px;
+        /* Mobile Controls */
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            gap: 10px;
         }
-        .btn-submit {
-            background-color: #27ae60;
+        .nav-btn {
+            background-color: #0284c7;
             color: white;
-            font-size: 1.1em;
-            padding: 12px 25px;
             border: none;
+            padding: 10px 16px;
             border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
             cursor: pointer;
-            font-weight: bold;
+            flex: 1;
         }
-        .btn-submit:hover {
-            background-color: #219653;
+        .nav-btn:disabled {
+            background-color: #cbd5e1;
+            cursor: not-allowed;
         }
-        #result-box {
+        .page-info {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #64748b;
+        }
+        #result-screen {
             display: none;
-            margin-top: 25px;
-            padding: 20px;
-            background-color: #e0f2fe;
-            border: 2px solid #0284c7;
-            border-radius: 8px;
             text-align: center;
+            padding: 20px 10px;
         }
-        #result-box h2 {
-            margin: 0 0 10px 0;
-            color: #0369a1;
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <h1>UGC NET JRF - भू-आकृति एवं समुद्र विज्ञान</h1>
-    <p style="text-align:center;"><b>100 महत्वपूर्ण प्रश्न (Auto Check & Final Result System)</b></p>
-
-    <!-- PART 1: GEOMORPHOLOGY -->
-    <div class="section-header">
-        <h2>भाग 1: भू-आकृति विज्ञान (Geomorphology)</h2>
-    </div>
-
-    <!-- Question 1 -->
-    <div class="question-card" data-correct="B">
-        <p class="q-number">Q1. "एकरूपतावाद" (Principle of Uniformitarianism) का सिद्धांत किसने दिया था? <span class="pyq-tag">NET JRF PYQ</span></p>
-        <div class="options">
-            <button class="option-btn" onclick="checkAnswer(this, 'A')">A) डब्ल्यू. एम. डेविस</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'B')">B) जेम्स हटन</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'C')">C) वाल्टर पेंक</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'D')">D) एल. सी. किंग</button>
-        </div>
-        <div class="explanation"><b>व्याख्या:</b> जेम्स हटन ने 1785 में इस सिद्धांत का प्रतिपादन किया था।</div>
-    </div>
-
-    <!-- Question 2 -->
-    <div class="question-card" data-correct="A">
-        <p class="q-number">Q2. "वर्तमान भूत की कुंजी है" (Present is the key to the past) यह कथन किसका है? <span class="pyq-tag">NET JRF PYQ</span></p>
-        <div class="options">
-            <button class="option-btn" onclick="checkAnswer(this, 'A')">A) जेम्स हटन</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'B')">B) चार्ल्स लायल</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'C')">C) डब्ल्यू. एम. डेविस</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'D')">D) डटन</button>
-        </div>
-        <div class="explanation"><b>व्याख्या:</b> यह एकरूपतावाद सिद्धांत से संबंधित कथन है जो जेम्स हटन द्वारा दिया गया।</div>
-    </div>
-
-    <!-- Question 3 -->
-    <div class="question-card" data-correct="B">
-        <p class="q-number">Q3. 'पेनिप्लेन' (Peneplain) अवधारणा का प्रतिपादन किसने किया था?</p>
-        <div class="options">
-            <button class="option-btn" onclick="checkAnswer(this, 'A')">A) वाल्टर पेंक</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'B')">B) डब्ल्यू. एम. डेविस</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'C')">C) एल. सी. किंग</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'D')">D) गिल्बर्ट</button>
-        </div>
-        <div class="explanation"><b>व्याख्या:</b> नदी अपरदन चक्र की अंतिम अवस्था में बने समप्राय मैदान को डेविस ने पेनिप्लेन कहा।</div>
-    </div>
-
-    <!-- Question 4 -->
-    <div class="question-card" data-correct="B">
-        <p class="q-number">Q4. 'प्रेडिमोंट ट्रेपेन' (Piedmont Treppen) शब्द का प्रयोग अपरदन चक्र के संदर्भ में किसने किया? <span class="pyq-tag">NET JRF PYQ</span></p>
-        <div class="options">
-            <button class="option-btn" onclick="checkAnswer(this, 'A')">A) डब्ल्यू. एम. डेविस</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'B')">B) वाल्टर पेंक</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'C')">C) एल. सी. किंग</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'D')">D) क्रिकमे</button>
-        </div>
-        <div class="explanation"><b>व्याख्या:</b> जर्मन भू-आकृति विज्ञानी वाल्टर पेंक ने सीढ़ीदार मैदानों के लिए यह शब्द प्रयुक्त किया था।</div>
-    </div>
-
-    <!-- Question 5 -->
-    <div class="question-card" data-correct="B">
-        <p class="q-number">Q5. महाद्वीपीय विस्थापन सिद्धांत (Continental Drift Theory) का प्रतिपादन 1912 में किसने किया?</p>
-        <div class="options">
-            <button class="option-btn" onclick="checkAnswer(this, 'A')">A) हैरी हैस</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'B')">B) अल्फ्रेड वेगनर</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'C')">C) एफ. बी. टेलर</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'D')">D) डब्ल्यू. जे. मॉर्गन</button>
-        </div>
-        <div class="explanation"><b>व्याख्या:</b> वेगनर ने पेंजिया और पैंथालासा की अवधारणा प्रस्तुत की थी।</div>
-    </div>
-
-    <!-- PART 2: OCEANOGRAPHY -->
-    <div class="section-header">
-        <h2>भाग 2: समुद्र विज्ञान (Oceanography)</h2>
-    </div>
-
-    <!-- Question 6 -->
-    <div class="question-card" data-correct="B">
-        <p class="q-number">Q6. महासागरों की औसत लवणता (Average Salinity) कितनी होती है? <span class="pyq-tag">NET JRF PYQ</span></p>
-        <div class="options">
-            <button class="option-btn" onclick="checkAnswer(this, 'A')">A) 30‰</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'B')">B) 35‰</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'C')">C) 40‰</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'D')">D) 25‰</button>
-        </div>
-        <div class="explanation"><b>व्याख्या:</b> समुद्री जल की औसत लवणता 35 प्रति हजार होती है।</div>
-    </div>
-
-    <!-- Question 7 -->
-    <div class="question-card" data-correct="B">
-        <p class="q-number">Q7. विश्व की सबसे गहरी महासागरीय गर्त (Trench) कौन सी है?</p>
-        <div class="options">
-            <button class="option-btn" onclick="checkAnswer(this, 'A')">A) प्यूर्टो रिको</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'B')">B) मेरियाना गर्त</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'C')">C) सुंडा गर्त</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'D')">D) टोंगा गर्त</button>
-        </div>
-        <div class="explanation"><b>व्याख्या:</b> प्रशांत महासागर में स्थित मेरियाना गर्त (चैलेंजर दीप) लगभग 11,034 मीटर गहरी है।</div>
-    </div>
-
-    <!-- Question 8 -->
-    <div class="question-card" data-correct="A">
-        <p class="q-number">Q8. गल्फ स्ट्रीम (Gulf Stream) कैसी जलधारा है? <span class="pyq-tag">NET JRF PYQ</span></p>
-        <div class="options">
-            <button class="option-btn" onclick="checkAnswer(this, 'A')">A) गरम महासागरीय धारा</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'B')">B) ठंडी महासागरीय धारा</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'C')">C) तटवर्ती पवन</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'D')">D) इनमें से कोई नहीं</button>
-        </div>
-        <div class="explanation"><b>व्याख्या:</b> यह अंध महासागर (Atlantic) की एक मुख्य गरम जलधारा है।</div>
-    </div>
-
-    <!-- Question 9 -->
-    <div class="question-card" data-correct="B">
-        <p class="q-number">Q9. सरगासो सागर (Sargasso Sea) किस महासागर में स्थित है? <span class="pyq-tag">NET JRF PYQ</span></p>
-        <div class="options">
-            <button class="option-btn" onclick="checkAnswer(this, 'A')">A) उत्तरी प्रशांत महासागर</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'B')">B) उत्तरी अटलांटिक महासागर</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'C')">C) हिंद महासागर</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'D')">D) आर्कटिक महासागर</button>
-        </div>
-        <div class="explanation"><b>व्याख्या:</b> यह चारों ओर से समुद्री धाराओं से घिरा शांत जल का क्षेत्र है, जिसका कोई तट नहीं है।</div>
-    </div>
-
-    <!-- Question 10 -->
-    <div class="question-card" data-correct="C">
-        <p class="q-number">Q10. वृहत् ज्वार (Spring Tide) कब आता है? <span class="pyq-tag">NET JRF PYQ</span></p>
-        <div class="options">
-            <button class="option-btn" onclick="checkAnswer(this, 'A')">A) केवल अमावस्या को</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'B')">B) केवल पूर्णिमा को</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'C')">C) अमावस्या और पूर्णिमा दोनों को</button>
-            <button class="option-btn" onclick="checkAnswer(this, 'D')">D) सप्तमी या अष्टमी को</button>
-        </div>
-        <div class="explanation"><b>व्याख्या:</b> सिज़िगी (Syzygy) स्थिति में सूर्य, पृथ्वी और चंद्रमा एक सीधी रेखा में होते हैं।</div>
-    </div>
-
-    <!-- SUBMIT BUTTON & FINAL RESULT -->
-    <div class="submit-section">
-        <button class="btn-submit" onclick="showFinalResult()">अंतिम परिणाम देखें (Submit Quiz)</button>
-    </div>
-
-    <div id="result-box">
-        <h2>क्विज़ परिणाम (Final Score)</h2>
-        <p id="score-text" style="font-size: 1.3em; font-weight: bold; color: #1e293b;"></p>
-        <p id="percentage-text" style="font-size: 1.1em; color: #0284c7;"></p>
-    </div>
-
-</div>
-
-<script>
-    let totalScore = 0;
-    let answeredQuestions = 0;
-
-    function checkAnswer(selectedBtn, selectedOption) {
-        let card = selectedBtn.closest('.question-card');
-        let correctOption = card.getAttribute('data-correct');
-        let allButtons = card.querySelectorAll('.option-btn');
-        let explanation = card.querySelector('.explanation');
-
-        // एक बार उत्तर देने के बाद बटन को डिसेबल करें
-        allButtons.forEach(btn => {
-            btn.disabled = true;
-            // सही उत्तर वाला बटन खोजें और उसे हरा (green) करें
-            if (btn.getAttribute('onclick').includes("'" + correctOption + "'")) {
-                btn.classList.add('correct');
-            }
-        });
-
-        // यदि गलत ऑप्शन चुना है तो उसे लाल (red) करें
-        if (selectedOption !== correctOption) {
-            selectedBtn.classList.add('wrong');
-        } else {
-            totalScore++;
-        }
-
-        // व्याख्या (Explanation) दिखाएं
-        if (explanation) {
-            explanation.style.display = "block";
-        }
-
-        answeredQuestions++;
-    }
-
-    function showFinalResult() {
-        let totalQuestions = document.querySelectorAll('.question-card').length;
-        let resultBox = document.getElementById('result-box');
-        let scoreText = document.getElementById('score-text');
-        let percentageText = document.getElementById('percentage-text');
-
-        let percentage = ((totalScore / totalQuestions) * 100).toFixed(1);
-
-        scoreText.innerText = `कुल प्रश्न: ${totalQuestions} | सही उत्तर: ${totalScore} | हल किए गए: ${answeredQuestions}`;
-        percentageText.innerText = `आपका कुल स्कोर: ${percentage}%`;
-
-        resultBox.style.display = 'block';
-        resultBox.scrollIntoView({ behavior: 'smooth' });
-    }
-</script>
-
-</body>
-</html>            background: #fafafa;
-            border-left: 4px solid #3498db;
-            margin: 15px 0;
-            padding: 15px;
-            border-radius: 0 5px 5px 0;
-        }
-        .q-number {
+        .score-badge {
+            font-size: 1.5rem;
             font-weight: bold;
-            color: #2c3e50;
-        }
-        .pyq-tag {
-            background-color: #e74c3c;
-            color: white;
-            font-size: 0.8em;
-            padding: 2px 6px;
-            border-radius: 3px;
-            margin-left: 8px;
-        }
-        .options {
+            color: #0284c7;
             margin: 10px 0;
-            padding-left: 20px;
-        }
-        .btn-answer {
-            background-color: #27ae60;
-            color: white;
-            border: none;
-            padding: 6px 12px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.9em;
-        }
-        .btn-answer:hover {
-            background-color: #219653;
-        }
-        .answer {
-            display: none;
-            margin-top: 10px;
-            padding: 10px;
-            background-color: #e8f8f5;
-            border: 1px solid #a3e4d7;
-            border-radius: 4px;
-            color: #117a65;
-            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>भूगोल (Geography) - 100 महत्वपूर्ण प्रश्नोत्तर</h1>
-    <p style="text-align:center;"><b>विषय:</b> भू-आकृति विज्ञान (Geomorphology) एवं समुद्र विज्ञान (Oceanography)</p>
+    <div id="quiz-screen">
+        <h1>UGC NET JRF Geography</h1>
+        <p class="subtitle">Geomorphology & Oceanography (100 Questions)</p>
+        
+        <div id="questions-container"></div>
 
-    <!-- PART 1: GEOMORPHOLOGY -->
-    <div class="section-header">
-        <h2>भाग 1: भू-आकृति विज्ञान (Geomorphology) - 50 प्रश्न</h2>
-    </div>
-
-    <!-- Question 1 -->
-    <div class="question-card">
-        <p class="q-number">Q1. "एकरूपतावाद" (Principle of Uniformitarianism) का सिद्धांत किसने दिया था? <span class="pyq-tag">NET JRF PYQ</span></p>
-        <div class="options">
-            A) डब्ल्यू. एम. डेविस<br>
-            B) जेम्स हटन<br>
-            C) वाल्टर पेंक<br>
-            D) एल. सी. किंग
+        <div class="controls">
+            <button class="nav-btn" id="prev-btn" onclick="changePage(-1)">पिछला</button>
+            <span class="page-info" id="page-num">Page 1/10</span>
+            <button class="nav-btn" id="next-btn" onclick="changePage(1)">अगला</button>
         </div>
-        <button class="btn-answer" onclick="toggleAnswer('ans1')">उत्तर देखें</button>
-        <div id="ans1" class="answer">सही उत्तर: B) जेम्स हटन (1785)</div>
     </div>
 
-    <!-- Question 2 -->
-    <div class="question-card">
-        <p class="q-number">Q2. "वर्तमान भूत की कुंजी है" (Present is the key to the past) यह कथन किसका है? <span class="pyq-tag">NET JRF PYQ</span></p>
-        <div class="options">
-            A) जेम्स हटन<br>
-            B) चार्ल्स लायल<br>
-            C) डेविस<br>
-            D) डटन
-        </div>
-        <button class="btn-answer" onclick="toggleAnswer('ans2')">उत्तर देखें</button>
-        <div id="ans2" class="answer">सही उत्तर: A) जेम्स हटन</div>
+    <div id="result-screen">
+        <h1>क्विज़ समाप्त!</h1>
+        <p style="margin-top:10px;">आपका स्कोर:</p>
+        <div class="score-badge" id="score-text">0 / 100</div>
+        <p id="percent-text" style="color:#64748b; font-size:0.9rem;"></p>
+        <button class="nav-btn" style="margin-top:20px; max-width:200px;" onclick="location.reload()">पुनः प्रयास करें</button>
     </div>
-
-    <!-- Question 3 -->
-    <div class="question-card">
-        <p class="q-number">Q3. 'पेनिप्लेन' (Peneplain) अवधारणा का प्रतिपादन किसने किया था?</p>
-        <div class="options">
-            A) वाल्टर पेंक<br>
-            B) डब्ल्यू. एम. डेविस<br>
-            C) एल. सी. किंग<br>
-            D) गिल्बर्ट
-        </div>
-        <button class="btn-answer" onclick="toggleAnswer('ans3')">उत्तर देखें</button>
-        <div id="ans3" class="answer">सही उत्तर: B) डब्ल्यू. एम. डेविस</div>
-    </div>
-
-    <!-- Question 4 -->
-    <div class="question-card">
-        <p class="q-number">Q4. 'प्रेडिमोंट ट्रेपेन' (Piedmont Treppen) शब्द का प्रयोग अपरदन चक्र के संदर्भ में किसने किया? <span class="pyq-tag">NET JRF PYQ</span></p>
-        <div class="options">
-            A) डब्ल्यू. एम. डेविस<br>
-            B) वाल्टर पेंक<br>
-            C) एल. सी. किंग<br>
-            D) क्रिकमे
-        </div>
-        <button class="btn-answer" onclick="toggleAnswer('ans4')">उत्तर देखें</button>
-        <div id="ans4" class="answer">सही उत्तर: B) वाल्टर पेंक</div>
-    </div>
-
-    <!-- Question 5 -->
-    <div class="question-card">
-        <p class="q-number">Q5. महाद्वीपीय विस्थापन सिद्धांत (Continental Drift Theory) का प्रतिपादन 1912 में किसने किया?</p>
-        <div class="options">
-            A) हैरी हैस<br>
-            B) अल्फ्रेड वेगनर<br>
-            C) टेलर<br>
-            D) मॉर्गन
-        </div>
-        <button class="btn-answer" onclick="toggleAnswer('ans5')">उत्तर देखें</button>
-        <div id="ans5" class="answer">सही उत्तर: B) अल्फ्रेड वेगनर</div>
-    </div>
-
-    <!-- Question 6 -->
-    <div class="question-card">
-        <p class="q-number">Q6. प्लेट विवर्तनिकी (Plate Tectonics) शब्द का प्रयोग सर्वप्रथम किसने किया था? <span class="pyq-tag">NET JRF PYQ</span></p>
-        <div class="options">
-            A) डब्ल्यू. जे. मॉर्गन<br>
-            B) टी. विल्सन (T. Wilson)<br>
-            C) हैरी हैस<br>
-            D) पार्कर
-        </div>
-        <button class="btn-answer" onclick="toggleAnswer('ans6')">उत्तर देखें</button>
-        <div id="ans6" class="answer">सही उत्तर: B) टी. विल्सन (1965)</div>
-    </div>
-
-    <!-- Question 7 -->
-    <div class="question-card">
-        <p class="q-number">Q7. 'समुद्र तल प्रसार' (Seafloor Spreading) की परिकल्पना किसने प्रस्तुत की थी? <span class="pyq-tag">NET JRF PYQ</span></p>
-        <div class="options">
-            A) अल्फ्रेड वेगनर<br>
-            B) हैरी हैस<br>
-            C) विल्सन<br>
-            D) जेफ्रीज
-        </div>
-        <button class="btn-answer" onclick="toggleAnswer('ans7')">उत्तर देखें</button>
-        <div id="ans7" class="answer">सही उत्तर: B) हैरी हैस (1960)</div>
-    </div>
-
-    <!-- Question 8 -->
-    <div class="question-card">
-        <p class="q-number">Q8. निम्नलिखित में से कौन सी एक नवीन मोड़दार पर्वतमाला नहीं है?</p>
-        <div class="options">
-            A) हिमालय<br>
-            B) अल्प्स<br>
-            C) एरावाली (Aravalli)<br>
-            D) एंडीज
-        </div>
-        <button class="btn-answer" onclick="toggleAnswer('ans8')">उत्तर देखें</button>
-        <div id="ans8" class="answer">सही उत्तर: C) अरावली (यह प्राचीन अवशिष्ट पर्वत है)</div>
-    </div>
-
-    <!-- Question 9 -->
-    <div class="question-card">
-        <p class="q-number">Q9. समस्थिति (Isostasy) शब्द का प्रयोग सर्वप्रथम किसने किया था? <span class="pyq-tag">NET JRF PYQ</span></p>
-        <div class="options">
-            A) एयरी (Airy)<br>
-            B) प्राट (Pratt)<br>
-            C) डटन (Dutton)<br>
-            D) जोली (Joly)
-        </div>
-        <button class="btn-answer" onclick="toggleAnswer('ans9')">उत्तर देखें</button>
-        <div id="ans9" class="answer">सही उत्तर: C) डटन (1889)</div>
-    </div>
-
-    <!-- Question 10 -->
-    <div class="question-card">
-        <p class="q-number">Q10. "विभिन्न घनत्व वाली चट्टानें समान गहराई तक धंसती हैं" - यह समस्थिति संबंधी विचार किसका है?</p>
-        <div class="options">
-            A) एयरी<br>
-            B) प्राट<br>
-            C) हेसकेनन<br>
-            D) होम्स
-        </div>
-        <button class="btn-answer" onclick="toggleAnswer('ans10')">उत्तर देखें</button>
-        <div id="ans10" class="answer">सही उत्तर: B) प्राट (Pratt)</div>
-    </div>
-
-    <!-- Question 11 to 50 Placeholders for Geomorphology -->
-    <div class="question-card">
-        <p class="q-number">Q11. लटकती घाटियाँ (Hanging Valleys) किस अपरदन प्रक्रिया द्वारा निर्मित होती हैं?</p>
-        <div class="options">A) पवन B) हिमनद (Glacier) C) नदी D) भूमिगत जल</div>
-        <button class="btn-answer" onclick="toggleAnswer('ans11')">उत्तर देखें</button>
-        <div id="ans11" class="answer">सही उत्तर: B) हिमनद (Glacier)</div>
-    </div>
-
-    <div class="question-card">
-        <p class="q-number">Q12. यार्डांग (Yardang) और इनसेलबर्ग (Inselberg) किस कारक के अपरदनात्मक रूप हैं? <span class="pyq-tag">NET JRF PYQ</span></p>
-        <div class="options">A) बहता जल B) पवन (Wind) C) हिमनद D) समुद्री तरंगें</div>
-        <button class="btn-answer" onclick="toggleAnswer('ans12')">उत्तर देखें</button>
-        <div id="ans12" class="answer">सही उत्तर: B) पवन (Wind)</div>
-    </div>
-
-    <div class="question-card">
-        <p class="q-number">Q13. ड्रमलिन (Drumlin) की आकृति की तुलना किससे की जाती है? <span class="pyq-tag">NET JRF PYQ</span></p>
-        <div class="options">A) उल्टी नाव या कटे अंडे B) पक्षी के पंजे C) पंखे D) भेड़ की पीठ</div>
-        <button class="btn-answer" onclick="toggleAnswer('ans13')">उत्तर देखें</button>
-        <div id="ans13" class="answer">सही उत्तर: A) उल्टी नाव या कटे हुए अंडे (Inverted Boat / Basket of Eggs)</div>
-    </div>
-
-    <div class="question-card">
-        <p class="q-number">Q14. 'आइसोस्टेसी' का 'तैराव का नियम' (Law of Floatation) किसने दिया था?</p>
-        <div class="options">A) प्राट B) एयरी (Airy) C) जोली D) हेफोर्ड</div>
-        <button class="btn-answer" onclick="toggleAnswer('ans14')">उत्तर देखें</button>
-        <div id="ans14" class="answer">सही उत्तर: B) एयरी (Airy)</div>
-    </div>
-
-    <div class="question-card">
-        <p class="q-number">Q15. अंध घाटी (Blind Valley) कहाँ पाई जाती है? <span class="pyq-tag">NET JRF PYQ</span></p>
-        <div class="options">A) मरुस्थलीय प्रदेश B) कास्ट (Karst) प्रदेश C) हिमानी प्रदेश D) तटीय प्रदेश</div>
-        <button class="btn-answer" onclick="toggleAnswer('ans15')">उत्तर देखें</button>
-        <div id="ans15" class="answer">सही उत्तर: B) कास्ट (Karst) / चुना पत्थर प्रदेश</div>
-    </div>
-
-    <div class="question-card">
-        <p class="q-number">Q16. गुटेनबर्ग असंबद्धता (Gutenberg Discontinuity) किन दो परतों के बीच स्थित है?</p>
-        <div class="options">A) क्रस्ट और मेंटल B) मेंटल और कोर C) उपरी क्रस्ट और निचली क्रस्ट D) बाह्य कोर और आंतरिक कोर</div>
-        <button class="btn-answer" onclick="toggleAnswer('ans16')">उत्तर देखें</button>
-        <div id="ans16" class="answer">सही उत्तर: B) मेंटल और कोर (Mantle and Core)</div>
-    </div>
-
-    <div class="question-card">
-        <p class="q-number">Q17. भूकंपीय तरंगों में सबसे तीव्र गति से चलने वाली तरंगें कौन सी हैं?</p>
-        <div class="options">A) S तरंगें B) L तरंगें C) P तरंगें D) अनुप्रस्थ तरंगें</div>
-        <button class="btn-answer" onclick="toggleAnswer('ans17')">उत्तर देखें</button>
-        <div id="ans17" class="answer">सही उत्तर: C) P तरंगें (Primary Waves)</div>
-    </div>
-
-    <div class="question-card">
-        <p class="q-number">Q18. सर्क (Cirque) के भीतर बनी झील को क्या कहते हैं? <span class="pyq-tag">NET JRF PYQ</span></p>
-        <div class="options">A) टार्न (Tarn) झील B) ऑक्स-बो झील C) क्रेटर झील D) प्लाया झील</div>
-        <button class="btn-answer" onclick="toggleAnswer('ans18')">उत्तर देखें</button>
-        <div id="ans18" class="answer">सही उत्तर: A) टार्न (Tarn) झील</div>
-    </div>
-
-    <div class="question-card">
-        <p class="q-number">Q19. पेडीप्लेनेशन (Pediplanation) चक्र की अवधारणा किसने दी?</p>
-        <div class="options">A) डेविस B) एल. सी. किंग C) पेंक D) गिल्बर्ट</div>
-        <button class="btn-answer" onclick="toggleAnswer('ans19')">उत्तर देखें</button>
-        <div id="ans19" class="answer">सही उत्तर: B) एल. सी. किंग (L.C. King)</div>
-    </div>
-
-    <div class="question-card">
-        <p class="q-number">Q20. 'रॉस मुटोने' (Roche Moutonnee) का निर्माण किस अपरदन कारक द्वारा होता है?</p>
-        <div class="options">A) हिमनद B) पवन C) नदी D) लहरें</div>
-        <button class="btn-answer" onclick="toggleAnswer('ans20')">उत्तर देखें</button>
-        <div id="ans20" class="answer">सही उत्तर: A) हिमनद (Glacier)</div>
-    </div>
-
-    <!-- Questions 21 to 50 Fast Summary List for Geomorphology -->
-    <div class="question-card"><p class="q-number">Q21. 'पैरासिटिक कोन' (Parasitic Cone) किससे संबंधित है?</p><button class="btn-answer" onclick="toggleAnswer('ans21')">उत्तर देखें</button><div id="ans21" class="answer">उत्तर: ज्वालामुखी (Volcano)</div></div>
-    <div class="question-card"><p class="q-number">Q22. निक्षेपात्मक स्थलाकृति 'एस्कर' (Esker) का निर्माण किससे होता है? <span class="pyq-tag">NET JRF PYQ</span></p><button class="btn-answer" onclick="toggleAnswer('ans22')">उत्तर देखें</button><div id="ans22" class="answer">उत्तर: हिमनदीय-जलीय निक्षेप (Glacio-fluvial)</div></div>
-    <div class="question-card"><p class="q-number">Q23. भारत की नर्मदा घाटी किसका उदाहरण है? <span class="pyq-tag">NET JRF PYQ</span></p><button class="btn-answer" onclick="toggleAnswer('ans23')">उत्तर देखें</button><div id="ans23" class="answer">उत्तर: भ्रंश घाटी (Rift Valley)</div></div>
-    <div class="question-card"><p class="q-number">Q24. घोलरंध्र (Sinkhole) किस अपरदन चक्र की विशेषता है?</p><button class="btn-answer" onclick="toggleAnswer('ans24')">उत्तर देखें</button><div id="ans24" class="answer">उत्तर: कास्ट (Karst) अपरदन चक्र</div></div>
-    <div class="question-card"><p class="q-number">Q25. मेसा और ब्यूट (Mesa and Butte) किस प्रक्रिया से बनते हैं?</p><button class="btn-answer" onclick="toggleAnswer('ans25')">उत्तर देखें</button><div id="ans25" class="answer">उत्तर: पवनीय एवं जल अपरदन (शुष्क प्रदेश)</div></div>
-    <div class="question-card"><p class="q-number">Q26. विषुवत रेखा पर क्रस्ट की मोटाई औसत रूप से कितनी होती है?</p><button class="btn-answer" onclick="toggleAnswer('ans26')">उत्तर देखें</button><div id="ans26" class="answer">उत्तर: लगभग 30-35 किमी</div></div>
-    <div class="question-card"><p class="q-number">Q27. 'सिएल' (SIAL) परत में मुख्य रूप से कौन से तत्व पाए जाते हैं?</p><button class="btn-answer" onclick="toggleAnswer('ans27')">उत्तर देखें</button><div id="ans27" class="answer">उत्तर: सिलिका और एल्युमीनियम</div></div>
-    <div class="question-card"><p class="q-number">Q28. 'जियोसिंकलाइन' (Geosyncline - भू-संतति) की अवधारणा किसने दी?</p><button class="btn-answer" onclick="toggleAnswer('ans28')">उत्तर देखें</button><div id="ans28" class="answer">उत्तर: हॉल तथा डाना (Hall & Dana)</div></div>
-    <div class="question-card"><p class="q-number">Q29. 'रेग' (Reg) और 'अर्ग' (Erg) किस प्रकार के मरुस्थल हैं?</p><button class="btn-answer" onclick="toggleAnswer('ans29')">उत्तर देखें</button><div id="ans29" class="answer">उत्तर: पथरीला (Reg) और रेतीला (Erg) मरुस्थल</div></div>
-    <div class="question-card"><p class="q-number">Q30. 'ज्वालामुखी रिंग ऑफ फायर' (Ring of Fire) किस महासागर में स्थित है? <span class="pyq-tag">NET JRF PYQ</span></p><button class="btn-answer" onclick="toggleAnswer('ans30')">उत्तर देखें</button><div id="ans30" class="answer">उत्तर: प्रशांत महासागर (Pacific Ocean)</div></div>
-
-    <!-- PART 2: OCEANOGRAPHY -->
-    <div class="section-header">
-        <h2>भाग 2: समुद्र विज्ञान (Oceanography) - 50 प्रश्न</h2>
-    </div>
-
-    <!-- Question 51 -->
-    <div class="question-card">
-        <p class="q-number">Q51. महासागरों की औसत लवणता (Average Salinity) कितनी होती है? <span class="pyq-tag">NET JRF PYQ</span></p>
-        <div class="options">
-            A) 30‰<br>
-            B) 35‰<br>
-            C) 40‰<br>
-            D) 25‰
-        </div>
-        <button class="btn-answer" onclick="toggleAnswer('ans51')">उत्तर देखें</button>
-        <div id="ans51" class="answer">सही उत्तर: B) 35‰ (35 प्रति हजार)</div>
-    </div>
-
-    <!-- Question 52 -->
-    <div class="question-card">
-        <p class="q-number">Q52. विश्व की सबसे गहरी महासागरीय गर्त (Trench) कौन सी है?</p>
-        <div class="options">
-            A) प्यूर्टो रिको<br>
-            B) मेरियाना गर्त (Mariana Trench)<br>
-            C) सुंडा गर्त<br>
-            D) टोंगा गर्त
-        </div>
-        <button class="btn-answer" onclick="toggleAnswer('ans52')">उत्तर देखें</button>
-        <div id="ans52" class="answer">सही उत्तर: B) मेरियाना गर्त (प्रशांत महासागर, ~11,034 मीटर)</div>
-    </div>
-
-    <!-- Question 53 -->
-    <div class="question-card">
-        <p class="q-number">Q53. गल्फ स्ट्रीम (Gulf Stream) कैसी जलधारा है? <span class="pyq-tag">NET JRF PYQ</span></p>
-        <div class="options">
-            A) गरम महासागरीय धारा<br>
-            B) ठंडी महासागरीय धारा<br>
-            C) समशीतोष्ण धारा<br>
-            D) इनमें से कोई नहीं
-        </div>
-        <button class="btn-answer" onclick="toggleAnswer('ans53')">उत्तर देखें</button>
-        <div id="ans53" class="answer">सही उत्तर: A) गरम जलधारा (Warm Current)</div>
-    </div>
-
-    <!-- Question 54 -->
-    <div class="question-card">
-        <p class="q-number">Q54. लैब्राडोर की धारा (Labrador Current) किस महासागर में बहती है?</p>
-        <div class="options">
-            A) प्रशांत महासागर<br>
-            B) अंध महासागर (Atlantic Ocean)<br>
-            C) हिंद महासागर<br>
-            D) आर्कटिक महासागर
-        </div>
-        <button class="btn-answer" onclick="toggleAnswer('ans54')">उत्तर देखें</button>
-        <div id="ans55" class="answer">सही उत्तर: B) अटलांटिक महासागर (यह एक ठंडी धारा है)</div>
-    </div>
-
-    <!-- Question 55 -->
-    <div class="question-card">
-        <p class="q-number">Q55. सरगासो सागर (Sargasso Sea) किस महासागर का हिस्सा है? <span class="pyq-tag">NET JRF PYQ</span></p>
-        <div class="options">
-            A) उत्तरी प्रशांत महासागर<br>
-            B) उत्तरी अटलांटिक महासागर<br>
-            C) दक्षिणी हिंद महासागर<br>
-            D) आर्कटिक महासागर
-        </div>
-        <button class="btn-answer" onclick="toggleAnswer('ans55')">उत्तर देखें</button>
-        <div id="ans55" class="answer">सही उत्तर: B) उत्तरी अटलांटिक महासागर (यह तटहीन सागर है)</div>
-    </div>
-
-    <!-- Question 56 -->
-    <div class="question-card">
-        <p class="q-number">Q56. प्रवाल भित्ति (Coral Reef) के निर्माण के लिए अनुकूल तापमान कितना होना चाहिए?</p>
-        <div class="options">
-            A) 10°C से 15°C<br>
-            B) 20°C से 21°C<br>
-            C) 30°C से 35°C<br>
-            D) 0°C से 5°C
-        </div>
-        <button class="btn-answer" onclick="toggleAnswer('ans56')">उत्तर देखें</button>
-        <div id="ans56" class="answer">सही उत्तर: B) 20°C से 21°C</div>
-    </div>
-
-    <!-- Question 57 -->
-    <div class="question-card">
-        <p class="q-number">Q57. 'द ग्रेट बैरियर रीफ' (Great Barrier Reef) कहाँ स्थित है? <span class="pyq-tag">NET JRF PYQ</span></p>
-        <div class="options">
-            A) ऑस्ट्रेलिया के पूर्वी तट पर<br>
-            B) भारत के पश्चिमी तट पर<br>
-            C) अफ्रीका के दक्षिणी तट पर<br>
-            D) जापान के पास
-        </div>
-        <button class="btn-answer" onclick="toggleAnswer('ans57')">उत्तर देखें</button>
-        <div id="ans57" class="answer">सही उत्तर: A) ऑस्ट्रेलिया के उत्तर-पूर्वी तट पर</div>
-    </div>
-
-    <!-- Question 58 -->
-    <div class="question-card">
-        <p class="q-number">Q58. 'सबमरीन कैनियन' (Submarine Canyons - जलमग्न कैनियन) कहाँ पाए जाते हैं?</p>
-        <div class="options">
-            A) महाद्वीपीय मग्नतट और ढाल पर<br>
-            B) गहरे समुद्री मैदान पर<br>
-            C) महासागरीय गर्तों में<br>
-            D) मध्य महासागरीय कटक पर
-        </div>
-        <button class="btn-answer" onclick="toggleAnswer('ans58')">उत्तर देखें</button>
-        <div id="ans58" class="answer">सही उत्तर: A) महाद्वीपीय मग्नढाल (Continental Slope) पर</div>
-    </div>
-
-    <!-- Question 59 -->
-    <div class="question-card">
-        <p class="q-number">Q59. वृहत् ज्वार (Spring Tide) कब आता है? <span class="pyq-tag">NET JRF PYQ</span></p>
-        <div class="options">
-            A) केवल अमावस्या को<br>
-            B) केवल पूर्णिमा को<br>
-            C) अमावस्या और पूर्णिमा दोनों को<br>
-            D) कृष्ण पक्ष की अष्टमी को
-        </div>
-        <button class="btn-answer" onclick="toggleAnswer('ans59')">उत्तर देखें</button>
-        <div id="ans59" class="answer">सही उत्तर: C) अमावस्या और पूर्णिमा (Syzygy की स्थिति में)</div>
-    </div>
-
-    <!-- Question 60 -->
-    <div class="question-card">
-        <p class="q-number">Q60. प्रवाल उत्पत्ति से संबंधित 'स्थिर स्थल सिद्धांत' (Standstill Theory) किसने दिया?</p>
-        <div class="options">
-            A) डार्विन<br>
-            B) मरे (Murray)<br>
-            C) डेली (Daly)<br>
-            D) डाना
-        </div>
-        <button class="btn-answer" onclick="toggleAnswer('ans60')">उत्तर देखें</button>
-        <div id="ans60" class="answer">सही उत्तर: B) जॉन मरे (Murray)</div>
-    </div>
-
-    <!-- Questions 61 to 100 Fast Summary List for Oceanography -->
-    <div class="question-card"><p class="q-number">Q61. प्रवाल उत्पत्ति का 'हिमानी नियंत्रण सिद्धांत' (Glacial Control Theory) किसने प्रस्तुत किया? <span class="pyq-tag">NET JRF PYQ</span></p><button class="btn-answer" onclick="toggleAnswer('ans61')">उत्तर देखें</button><div id="ans61" class="answer">उत्तर: आर. ए. डेली (R.A. Daly)</div></div>
-    <div class="question-card"><p class="q-number">Q62. 'गुयोट' (Guyot) क्या है?</p><button class="btn-answer" onclick="toggleAnswer('ans62')">उत्तर देखें</button><div id="ans62" class="answer">उत्तर: सपाट शिखर वाला जलमग्न समुद्री पर्वत</div></div>
-    <div class="question-card"><p class="q-number">Q63. अल-नीनो (El-Nino) धारा किस तट के पास उत्पन्न होती है? <span class="pyq-tag">NET JRF PYQ</span></p><button class="btn-answer" onclick="toggleAnswer('ans63')">उत्तर देखें</button><div id="ans63" class="answer">उत्तर: पेरू (Peru) के तट पर</div></div>
-    <div class="question-card"><p class="q-number">Q64. महासागर का वह क्षेत्र जहाँ गहराई के साथ लवणता तीव्र गति से बदलती है, उसे क्या कहते हैं?</p><button class="btn-answer" onclick="toggleAnswer('ans64')">उत्तर देखें</button><div id="ans64" class="answer">उत्तर: हैलोक्लाइन (Halocline)</div></div>
-    <div class="question-card"><p class="q-number">Q65. महासागर का वह क्षेत्र जहाँ गहराई के साथ तापमान तेजी से गिरता है?</p><button class="btn-answer" onclick="toggleAnswer('ans65')">उत्तर देखें</button><div id="ans65" class="answer">उत्तर: थर्मोक्लाइन (Thermocline)</div></div>
-    <div class="question-card"><p class="q-number">Q66. डॉल्फिन तथा चैलेन्जर कटक (Dolphin and Challenger Ridge) किस महासागर में स्थित हैं? <span class="pyq-tag">NET JRF PYQ</span></p><button class="btn-answer" onclick="toggleAnswer('ans66')">उत्तर देखें</button><div id="ans66" class="answer">उत्तर: अटलांटिक महासागर</div></div>
-    <div class="question-card"><p class="q-number">Q67. टर्बिडिटी करंट (Turbidity Current) का संबंध किससे है?</p><button class="btn-answer" onclick="toggleAnswer('ans67')">उत्तर देखें</button><div id="ans67" class="answer">उत्तर: महासागरीय निक्षेप एवं कैनियन निर्माण</div></div>
-    <div class="question-card"><p class="q-number">Q68. पेलाजिक निक्षेप (Pelagic Deposits) कहाँ पाए जाते हैं?</p><button class="btn-answer" onclick="toggleAnswer('ans68')">उत्तर देखें</button><div id="ans68" class="answer">उत्तर: गहरे महासागरीय मैदानों में</div></div>
-    <div class="question-card"><p class="q-number">Q69. 'रेड ऊज' (Red Ooze) किस प्रकार का निक्षेप है?</p><button class="btn-answer" onclick="toggleAnswer('ans69')">उत्तर देखें</button><div id="ans69" class="answer">उत्तर: अजैविक / जैविक गहरा महासागरीय निक्षेप</div></div>
-    <div class="question-card"><p class="q-number">Q70. क्यूरोशियो (Kuroshio) की धारा कैसी जलधारा है? <span class="pyq-tag">NET JRF PYQ</span></p><button class="btn-answer" onclick="toggleAnswer('ans70')">उत्तर देखें</button><div id="ans70" class="answer">उत्तर: गरम जलधारा (प्रशांत महासागर)</div></div>
-
 </div>
 
 <script>
-    function toggleAnswer(id) {
-        var ansDiv = document.getElementById(id);
-        if (ansDiv.style.display === "block") {
-            ansDiv.style.display = "none";
-        } else {
-            ansDiv.style.display = "block";
-        }
+// 100 Complete Questions Data
+const quizData = [
+    // Geomorphology (1-50)
+    {q: "Q1. 'एकरूपतावाद' (Uniformitarianism) का सिद्धांत किसने दिया?", pyq: true, opts: ["डब्ल्यू. एम. डेविस", "जेम्स हटन", "वाल्टर पेंक", "एल. सी. किंग"], ans: 1, exp: "जेम्स हटन (1785)"},
+    {q: "Q2. 'वर्तमान भूत की कुंजी है' यह कथन किसका है?", pyq: true, opts: ["जेम्स हटन", "चार्ल्स लायल", "डेविस", "डटन"], ans: 0, exp: "हटन के एकरूपतावाद सिद्धांत से जुड़ी पंक्ति।"},
+    {q: "Q3. 'पेनिप्लेन' (Peneplain) की अवधारणा किसने दी?", pyq: false, opts: ["वाल्टर पेंक", "डब्ल्यू. एम. डेविस", "एल. सी. किंग", "गिल्बर्ट"], ans: 1, exp: "अपरदन चक्र की अंतिम अवस्था।"},
+    {q: "Q4. 'प्रेडिमोंट ट्रेपेन' शब्द का प्रयोग किसने किया?", pyq: true, opts: ["डेविस", "वाल्टर पेंक", "एल. सी. किंग", "क्रिकमे"], ans: 1, exp: "पेंक द्वारा सीढ़ीदार मैदान हेतु।"},
+    {q: "Q5. महाद्वीपीय विस्थापन सिद्धांत (1912) किसने दिया?", pyq: false, opts: ["हैरी हैस", "अल्फ्रेड वेगनर", "टेलर", "मॉर्गन"], ans: 1, exp: "वेगनर ने महाद्वीपों के तैरने का विचार दिया।"},
+    {q: "Q6. प्लेट विवर्तनिकी शब्द का प्रथम प्रयोग किसने किया?", pyq: true, opts: ["मॉर्गन", "टी. विल्सन", "हैरी हैस", "पार्कर"], ans: 1, exp: "टी. विल्सन (1965)"},
+    {q: "Q7. 'समुद्र तल प्रसार' (Seafloor Spreading) परिकल्पना किसकी है?", pyq: true, opts: ["वेगनर", "हैरी हैस", "विल्सन", "जेफ्रीज"], ans: 1, exp: "हैरी हैस (1960)"},
+    {q: "Q8. कौन सा प्राचीन अवशिष्ट पर्वत है?", pyq: false, opts: ["हिमालय", "अल्प्स", "अरावली", "एंडीज"], ans: 2, exp: "अरावली विश्व के सबसे प्राचीन पर्वतों में से है।"},
+    {q: "Q9. समस्थिति (Isostasy) शब्द का प्रयोग सबसे पहले किसने किया?", pyq: true, opts: ["एयरी", "प्राट", "डटन", "जोली"], ans: 2, exp: "डटन (1889)"},
+    {q: "Q10. 'तैराव का नियम' (Law of Floatation) समस्थिति में किसने दिया?", pyq: false, opts: ["प्राट", "एयरी", "जोली", "हेफोर्ड"], ans: 1, exp: "एयरी के अनुसार जड़ें गहराई तक होती हैं।"},
+    {q: "Q11. लटकती घाटियाँ (Hanging Valleys) किससे बनती हैं?", pyq: false, opts: ["पवन", "हिमनद", "नदी", "भूमिगत जल"], ans: 1, exp: "ग्लेशियर द्वारा निर्मित।"},
+    {q: "Q12. यार्डांग और इनसेलबर्ग किस अपरदन से बनते हैं?", pyq: true, opts: ["जल", "पवन", "हिमनद", "तरंगें"], ans: 1, exp: "शुष्क पवनीय क्षेत्र में।"},
+    {q: "Q13. ड्रमलिन (Drumlin) की आकृति कैसी होती है?", pyq: true, opts: ["उल्टी नाव / कटा अंडा", "पक्षी पंख", "पंखा", "भेड़ पीठ"], ans: 0, exp: "Basket of eggs topography."},
+    {q: "Q14. अंध घाटी (Blind Valley) कहाँ पाई जाती है?", pyq: true, opts: ["मरुस्थल", "कास्ट प्रदेश", "हिमानी प्रदेश", "तट"], ans: 1, exp: "चूना पत्थर क्षेत्र में।"},
+    {q: "Q15. गुटेनबर्ग असंबद्धता किनके बीच है?", pyq: false, opts: ["क्रस्ट-मेंटल", "मेंटल-कोर", "ऊपरी-निचला क्रस्ट", "कोर"], ans: 1, exp: "मेंटल और कोर के मध्य।"},
+    {q: "Q16. सबसे तीव्र भूकंपीय तरंगें कौन सी हैं?", pyq: false, opts: ["S तरंगें", "L तरंगें", "P तरंगें", "अनुप्रस्थ"], ans: 2, exp: "P तरंगें (Primary Waves)."},
+    {q: "Q17. सर्क (Cirque) के भीतर बनी झील क्या कहलाती है?", pyq: true, opts: ["टार्न झील", "ऑक्स-बो", "क्रेटर", "प्लाया"], ans: 0, exp: "टार्न (Tarn) झील।"},
+    {q: "Q18. पेडीप्लेनेशन (Pediplanation) चक्र किसने दिया?", pyq: false, opts: ["डेविस", "एल. सी. किंग", "पेंक", "गिल्बर्ट"], ans: 1, exp: "L.C. King."},
+    {q: "Q19. 'रॉस मुटोने' (Roche Moutonnee) किससे बनता है?", pyq: false, opts: ["हिमनद", "पवन", "नदी", "लहरें"], ans: 0, exp: "हिमनद अपरदन।"},
+    {q: "Q20. 'पैरासिटिक कोन' किससे संबंधित है?", pyq: false, opts: ["भूकंप", "ज्वालामुखी", "पर्वत", "नदी"], ans: 1, exp: "Volcano."},
+    {q: "Q21. 'एस्कर' (Esker) का निर्माण किससे होता है?", pyq: true, opts: ["पवन", "हिमनदीय-जलीय निक्षेप", "नदी", "समुद्र"], ans: 1, exp: "Glacio-fluvial deposit."},
+    {q: "Q22. नर्मदा घाटी किसका उदाहरण है?", pyq: true, opts: ["भ्रंश घाटी", "सेंक्लाइन", "एंटीक्लाइन", "ब्लॉक"], ans: 0, exp: "Rift Valley."},
+    {q: "Q23. घोलरंध्र (Sinkhole) किस अपरदन चक्र में बनते हैं?", pyq: false, opts: ["नदी", "कास्ट", "पवन", "हिमनद"], ans: 1, exp: "Karst topography."},
+    {q: "Q24. भू-संतति (Geosyncline) अवधारणा किसने दी?", pyq: false, opts: ["हॉल और डाना", "हटन", "वेगनर", "किंग"], ans: 0, exp: "Hall & Dana."},
+    {q: "Q25. रिंग ऑफ फायर कहाँ है?", pyq: true, opts: ["अटलांटिक", "प्रशांत महासागर", "हिंद महासागर", "आर्कटिक"], ans: 1, exp: "Pacific Ocean."},
+    {q: "Q26. लोएस (Loess) का जमाव किससे होता है?", pyq: false, opts: ["जल", "पवन", "हिमनद", "लहरें"], ans: 1, exp: "Wind blown dust."},
+    {q: "Q27. सिएल (SIAL) में मुख्य तत्व कौन से हैं?", pyq: false, opts: ["Si + Al", "Si + Mg", "Ni + Fe", "Fe + Mg"], ans: 0, exp: "Silica & Aluminium."},
+    {q: "Q28. नाइफ (NIFE) परत का मुख्य तत्व?", pyq: false, opts: ["सिलिका", "निकिल और लोहा", "एल्युमीनियम", "जस्ता"], ans: 1, exp: "Nickel & Iron."},
+    {q: "Q29. 'भू-अभिनति' सिद्धांत से कौन सा पर्वत बना?", pyq: false, opts: ["हिमालय", "ब्लैक फॉरेस्ट", "सिएरा नेवादा", "विंध्य"], ans: 0, exp: "Fold Mountains."},
+    {q: "Q30. स्टेलैग्माइट और स्टेलेक्टाइट कहाँ बनते हैं?", pyq: true, opts: ["कास्ट गुफाएँ", "मरुस्थल", "नदी मुहाना", "समुद्र"], ans: 0, exp: "Cave formations."},
+    {q: "Q31. छत्रक शिला (Mushroom Rock) किससे बनती है?", pyq: false, opts: ["नदी", "पवन अपरदन", "हिमनद", "लहरें"], ans: 1, exp: "Wind abrasion."},
+    {q: "Q32. गोखुर झील (Ox-bow Lake) किससे बनती है?", pyq: false, opts: ["नदी के विसर्प से", "हिमनद से", "पवन से", "भूकंप से"], ans: 0, exp: "River Meander."},
+    {q: "Q33. कैनियन (Canyon) का निर्माण मुख्यतः होता है?", pyq: false, opts: ["गहरी घाटी अपरदन", "पवन", "ग्लेशियर", "भ्रंश"], ans: 0, exp: "Grand Canyon by River."},
+    {q: "Q34. मोनाडनॉक (Monadnock) किस चक्र में बचते हैं?", pyq: true, opts: ["डेविस पेनिप्लेन", "पेंक", "किंग", "कास्ट"], ans: 0, exp: "Residual hills in Peneplain."},
+    {q: "Q35. मोनालोआ (Mauna Loa) कैसा ज्वालामुखी है?", pyq: false, opts: ["सक्रिय", "प्रसुप्त", "शांत", "मृत"], ans: 0, exp: "Active Volcano in Hawaii."},
+    {q: "Q36. वेगास (Bajada) कहाँ पाया जाता है?", pyq: false, opts: ["शुष्क मरुस्थल", "कास्ट", "ग्लेशियर", "तट"], ans: 0, exp: "Desert piedmont zone."},
+    {q: "Q37. 'इंसेलबर्ग' का अर्थ क्या है?", pyq: false, opts: ["द्वीप पर्वत", "बर्फ का टीला", "घाटी", "नदी"], ans: 0, exp: "Island Mountain."},
+    {q: "Q38. मेसा और ब्यूट की आकृति कैसी होती है?", pyq: false, opts: ["सपाट शिखर मेज जैसी", "नकीली", "गोल", "गहरी"], ans: 0, exp: "Flat topped tableland."},
+    {q: "Q39. सिंडर शंकु किससे बनता है?", pyq: false, opts: ["ज्वालामुखी राख व लावा", "नदी गाद", "बालू", "बर्फ"], ans: 0, exp: "Volcanic ash/cinder."},
+    {q: "Q40. भूमध्य सागर का प्रकाश स्तंभ किसे कहते हैं?", pyq: true, opts: ["स्ट्रॉम्बोली", "इटना", "विसुवियस", "कोटोपैक्सी"], ans: 0, exp: "Stromboli volcano."},
+    {q: "Q41. सिएरा नेवादा किस प्रकार का पर्वत है?", pyq: false, opts: ["ब्लॉक पर्वत", "मोड़दार", "अवशिष्ट", "संचित"], ans: 0, exp: "Block Mountain."},
+    {q: "Q42. रिया तट (Ria Coast) उदाहरण है?", pyq: true, opts: ["निम्नजलमग्न नदी घाटी", "हिमनद घाटी", "पवन मैदान", "प्रवाल"], ans: 0, exp: "Submerged river valley."},
+    {q: "Q43. फियोर्ड तट (Fiord Coast) किससे बना है?", pyq: true, opts: ["जलमग्न हिमानी घाटी", "नदी", "पवन", "ज्वालामुखी"], ans: 0, exp: "Submerged glacial valley."},
+    {q: "Q44. विषुवत रेखा पर क्रस्ट की औसत मोटाई?", pyq: false, opts: ["5 किमी", "30-35 किमी", "100 किमी", "200 किमी"], ans: 1, exp: "Continental crust."},
+    {q: "Q45. मोह असंबद्धता (Moho Discontinuity) कहाँ है?", pyq: true, opts: ["क्रस्ट और मेंटल", "मेंटल कोर", "कोर", "सिअल सिमा"], ans: 0, exp: "Crust-Mantle boundary."},
+    {q: "Q46. सर्वाधिक विनाशकारी भूकंपीय तरंगें?", pyq: false, opts: ["L तरंगें (धरातलीय)", "P तरंगें", "S तरंगें", "जल तरंगें"], ans: 0, exp: "Surface / Long waves."},
+    {q: "Q47. रिक्टर स्केल क्या मापता है?", pyq: false, opts: ["भूकंप की तीव्रता/ऊर्जा", "तापमान", "दाब", "लवणता"], ans: 0, exp: "Magnitude of Earthquake."},
+    {q: "Q48. 'पेंटीप्लेन' शब्द किसने दिया?", pyq: false, opts: ["क्रिकमे", "डेविस", "पेंक", "किंग"], ans: 0, exp: "Crickmay (1933)."},
+    {q: "Q49. बरखान (Barchan) क्या है?", pyq: false, opts: ["अर्धचंद्राकार बालुका स्तूप", "झील", "पर्वत", "गुफा"], ans: 0, exp: "Crescent sand dune."},
+    {q: "Q50. अंध घाटी की छत गिरने से क्या बनता है?", pyq: false, opts: ["प्राकृतिक पुल (Natural Bridge)", "सर्क", "कैनियन", "मेसा"], ans: 0, exp: "Natural limestone bridge."},
+
+    // Oceanography (51-100)
+    {q: "Q51. महासागरों की औसत लवणता?", pyq: true, opts: ["30‰", "35‰", "40‰", "20‰"], ans: 1, exp: "35 प्रति हजार।"},
+    {q: "Q52. सबसे गहरी महासागरीय गर्त?", pyq: false, opts: ["प्यूर्टो रिको", "मेरियाना गर्त", "सुंडा", "टोंगा"], ans: 1, exp: "Mariana Trench (~11034m)."},
+    {q: "Q53. गल्फ स्ट्रीम कैसी जलधारा है?", pyq: true, opts: ["गरम", "ठंडी", "समान", "कोई नहीं"], ans: 0, exp: "Warm current in Atlantic."},
+    {q: "Q54. लैब्राडोर धारा किस महासागर में है?", pyq: false, opts: ["प्रशांत", "अटलांटिक", "हिंद", "आर्कटिक"], ans: 1, exp: "Cold current in N. Atlantic."},
+    {q: "Q55. सरगासो सागर कहाँ स्थित है?", pyq: true, opts: ["उत्तरी प्रशांत", "उत्तरी अटलांटिक", "हिंद", "दक्षिण अटलांटिक"], ans: 1, exp: "North Atlantic Ocean."},
+    {q: "Q56. प्रवाल भित्ति के लिए उपयुक्त तापमान?", pyq: false, opts: ["10-15°C", "20-21°C", "35-40°C", "0°C"], ans: 1, exp: "Tropical warm waters."},
+    {q: "Q57. द ग्रेट बैरियर रीफ कहाँ स्थित है?", pyq: true, opts: ["ऑस्ट्रेलिया तट", "भारत तट", "जापान", "अफ्रीका"], ans: 0, exp: "Queensland, Australia."},
+    {q: "Q58. सबमरीन कैनियन कहाँ पाए जाते हैं?", pyq: false, opts: ["मग्नढाल (Continental Slope)", "मैदान", "गर्त", "कटक"], ans: 0, exp: "Continental Slopes."},
+    {q: "Q59. वृहत् ज्वार कब आता है?", pyq: true, opts: ["अमावस्या", "पूर्णिमा", "अमावस्या और पूर्णिमा", "अष्टमी"], ans: 2, exp: "Syzygy position."},
+    {q: "Q60. प्रवाल हेतु 'स्थिर स्थल सिद्धांत' किसने दिया?", pyq: false, opts: ["डार्विन", "मरे (Murray)", "डेली", "डाना"], ans: 1, exp: "John Murray."},
+    {q: "Q61. प्रवाल हेतु 'हिमानी नियंत्रण सिद्धांत' किसने दिया?", pyq: true, opts: ["डेली (Daly)", "डार्विन", "मरे", "डाविस"], ans: 0, exp: "R.A. Daly."},
+    {q: "Q62. 'गुयोट' (Guyot) क्या है?", pyq: false, opts: ["सपाट शिखर जलमग्न पर्वत", "द्वीप", "गर्त", "प्रवाल"], ans: 0, exp: "Flat-topped seamount."},
+    {q: "Q63. अल-नीनो (El-Nino) कहाँ उत्पन्न होता है?", pyq: true, opts: ["पेरू तट", "भारत तट", "जापान", "ऑस्ट्रेलिया"], ans: 0, exp: "Peru Coast, Pacific."},
+    {q: "Q64. हैलोक्लाइन (Halocline) क्या दर्शाता है?", pyq: false, opts: ["लवणता परिवर्तन गहराई के साथ", "तापमान", "घनत्व", "दाब"], ans: 0, exp: "Salinity gradient."},
+    {q: "Q65. थर्मोक्लाइन (Thermocline) क्या दर्शाता है?", pyq: false, opts: ["तापमान में तीव्र गिरावट", "लवणता", "धारा", "ज्वार"], ans: 0, exp: "Temperature change zone."},
+    {q: "Q66. डॉल्फिन तथा चैलेन्जर कटक कहाँ हैं?", pyq: true, opts: ["अटलांटिक महासागर", "प्रशांत", "हिंद", "आर्कटिक"], ans: 0, exp: "Mid-Atlantic Ridge."},
+    {q: "Q67. टर्बिडिटी करंट किससे संबंधित है?", pyq: false, opts: ["महासागरीय निक्षेप/कैनियन", "वायु", "ग्लेशियर", "नदी"], ans: 0, exp: "Density current in ocean."},
+    {q: "Q68. पेलाजिक निक्षेप कहाँ मिलते हैं?", pyq: false, opts: ["गहरे महासागरीय मैदान", "तट", "नदी मुहाना", "पर्वत"], ans: 0, exp: "Deep sea deposits."},
+    {q: "Q69. क्यूरोशियो धारा कैसी धारा है?", pyq: true, opts: ["गरम (प्रशांत)", "ठंडी", "हिंद धारा", "अटलांटिक"], ans: 0, exp: "Warm current near Japan."},
+    {q: "Q70. ओयाशियो धारा कैसी धारा है?", pyq: false, opts: ["ठंडी (प्रशांत)", "गरम", "हिंद धारा", "कोई नहीं"], ans: 0, exp: "Cold Oyashio current."},
+    {q: "Q71. पेरू/हंबोल्ट धारा कैसी जलधारा है?", pyq: true, opts: ["ठंडी धारा", "गरम धारा", "विषुवतीय", "कोई नहीं"], ans: 0, exp: "Cold current along South America."},
+    {q: "Q72. कैनरी धारा कहाँ बहती है?", pyq: false, opts: ["उत्तरी अटलांटिक (ठंडी)", "प्रशांत", "हिंद", "आर्कटिक"], ans: 0, exp: "Cold current near W. Africa."},
+    {q: "Q73. बेगुएला धारा कैसी है?", pyq: true, opts: ["ठंडी (दक्षिण अटलांटिक)", "गरम", "प्रशांत", "हिंद"], ans: 0, exp: "Benguela cold current."},
+    {q: "Q74. अगुलहास धारा किस महासागर में है?", pyq: true, opts: ["हिंद महासागर (गरम)", "अटलांटिक", "प्रशांत", "आर्कटिक"], ans: 0, exp: "Warm current in Indian Ocean."},
+    {q: "Q75. महासागरीय नितल का सबसे विस्तृत भाग?", pyq: true, opts: ["गहरे समुद्री मैदान", "मग्नतट", "मग्नढाल", "गर्त"], ans: 0, exp: "Abyssal Plains (~75.9%)."},
+    {q: "Q76. सर्वाधिक लवणता वाली झील/सागर?", pyq: false, opts: ["वान झील (तुर्की)", "मृत सागर", "ग्रेट साल्ट लेक", "कैस्पियन"], ans: 0, exp: "Lake Van (~330‰)."},
+    {q: "Q77. ग्रैंड बैंक मत्स्य क्षेत्र कहाँ है?", pyq: true, opts: ["न्यूफाउंडलैंड (अटलांटिक)", "जापान", "भारत", "यूरोप"], ans: 0, exp: "Meeting of Gulfstream & Labrador."},
+    {q: "Q78. टेलीग्राफ पठार कहाँ स्थित है?", pyq: true, opts: ["उत्तरी अटलांटिक कटक", "प्रशांत", "हिंद", "दक्षिण अटलांटिक"], ans: 0, exp: "Telegraphic Plateau."},
+    {q: "Q79. सूंडा गर्त किस महासागर में है?", pyq: false, opts: ["हिंद महासागर", "प्रशांत", "अटलांटिक", "आर्कटिक"], ans: 0, exp: "Java / Sunda Trench."},
+    {q: "Q80. प्यूर्टो रिको गर्त कहाँ है?", pyq: false, opts: ["अटलांटिक महासागर", "प्रशांत", "हिंद", "आर्कटिक"], ans: 0, exp: "Deepest in Atlantic."},
+    {q: "Q81. लाल सागर की लवणता अधिक क्यों है?", pyq: false, opts: ["उच्च वाष्पीकरण व कम वर्षा", "नदी आवक", "बर्फ पिघलना", "गहराई"], ans: 0, exp: "High evaporation."},
+    {q: "Q82. प्रवाल (Coral Polyps) क्या हैं?", pyq: false, opts: ["समुद्री सूक्ष्म जीव", "पौधे", "चट्टान", "जलधारा"], ans: 0, exp: "Marine invertebrates."},
+    {q: "Q83. अवतलन सिद्धांत (Subsidence Theory) प्रवाल हेतु किसने दिया?", pyq: true, opts: ["डार्विन (1837)", "मरे", "डेली", "डाना"], ans: 0, exp: "Charles Darwin."},
+    {q: "Q84. ऐटॉल (Atoll) का आकार कैसा होता है?", pyq: false, opts: ["घोड़े की नाल या वलयाकार", "सीधा", "त्रिकोण", "चौकोर"], ans: 0, exp: "Circular / Horseshoe reef."},
+    {q: "Q85. दैनिक ज्वार में कितना समय अंतर होता है?", pyq: false, opts: ["24 घंटे 52 मिनट", "12 घंटे 26 मिनट", "6 घंटे", "12 घंटे"], ans: 0, exp: "Daily Tide interval."},
+    {q: "Q86. अर्ध-दैनिक ज्वार (Semi-diurnal) का समय अंतर?", pyq: false, opts: ["12 घंटे 26 मिनट", "24 घंटे", "6 घंटे", "18 घंटे"], ans: 0, exp: "Twice a day."},
+    {q: "Q87. लघु ज्वार (Neap Tide) कब आता है?", pyq: true, opts: ["सप्तमी या अष्टमी (समकोण)", "अमावस्या", "पूर्णिमा", "सिज़िगी"], ans: 0, exp: "Right angle position."},
+    {q: "Q88. विश्व में सबसे ऊँचा ज्वार कहाँ आता है?", pyq: true, opts: ["फंडी की खाड़ी (कनाडा)", "कच्छ खाड़ी", "लंदन", "सिडनी"], ans: 0, exp: "Bay of Fundy."},
+    {q: "Q89. ज्वार-भाटा हेतु 'स्थैतिक तरंग सिद्धांत' किसने दिया?", pyq: true, opts: ["आर. ए. हैरिस", "न्यूटन", "लाप्लास", "व्हीवेल"], ans: 0, exp: "R.A. Harris (Progressive wave vs Stationary)."},
+    {q: "Q90. ज्वार का 'संतुलन सिद्धांत' किसने प्रस्तुत किया?", pyq: true, opts: ["सर आइज़ैक न्यूटन", "लाप्लास", "हैरिस", "एयरी"], ans: 0, exp: "Newton (1687)."},
+    {q: "Q91. ज्वार का 'गतिज सिद्धांत' (Dynamic Theory) किसका है?", pyq: false, opts: ["लाप्लास", "न्यूटन", "हैरिस", "डार्विन"], ans: 0, exp: "Laplace (1755)."},
+    {q: "Q92. ज्वार का 'नहर सिद्धांत' (Canal Theory) किसका है?", pyq: false, opts: ["एयरी (Airy)", "न्यूटन", "हैरिस", "लाप्लास"], ans: 0, exp: "Airy (1842)."},
+    {q: "Q93. महासागरीय जल का सर्वाधिक क्षैतिज संचलन?", pyq: false, opts: ["धाराएँ (Currents)", "ज्वार", "तरंग", "उद्वेलन"], ans: 0, exp: "Ocean Currents."},
+    {q: "Q94. कोरियोलिस बल का धाराओं पर प्रभाव?", pyq: false, opts: ["उत्तरी गोलार्ध में दाईं ओर मुड़ना", "बाईं ओर", "कोई प्रभाव नहीं", "सीधी रेखा"], ans: 0, exp: "Coriolis Force effect."},
+    {q: "Q95. ड्रिफ्ट (Drift) की गति कैसी होती है?", pyq: false, opts: ["मंद एवं अनिश्चित", "तीव्र", "गहरी", "कोई नहीं"], ans: 0, exp: "Slow wind-driven water movement."},
+    {q: "Q96. ब्राजील की धारा कैसी जलधारा है?", pyq: false, opts: ["गरम धारा (दक्षिण अटलांटिक)", "ठंडी", "प्रशांत", "हिंद"], ans: 0, exp: "Warm Brazil Current."},
+    {q: "Q97. फ़ॉकलैंड धारा कैसी धारा है?", pyq: false, opts: ["ठंडी धारा", "गरम धारा", "विषुवतीय", "कोई नहीं"], ans: 0, exp: "Cold Falkland Current."},
+    {q: "Q98. अल्युशियन धारा किस महासागर में है?", pyq: false, opts: ["उत्तर प्रशांत महासागर", "अटलांटिक", "हिंद", "आर्कटिक"], ans: 0, exp: "North Pacific."},
+    {q: "Q99. नीरिटिक निक्षेप (Neritic Deposits) कहाँ मिलते हैं?", pyq: false, opts: ["महाद्वीपीय मग्नतट पर", "गहरे सागर", "गर्त", "कटक"], ans: 0, exp: "Shallow continental shelf."},
+    {q: "Q100. डायटम (Diatom) किस प्रकार का निक्षेप है?", pyq: false, opts: ["सिलिकामय जैविक निक्षेप", "चूनामय", "अजैविक", "ज्वालामुखी"], ans: 0, exp: "Siliceous Ooze."}
+];
+
+let currentPage = 0;
+const pageSize = 10;
+let userAnswers = new Array(quizData.length).fill(null);
+
+function renderPage() {
+    const container = document.getElementById('questions-container');
+    container.innerHTML = '';
+    
+    const start = currentPage * pageSize;
+    const end = Math.min(start + pageSize, quizData.length);
+    
+    for (let i = start; i < end; i++) {
+        const item = quizData[i];
+        const card = document.createElement('div');
+        card.className = 'question-card';
+        
+        let pyqHtml = item.pyq ? '<span class="pyq-tag">NET PYQ</span>' : '';
+        
+        let optionsHtml = '';
+        item.opts.forEach((opt, optIdx) => {
+            let btnClass = 'opt-btn';
+            let disabled = '';
+            
+            if (userAnswers[i] !== null) {
+                disabled = 'disabled';
+                if (optIdx === item.ans) {
+                    btnClass += ' correct';
+                } else if (userAnswers[i] === optIdx) {
+                    btnClass += ' wrong';
+                }
+            }
+            
+            optionsHtml += `<button class="${btnClass}" ${disabled} onclick="selectOption(${i}, ${optIdx})">${String.fromCharCode(65+optIdx)}) ${opt}</button>`;
+        });
+        
+        let expStyle = userAnswers[i] !== null ? 'style="display:block;"' : '';
+
+        card.innerHTML = `
+            <div class="q-text">${item.q} ${pyqHtml}</div>
+            <div class="options">${optionsHtml}</div>
+            <div class="exp-box" ${expStyle}><b>व्याख्या:</b> ${item.exp}</div>
+        `;
+        container.appendChild(card);
     }
+
+    // Update Pagination UI
+    document.getElementById('page-num').innerText = `Page ${currentPage + 1} / ${Math.ceil(quizData.length / pageSize)}`;
+    document.getElementById('prev-btn').disabled = currentPage === 0;
+    
+    if (currentPage === Math.ceil(quizData.length / pageSize) - 1) {
+        document.getElementById('next-btn').innerText = 'Submit';
+    } else {
+        document.getElementById('next-btn').innerText = 'अगला';
+    }
+}
+
+function selectOption(qIdx, optIdx) {
+    userAnswers[qIdx] = optIdx;
+    renderPage();
+}
+
+function changePage(dir) {
+    const maxPage = Math.ceil(quizData.length / pageSize) - 1;
+    
+    if (currentPage === maxPage && dir === 1) {
+        showResults();
+        return;
+    }
+    
+    currentPage += dir;
+    if (currentPage < 0) currentPage = 0;
+    if (currentPage > maxPage) currentPage = maxPage;
+    
+    renderPage();
+    window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function showResults() {
+    document.getElementById('quiz-screen').style.display = 'none';
+    document.getElementById('result-screen').style.display = 'block';
+    
+    let score = 0;
+    userAnswers.forEach((ans, idx) => {
+        if (ans === quizData[idx].ans) score++;
+    });
+    
+    document.getElementById('score-text').innerText = `${score} / ${quizData.length}`;
+    document.getElementById('percent-text').innerText = `आपका कुल प्रतिशत: ${((score / quizData.length) * 100).toFixed(1)}%`;
+}
+
+// Initial Render
+renderPage();
 </script>
 
 </body>
