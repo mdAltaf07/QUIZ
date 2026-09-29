@@ -43,6 +43,298 @@
         .q-number {
             font-weight: bold;
             color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .pyq-tag {
+            background-color: #e74c3c;
+            color: white;
+            font-size: 0.8em;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-left: 8px;
+        }
+        .options {
+            margin: 10px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .option-btn {
+            background-color: #ffffff;
+            border: 1.5px solid #cbd5e1;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 0.95em;
+            transition: all 0.2s ease;
+        }
+        .option-btn:hover:not([disabled]) {
+            background-color: #e2e8f0;
+            border-color: #94a3b8;
+        }
+        .option-btn.correct {
+            background-color: #d1fae5 !important;
+            border-color: #10b981 !important;
+            color: #065f46;
+            font-weight: bold;
+        }
+        .option-btn.wrong {
+            background-color: #fee2e2 !important;
+            border-color: #ef4444 !important;
+            color: #991b1b;
+        }
+        .explanation {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f1f5f9;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #334155;
+        }
+        /* Result Box Styling */
+        .submit-section {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .btn-submit {
+            background-color: #27ae60;
+            color: white;
+            font-size: 1.1em;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .btn-submit:hover {
+            background-color: #219653;
+        }
+        #result-box {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e0f2fe;
+            border: 2px solid #0284c7;
+            border-radius: 8px;
+            text-align: center;
+        }
+        #result-box h2 {
+            margin: 0 0 10px 0;
+            color: #0369a1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>UGC NET JRF - भू-आकृति एवं समुद्र विज्ञान</h1>
+    <p style="text-align:center;"><b>100 महत्वपूर्ण प्रश्न (Auto Check & Final Result System)</b></p>
+
+    <!-- PART 1: GEOMORPHOLOGY -->
+    <div class="section-header">
+        <h2>भाग 1: भू-आकृति विज्ञान (Geomorphology)</h2>
+    </div>
+
+    <!-- Question 1 -->
+    <div class="question-card" data-correct="B">
+        <p class="q-number">Q1. "एकरूपतावाद" (Principle of Uniformitarianism) का सिद्धांत किसने दिया था? <span class="pyq-tag">NET JRF PYQ</span></p>
+        <div class="options">
+            <button class="option-btn" onclick="checkAnswer(this, 'A')">A) डब्ल्यू. एम. डेविस</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'B')">B) जेम्स हटन</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'C')">C) वाल्टर पेंक</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'D')">D) एल. सी. किंग</button>
+        </div>
+        <div class="explanation"><b>व्याख्या:</b> जेम्स हटन ने 1785 में इस सिद्धांत का प्रतिपादन किया था।</div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question-card" data-correct="A">
+        <p class="q-number">Q2. "वर्तमान भूत की कुंजी है" (Present is the key to the past) यह कथन किसका है? <span class="pyq-tag">NET JRF PYQ</span></p>
+        <div class="options">
+            <button class="option-btn" onclick="checkAnswer(this, 'A')">A) जेम्स हटन</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'B')">B) चार्ल्स लायल</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'C')">C) डब्ल्यू. एम. डेविस</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'D')">D) डटन</button>
+        </div>
+        <div class="explanation"><b>व्याख्या:</b> यह एकरूपतावाद सिद्धांत से संबंधित कथन है जो जेम्स हटन द्वारा दिया गया।</div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question-card" data-correct="B">
+        <p class="q-number">Q3. 'पेनिप्लेन' (Peneplain) अवधारणा का प्रतिपादन किसने किया था?</p>
+        <div class="options">
+            <button class="option-btn" onclick="checkAnswer(this, 'A')">A) वाल्टर पेंक</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'B')">B) डब्ल्यू. एम. डेविस</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'C')">C) एल. सी. किंग</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'D')">D) गिल्बर्ट</button>
+        </div>
+        <div class="explanation"><b>व्याख्या:</b> नदी अपरदन चक्र की अंतिम अवस्था में बने समप्राय मैदान को डेविस ने पेनिप्लेन कहा।</div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question-card" data-correct="B">
+        <p class="q-number">Q4. 'प्रेडिमोंट ट्रेपेन' (Piedmont Treppen) शब्द का प्रयोग अपरदन चक्र के संदर्भ में किसने किया? <span class="pyq-tag">NET JRF PYQ</span></p>
+        <div class="options">
+            <button class="option-btn" onclick="checkAnswer(this, 'A')">A) डब्ल्यू. एम. डेविस</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'B')">B) वाल्टर पेंक</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'C')">C) एल. सी. किंग</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'D')">D) क्रिकमे</button>
+        </div>
+        <div class="explanation"><b>व्याख्या:</b> जर्मन भू-आकृति विज्ञानी वाल्टर पेंक ने सीढ़ीदार मैदानों के लिए यह शब्द प्रयुक्त किया था।</div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question-card" data-correct="B">
+        <p class="q-number">Q5. महाद्वीपीय विस्थापन सिद्धांत (Continental Drift Theory) का प्रतिपादन 1912 में किसने किया?</p>
+        <div class="options">
+            <button class="option-btn" onclick="checkAnswer(this, 'A')">A) हैरी हैस</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'B')">B) अल्फ्रेड वेगनर</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'C')">C) एफ. बी. टेलर</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'D')">D) डब्ल्यू. जे. मॉर्गन</button>
+        </div>
+        <div class="explanation"><b>व्याख्या:</b> वेगनर ने पेंजिया और पैंथालासा की अवधारणा प्रस्तुत की थी।</div>
+    </div>
+
+    <!-- PART 2: OCEANOGRAPHY -->
+    <div class="section-header">
+        <h2>भाग 2: समुद्र विज्ञान (Oceanography)</h2>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question-card" data-correct="B">
+        <p class="q-number">Q6. महासागरों की औसत लवणता (Average Salinity) कितनी होती है? <span class="pyq-tag">NET JRF PYQ</span></p>
+        <div class="options">
+            <button class="option-btn" onclick="checkAnswer(this, 'A')">A) 30‰</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'B')">B) 35‰</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'C')">C) 40‰</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'D')">D) 25‰</button>
+        </div>
+        <div class="explanation"><b>व्याख्या:</b> समुद्री जल की औसत लवणता 35 प्रति हजार होती है।</div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question-card" data-correct="B">
+        <p class="q-number">Q7. विश्व की सबसे गहरी महासागरीय गर्त (Trench) कौन सी है?</p>
+        <div class="options">
+            <button class="option-btn" onclick="checkAnswer(this, 'A')">A) प्यूर्टो रिको</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'B')">B) मेरियाना गर्त</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'C')">C) सुंडा गर्त</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'D')">D) टोंगा गर्त</button>
+        </div>
+        <div class="explanation"><b>व्याख्या:</b> प्रशांत महासागर में स्थित मेरियाना गर्त (चैलेंजर दीप) लगभग 11,034 मीटर गहरी है।</div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question-card" data-correct="A">
+        <p class="q-number">Q8. गल्फ स्ट्रीम (Gulf Stream) कैसी जलधारा है? <span class="pyq-tag">NET JRF PYQ</span></p>
+        <div class="options">
+            <button class="option-btn" onclick="checkAnswer(this, 'A')">A) गरम महासागरीय धारा</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'B')">B) ठंडी महासागरीय धारा</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'C')">C) तटवर्ती पवन</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'D')">D) इनमें से कोई नहीं</button>
+        </div>
+        <div class="explanation"><b>व्याख्या:</b> यह अंध महासागर (Atlantic) की एक मुख्य गरम जलधारा है।</div>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question-card" data-correct="B">
+        <p class="q-number">Q9. सरगासो सागर (Sargasso Sea) किस महासागर में स्थित है? <span class="pyq-tag">NET JRF PYQ</span></p>
+        <div class="options">
+            <button class="option-btn" onclick="checkAnswer(this, 'A')">A) उत्तरी प्रशांत महासागर</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'B')">B) उत्तरी अटलांटिक महासागर</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'C')">C) हिंद महासागर</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'D')">D) आर्कटिक महासागर</button>
+        </div>
+        <div class="explanation"><b>व्याख्या:</b> यह चारों ओर से समुद्री धाराओं से घिरा शांत जल का क्षेत्र है, जिसका कोई तट नहीं है।</div>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question-card" data-correct="C">
+        <p class="q-number">Q10. वृहत् ज्वार (Spring Tide) कब आता है? <span class="pyq-tag">NET JRF PYQ</span></p>
+        <div class="options">
+            <button class="option-btn" onclick="checkAnswer(this, 'A')">A) केवल अमावस्या को</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'B')">B) केवल पूर्णिमा को</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'C')">C) अमावस्या और पूर्णिमा दोनों को</button>
+            <button class="option-btn" onclick="checkAnswer(this, 'D')">D) सप्तमी या अष्टमी को</button>
+        </div>
+        <div class="explanation"><b>व्याख्या:</b> सिज़िगी (Syzygy) स्थिति में सूर्य, पृथ्वी और चंद्रमा एक सीधी रेखा में होते हैं।</div>
+    </div>
+
+    <!-- SUBMIT BUTTON & FINAL RESULT -->
+    <div class="submit-section">
+        <button class="btn-submit" onclick="showFinalResult()">अंतिम परिणाम देखें (Submit Quiz)</button>
+    </div>
+
+    <div id="result-box">
+        <h2>क्विज़ परिणाम (Final Score)</h2>
+        <p id="score-text" style="font-size: 1.3em; font-weight: bold; color: #1e293b;"></p>
+        <p id="percentage-text" style="font-size: 1.1em; color: #0284c7;"></p>
+    </div>
+
+</div>
+
+<script>
+    let totalScore = 0;
+    let answeredQuestions = 0;
+
+    function checkAnswer(selectedBtn, selectedOption) {
+        let card = selectedBtn.closest('.question-card');
+        let correctOption = card.getAttribute('data-correct');
+        let allButtons = card.querySelectorAll('.option-btn');
+        let explanation = card.querySelector('.explanation');
+
+        // एक बार उत्तर देने के बाद बटन को डिसेबल करें
+        allButtons.forEach(btn => {
+            btn.disabled = true;
+            // सही उत्तर वाला बटन खोजें और उसे हरा (green) करें
+            if (btn.getAttribute('onclick').includes("'" + correctOption + "'")) {
+                btn.classList.add('correct');
+            }
+        });
+
+        // यदि गलत ऑप्शन चुना है तो उसे लाल (red) करें
+        if (selectedOption !== correctOption) {
+            selectedBtn.classList.add('wrong');
+        } else {
+            totalScore++;
+        }
+
+        // व्याख्या (Explanation) दिखाएं
+        if (explanation) {
+            explanation.style.display = "block";
+        }
+
+        answeredQuestions++;
+    }
+
+    function showFinalResult() {
+        let totalQuestions = document.querySelectorAll('.question-card').length;
+        let resultBox = document.getElementById('result-box');
+        let scoreText = document.getElementById('score-text');
+        let percentageText = document.getElementById('percentage-text');
+
+        let percentage = ((totalScore / totalQuestions) * 100).toFixed(1);
+
+        scoreText.innerText = `कुल प्रश्न: ${totalQuestions} | सही उत्तर: ${totalScore} | हल किए गए: ${answeredQuestions}`;
+        percentageText.innerText = `आपका कुल स्कोर: ${percentage}%`;
+
+        resultBox.style.display = 'block';
+        resultBox.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>            background: #fafafa;
+            border-left: 4px solid #3498db;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 0 5px 5px 0;
+        }
+        .q-number {
+            font-weight: bold;
+            color: #2c3e50;
         }
         .pyq-tag {
             background-color: #e74c3c;
