@@ -1,368 +1,131 @@
-<!DOCTYPE html>
-<html lang="hi">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UGC NET JRF - Geography 100 Questions</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: #f1f5f9;
-            color: #1e293b;
-            padding: 10px;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 15px;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        }
-        h1 {
-            text-align: center;
-            color: #0f172a;
-            font-size: 1.25rem;
-            margin-bottom: 5px;
-        }
-        .subtitle {
-            text-align: center;
-            font-size: 0.85rem;
-            color: #64748b;
-            margin-bottom: 15px;
-        }
-        .question-card {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-left: 4px solid #0284c7;
-            margin-bottom: 15px;
-            padding: 12px;
-            border-radius: 6px;
-        }
-        .q-text {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #0f172a;
-            margin-bottom: 10px;
-            line-height: 1.4;
-        }
-        .pyq-tag {
-            background-color: #ef4444;
-            color: #ffffff;
-            font-size: 0.7rem;
-            padding: 2px 5px;
-            border-radius: 3px;
-            margin-left: 5px;
-            display: inline-block;
-        }
-        .options {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-        .opt-btn {
-            background-color: #ffffff;
-            border: 1px solid #cbd5e1;
-            padding: 10px;
-            border-radius: 6px;
-            text-align: left;
-            font-size: 0.88rem;
-            color: #334155;
-            cursor: pointer;
-            word-wrap: break-word;
-        }
-        .opt-btn.correct {
-            background-color: #d1fae5 !important;
-            border-color: #10b981 !important;
-            color: #065f46;
-            font-weight: 600;
-        }
-        .opt-btn.wrong {
-            background-color: #fee2e2 !important;
-            border-color: #ef4444 !important;
-            color: #991b1b;
-        }
-        .exp-box {
-            display: none;
-            margin-top: 8px;
-            padding: 8px;
-            background-color: #f1f5f9;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            color: #475569;
-        }
-        /* Mobile Controls */
-        .controls {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 15px;
-            gap: 10px;
-        }
-        .nav-btn {
-            background-color: #0284c7;
-            color: white;
-            border: none;
-            padding: 10px 16px;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            cursor: pointer;
-            flex: 1;
-        }
-        .nav-btn:disabled {
-            background-color: #cbd5e1;
-            cursor: not-allowed;
-        }
-        .page-info {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #64748b;
-        }
-        #result-screen {
-            display: none;
-            text-align: center;
-            padding: 20px 10px;
-        }
-        .score-badge {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #0284c7;
-            margin: 10px 0;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UGC NET Geography December 2012 — 50 Question Quiz</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,system-ui,sans-serif;background:#f4f6f8;color:#17202a}
+header{position:sticky;top:0;z-index:10;background:#111827;color:#fff;padding:14px 18px;box-shadow:0 2px 10px #0002}
+h1{font-size:21px;margin:0 0 4px}
+.sub{font-size:13px;color:#d1d5db}
+.wrap{max-width:950px;margin:18px auto;padding:0 12px}
+.toolbar{position:sticky;top:76px;z-index:9;display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:#fff;padding:12px;border-radius:12px;margin-bottom:14px;box-shadow:0 2px 8px #0001}
+button{border:0;border-radius:8px;padding:10px 15px;font-weight:700;cursor:pointer}
+#submit{background:#2563eb;color:#fff}
+#reset{background:#e5e7eb}
+#score{font-weight:800;margin-left:auto}
+.card{background:#fff;border-radius:12px;margin:12px 0;padding:18px;border:2px solid transparent;box-shadow:0 2px 8px #0001}
+.card.correct{border-color:#16a34a}
+.card.wrong{border-color:#dc2626}
+.qno{font-size:12px;color:#2563eb;font-weight:800;text-transform:uppercase}
+.q{font-size:17px;font-weight:700;line-height:1.45;margin:7px 0}
+.hi{font-size:16px;line-height:1.5;color:#374151;margin-bottom:12px}
+.option{display:block;padding:10px 12px;margin:7px 0;border:1px solid #d1d5db;border-radius:8px;cursor:pointer}
+.option:hover{background:#f8fafc}
+.option input{margin-right:8px}.hiOpt{display:block;font-size:16px;font-weight:600}.enOpt{display:block;font-size:13px;color:#6b7280;margin-top:3px}
+.option.selected{font-weight:700}
+.option.correctOpt{border-color:#16a34a;background:#ecfdf5}
+.option.wrongOpt{border-color:#dc2626;background:#fef2f2}
+.feedback{display:none;margin-top:11px;padding:10px;border-radius:8px;background:#f3f4f6;font-size:14px}
+.feedback.show{display:block}
+.note{font-size:13px;color:#6b7280;text-align:center;margin:12px 0 18px}
+</style>
 </head>
 <body>
+<header>
+<h1>UGC NET/JRF Geography — December 2012</h1>
+<div class="sub">50 Questions • Hindi + English • Answer करते ही correct answer reveal होगा</div>
+</header>
 
-<div class="container">
-    <div id="quiz-screen">
-        <h1>UGC NET JRF Geography</h1>
-        <p class="subtitle">Geomorphology & Oceanography (100 Questions)</p>
-        
-        <div id="questions-container"></div>
+<div class="wrap">
+<div class="toolbar">
+<button id="submit" onclick="submitQuiz()">Submit / Final Score</button>
+<button id="reset" onclick="location.reload()">Reset</button>
+<span id="score">Attempted: 0/50</span>
+</div>
 
-        <div class="controls">
-            <button class="nav-btn" id="prev-btn" onclick="changePage(-1)">पिछला</button>
-            <span class="page-info" id="page-num">Page 1/10</span>
-            <button class="nav-btn" id="next-btn" onclick="changePage(1)">अगला</button>
-        </div>
-    </div>
-
-    <div id="result-screen">
-        <h1>क्विज़ समाप्त!</h1>
-        <p style="margin-top:10px;">आपका स्कोर:</p>
-        <div class="score-badge" id="score-text">0 / 100</div>
-        <p id="percent-text" style="color:#64748b; font-size:0.9rem;"></p>
-        <button class="nav-btn" style="margin-top:20px; max-width:200px;" onclick="location.reload()">पुनः प्रयास करें</button>
-    </div>
+<div class="note">हर question में option select करते ही सही answer और आपका answer reveal होगा।</div>
+<form id="quiz"></form>
 </div>
 
 <script>
-// 100 Complete Questions Data
-const quizData = [
-    // Geomorphology (1-50)
-    {q: "Q1. 'एकरूपतावाद' (Uniformitarianism) का सिद्धांत किसने दिया?", pyq: true, opts: ["डब्ल्यू. एम. डेविस", "जेम्स हटन", "वाल्टर पेंक", "एल. सी. किंग"], ans: 1, exp: "जेम्स हटन (1785)"},
-    {q: "Q2. 'वर्तमान भूत की कुंजी है' यह कथन किसका है?", pyq: true, opts: ["जेम्स हटन", "चार्ल्स लायल", "डेविस", "डटन"], ans: 0, exp: "हटन के एकरूपतावाद सिद्धांत से जुड़ी पंक्ति।"},
-    {q: "Q3. 'पेनिप्लेन' (Peneplain) की अवधारणा किसने दी?", pyq: false, opts: ["वाल्टर पेंक", "डब्ल्यू. एम. डेविस", "एल. सी. किंग", "गिल्बर्ट"], ans: 1, exp: "अपरदन चक्र की अंतिम अवस्था।"},
-    {q: "Q4. 'प्रेडिमोंट ट्रेपेन' शब्द का प्रयोग किसने किया?", pyq: true, opts: ["डेविस", "वाल्टर पेंक", "एल. सी. किंग", "क्रिकमे"], ans: 1, exp: "पेंक द्वारा सीढ़ीदार मैदान हेतु।"},
-    {q: "Q5. महाद्वीपीय विस्थापन सिद्धांत (1912) किसने दिया?", pyq: false, opts: ["हैरी हैस", "अल्फ्रेड वेगनर", "टेलर", "मॉर्गन"], ans: 1, exp: "वेगनर ने महाद्वीपों के तैरने का विचार दिया।"},
-    {q: "Q6. प्लेट विवर्तनिकी शब्द का प्रथम प्रयोग किसने किया?", pyq: true, opts: ["मॉर्गन", "टी. विल्सन", "हैरी हैस", "पार्कर"], ans: 1, exp: "टी. विल्सन (1965)"},
-    {q: "Q7. 'समुद्र तल प्रसार' (Seafloor Spreading) परिकल्पना किसकी है?", pyq: true, opts: ["वेगनर", "हैरी हैस", "विल्सन", "जेफ्रीज"], ans: 1, exp: "हैरी हैस (1960)"},
-    {q: "Q8. कौन सा प्राचीन अवशिष्ट पर्वत है?", pyq: false, opts: ["हिमालय", "अल्प्स", "अरावली", "एंडीज"], ans: 2, exp: "अरावली विश्व के सबसे प्राचीन पर्वतों में से है।"},
-    {q: "Q9. समस्थिति (Isostasy) शब्द का प्रयोग सबसे पहले किसने किया?", pyq: true, opts: ["एयरी", "प्राट", "डटन", "जोली"], ans: 2, exp: "डटन (1889)"},
-    {q: "Q10. 'तैराव का नियम' (Law of Floatation) समस्थिति में किसने दिया?", pyq: false, opts: ["प्राट", "एयरी", "जोली", "हेफोर्ड"], ans: 1, exp: "एयरी के अनुसार जड़ें गहराई तक होती हैं।"},
-    {q: "Q11. लटकती घाटियाँ (Hanging Valleys) किससे बनती हैं?", pyq: false, opts: ["पवन", "हिमनद", "नदी", "भूमिगत जल"], ans: 1, exp: "ग्लेशियर द्वारा निर्मित।"},
-    {q: "Q12. यार्डांग और इनसेलबर्ग किस अपरदन से बनते हैं?", pyq: true, opts: ["जल", "पवन", "हिमनद", "तरंगें"], ans: 1, exp: "शुष्क पवनीय क्षेत्र में।"},
-    {q: "Q13. ड्रमलिन (Drumlin) की आकृति कैसी होती है?", pyq: true, opts: ["उल्टी नाव / कटा अंडा", "पक्षी पंख", "पंखा", "भेड़ पीठ"], ans: 0, exp: "Basket of eggs topography."},
-    {q: "Q14. अंध घाटी (Blind Valley) कहाँ पाई जाती है?", pyq: true, opts: ["मरुस्थल", "कास्ट प्रदेश", "हिमानी प्रदेश", "तट"], ans: 1, exp: "चूना पत्थर क्षेत्र में।"},
-    {q: "Q15. गुटेनबर्ग असंबद्धता किनके बीच है?", pyq: false, opts: ["क्रस्ट-मेंटल", "मेंटल-कोर", "ऊपरी-निचला क्रस्ट", "कोर"], ans: 1, exp: "मेंटल और कोर के मध्य।"},
-    {q: "Q16. सबसे तीव्र भूकंपीय तरंगें कौन सी हैं?", pyq: false, opts: ["S तरंगें", "L तरंगें", "P तरंगें", "अनुप्रस्थ"], ans: 2, exp: "P तरंगें (Primary Waves)."},
-    {q: "Q17. सर्क (Cirque) के भीतर बनी झील क्या कहलाती है?", pyq: true, opts: ["टार्न झील", "ऑक्स-बो", "क्रेटर", "प्लाया"], ans: 0, exp: "टार्न (Tarn) झील।"},
-    {q: "Q18. पेडीप्लेनेशन (Pediplanation) चक्र किसने दिया?", pyq: false, opts: ["डेविस", "एल. सी. किंग", "पेंक", "गिल्बर्ट"], ans: 1, exp: "L.C. King."},
-    {q: "Q19. 'रॉस मुटोने' (Roche Moutonnee) किससे बनता है?", pyq: false, opts: ["हिमनद", "पवन", "नदी", "लहरें"], ans: 0, exp: "हिमनद अपरदन।"},
-    {q: "Q20. 'पैरासिटिक कोन' किससे संबंधित है?", pyq: false, opts: ["भूकंप", "ज्वालामुखी", "पर्वत", "नदी"], ans: 1, exp: "Volcano."},
-    {q: "Q21. 'एस्कर' (Esker) का निर्माण किससे होता है?", pyq: true, opts: ["पवन", "हिमनदीय-जलीय निक्षेप", "नदी", "समुद्र"], ans: 1, exp: "Glacio-fluvial deposit."},
-    {q: "Q22. नर्मदा घाटी किसका उदाहरण है?", pyq: true, opts: ["भ्रंश घाटी", "सेंक्लाइन", "एंटीक्लाइन", "ब्लॉक"], ans: 0, exp: "Rift Valley."},
-    {q: "Q23. घोलरंध्र (Sinkhole) किस अपरदन चक्र में बनते हैं?", pyq: false, opts: ["नदी", "कास्ट", "पवन", "हिमनद"], ans: 1, exp: "Karst topography."},
-    {q: "Q24. भू-संतति (Geosyncline) अवधारणा किसने दी?", pyq: false, opts: ["हॉल और डाना", "हटन", "वेगनर", "किंग"], ans: 0, exp: "Hall & Dana."},
-    {q: "Q25. रिंग ऑफ फायर कहाँ है?", pyq: true, opts: ["अटलांटिक", "प्रशांत महासागर", "हिंद महासागर", "आर्कटिक"], ans: 1, exp: "Pacific Ocean."},
-    {q: "Q26. लोएस (Loess) का जमाव किससे होता है?", pyq: false, opts: ["जल", "पवन", "हिमनद", "लहरें"], ans: 1, exp: "Wind blown dust."},
-    {q: "Q27. सिएल (SIAL) में मुख्य तत्व कौन से हैं?", pyq: false, opts: ["Si + Al", "Si + Mg", "Ni + Fe", "Fe + Mg"], ans: 0, exp: "Silica & Aluminium."},
-    {q: "Q28. नाइफ (NIFE) परत का मुख्य तत्व?", pyq: false, opts: ["सिलिका", "निकिल और लोहा", "एल्युमीनियम", "जस्ता"], ans: 1, exp: "Nickel & Iron."},
-    {q: "Q29. 'भू-अभिनति' सिद्धांत से कौन सा पर्वत बना?", pyq: false, opts: ["हिमालय", "ब्लैक फॉरेस्ट", "सिएरा नेवादा", "विंध्य"], ans: 0, exp: "Fold Mountains."},
-    {q: "Q30. स्टेलैग्माइट और स्टेलेक्टाइट कहाँ बनते हैं?", pyq: true, opts: ["कास्ट गुफाएँ", "मरुस्थल", "नदी मुहाना", "समुद्र"], ans: 0, exp: "Cave formations."},
-    {q: "Q31. छत्रक शिला (Mushroom Rock) किससे बनती है?", pyq: false, opts: ["नदी", "पवन अपरदन", "हिमनद", "लहरें"], ans: 1, exp: "Wind abrasion."},
-    {q: "Q32. गोखुर झील (Ox-bow Lake) किससे बनती है?", pyq: false, opts: ["नदी के विसर्प से", "हिमनद से", "पवन से", "भूकंप से"], ans: 0, exp: "River Meander."},
-    {q: "Q33. कैनियन (Canyon) का निर्माण मुख्यतः होता है?", pyq: false, opts: ["गहरी घाटी अपरदन", "पवन", "ग्लेशियर", "भ्रंश"], ans: 0, exp: "Grand Canyon by River."},
-    {q: "Q34. मोनाडनॉक (Monadnock) किस चक्र में बचते हैं?", pyq: true, opts: ["डेविस पेनिप्लेन", "पेंक", "किंग", "कास्ट"], ans: 0, exp: "Residual hills in Peneplain."},
-    {q: "Q35. मोनालोआ (Mauna Loa) कैसा ज्वालामुखी है?", pyq: false, opts: ["सक्रिय", "प्रसुप्त", "शांत", "मृत"], ans: 0, exp: "Active Volcano in Hawaii."},
-    {q: "Q36. वेगास (Bajada) कहाँ पाया जाता है?", pyq: false, opts: ["शुष्क मरुस्थल", "कास्ट", "ग्लेशियर", "तट"], ans: 0, exp: "Desert piedmont zone."},
-    {q: "Q37. 'इंसेलबर्ग' का अर्थ क्या है?", pyq: false, opts: ["द्वीप पर्वत", "बर्फ का टीला", "घाटी", "नदी"], ans: 0, exp: "Island Mountain."},
-    {q: "Q38. मेसा और ब्यूट की आकृति कैसी होती है?", pyq: false, opts: ["सपाट शिखर मेज जैसी", "नकीली", "गोल", "गहरी"], ans: 0, exp: "Flat topped tableland."},
-    {q: "Q39. सिंडर शंकु किससे बनता है?", pyq: false, opts: ["ज्वालामुखी राख व लावा", "नदी गाद", "बालू", "बर्फ"], ans: 0, exp: "Volcanic ash/cinder."},
-    {q: "Q40. भूमध्य सागर का प्रकाश स्तंभ किसे कहते हैं?", pyq: true, opts: ["स्ट्रॉम्बोली", "इटना", "विसुवियस", "कोटोपैक्सी"], ans: 0, exp: "Stromboli volcano."},
-    {q: "Q41. सिएरा नेवादा किस प्रकार का पर्वत है?", pyq: false, opts: ["ब्लॉक पर्वत", "मोड़दार", "अवशिष्ट", "संचित"], ans: 0, exp: "Block Mountain."},
-    {q: "Q42. रिया तट (Ria Coast) उदाहरण है?", pyq: true, opts: ["निम्नजलमग्न नदी घाटी", "हिमनद घाटी", "पवन मैदान", "प्रवाल"], ans: 0, exp: "Submerged river valley."},
-    {q: "Q43. फियोर्ड तट (Fiord Coast) किससे बना है?", pyq: true, opts: ["जलमग्न हिमानी घाटी", "नदी", "पवन", "ज्वालामुखी"], ans: 0, exp: "Submerged glacial valley."},
-    {q: "Q44. विषुवत रेखा पर क्रस्ट की औसत मोटाई?", pyq: false, opts: ["5 किमी", "30-35 किमी", "100 किमी", "200 किमी"], ans: 1, exp: "Continental crust."},
-    {q: "Q45. मोह असंबद्धता (Moho Discontinuity) कहाँ है?", pyq: true, opts: ["क्रस्ट और मेंटल", "मेंटल कोर", "कोर", "सिअल सिमा"], ans: 0, exp: "Crust-Mantle boundary."},
-    {q: "Q46. सर्वाधिक विनाशकारी भूकंपीय तरंगें?", pyq: false, opts: ["L तरंगें (धरातलीय)", "P तरंगें", "S तरंगें", "जल तरंगें"], ans: 0, exp: "Surface / Long waves."},
-    {q: "Q47. रिक्टर स्केल क्या मापता है?", pyq: false, opts: ["भूकंप की तीव्रता/ऊर्जा", "तापमान", "दाब", "लवणता"], ans: 0, exp: "Magnitude of Earthquake."},
-    {q: "Q48. 'पेंटीप्लेन' शब्द किसने दिया?", pyq: false, opts: ["क्रिकमे", "डेविस", "पेंक", "किंग"], ans: 0, exp: "Crickmay (1933)."},
-    {q: "Q49. बरखान (Barchan) क्या है?", pyq: false, opts: ["अर्धचंद्राकार बालुका स्तूप", "झील", "पर्वत", "गुफा"], ans: 0, exp: "Crescent sand dune."},
-    {q: "Q50. अंध घाटी की छत गिरने से क्या बनता है?", pyq: false, opts: ["प्राकृतिक पुल (Natural Bridge)", "सर्क", "कैनियन", "मेसा"], ans: 0, exp: "Natural limestone bridge."},
+const questions = [{"n": 1, "en": "Landslides involve:", "hi": "भूस्खलन में क्या शामिल होता है?", "opts": ["Downslope movement of blocks that is usually not perceptible", "Rapid perceptible movement of a mass of earth, debris or bedrock", "Slow to very rapid movement of saturated rock debris", "Slow-flowing downslope debris saturated with water"], "ans": "B", "ansHi": "तेजी से होने वाला पृथ्वी, मलबे या शैलखंड के द्रव्यमान का प्रत्यक्ष ढाल की ओर संचलन", "optsHi": ["नीचे की ओर ब्लॉकों का ऐसा संचलन जो सामान्यतः प्रत्यक्ष अनुभव नहीं होता", "पृथ्वी, मलबे या शैलखंड के द्रव्यमान का तीव्र एवं प्रत्यक्ष ढाल की ओर संचलन", "जल-संतृप्त शैल-मलबे का धीमे से बहुत तीव्र गति तक संचलन", "जल से संतृप्त मलबे का ढाल की ओर धीमा प्रवाह"]}, {"n": 2, "en": "Which pair is NOT a correct match of desert and country/continent?", "hi": "मरुस्थल और देश/महाद्वीप का कौन-सा युग्म सही नहीं है?", "opts": ["Atacama – South America", "Gobi – Central Asia", "Sonoran – West Asia", "Great Victoria – Australia"], "ans": "C", "ansHi": "सोनोरन – पश्चिम एशिया", "optsHi": ["अटाकामा – दक्षिण अमेरिका", "गोबी – मध्य एशिया", "सोनोरन – पश्चिम एशिया", "ग्रेट विक्टोरिया – ऑस्ट्रेलिया"]}, {"n": 3, "en": "One of the proponents of the theory of the origin of submarine canyons/turbidity currents was:", "hi": "पनडुब्बी घाटियों/टर्बिडिटी करंट की उत्पत्ति के सिद्धांत के प्रमुख समर्थकों में से एक कौन था?", "opts": ["Daly", "Dana", "Salis", "Gregory"], "ans": "A", "ansHi": "डेली (Daly)", "optsHi": ["डेली (Daly)", "डाना (Dana)", "सैलिस (Salis)", "ग्रेगरी (Gregory)"]}, {"n": 4, "en": "The term 'panplane' refers to:", "hi": "'Panplane' शब्द किसे संदर्भित करता है?", "opts": ["A level surface formed in a fluvial cycle", "A level surface formed by wind action", "A plain formed by marine action", "A plain formed by joining previously separate flood plains"], "ans": "D", "ansHi": "पहले अलग-अलग बाढ़ मैदानों को जोड़कर बना समतल मैदान", "optsHi": ["नदीय चक्र द्वारा निर्मित समतल सतह", "पवन की क्रिया द्वारा निर्मित समतल सतह", "समुद्री क्रिया द्वारा निर्मित मैदान", "पहले अलग-अलग रहे बाढ़ मैदानों को जोड़कर बना मैदान"]}, {"n": 5, "en": "In the process of erosion, removal of material by solution is called:", "hi": "अपरदन की प्रक्रिया में पदार्थ को घोल द्वारा हटाने को क्या कहा जाता है?", "opts": ["Attrition", "Corrasion", "Corrosion", "Sapping"], "ans": "C", "ansHi": "कोरोजन / घोल द्वारा अपरदन (Corrosion)", "optsHi": ["अपघर्षण (Attrition)", "घर्षण/रगड़ द्वारा अपरदन (Corrasion)", "घोल द्वारा अपरदन (Corrosion)", "सैपिंग/अंतःक्षरण (Sapping)"]}, {"n": 6, "en": "Arrange these electromagnetic waves in ascending order of wavelength: X-rays, ultraviolet, microwaves, television waves.", "hi": "इन विद्युतचुंबकीय तरंगों को तरंगदैर्ध्य के बढ़ते क्रम में व्यवस्थित करें: X-rays, ultraviolet, microwaves, television waves.", "opts": ["X-rays → ultraviolet → microwaves → television waves", "Ultraviolet → X-rays → microwaves → television waves", "Television waves → microwaves → ultraviolet → X-rays", "Microwaves → television waves → X-rays → ultraviolet"], "ans": "A", "ansHi": "एक्स-किरणें → पराबैंगनी → माइक्रोवेव → टेलीविजन तरंगें", "optsHi": ["एक्स-किरणें → पराबैंगनी → माइक्रोवेव → टेलीविजन तरंगें", "पराबैंगनी → एक्स-किरणें → माइक्रोवेव → टेलीविजन तरंगें", "टेलीविजन तरंगें → माइक्रोवेव → पराबैंगनी → एक्स-किरणें", "माइक्रोवेव → टेलीविजन तरंगें → एक्स-किरणें → पराबैंगनी"]}, {"n": 7, "en": "Energy reflected by the atmosphere:", "hi": "वायुमंडल द्वारा परावर्तित ऊर्जा के बारे में सही कथन है:", "opts": ["Does not heat the atmosphere directly", "Always has a longer wavelength than incoming energy", "Is usually short-wave visible energy that cannot penetrate the atmosphere", "Heats the atmosphere by absorption"], "ans": "A", "ansHi": "यह वायुमंडल को सीधे गर्म नहीं करती", "optsHi": ["वायुमंडल को सीधे गर्म नहीं करती", "इसकी तरंगदैर्ध्य हमेशा आने वाली ऊर्जा से अधिक होती है", "यह सामान्यतः लघु-तरंग दृश्य ऊर्जा होती है जो वायुमंडल में प्रवेश नहीं कर सकती", "अवशोषण द्वारा वायुमंडल को गर्म करती है"]}, {"n": 8, "en": "Which statement about the polar jet stream is NOT true?", "hi": "ध्रुवीय जेट स्ट्रीम के बारे में कौन-सा कथन सही नहीं है?", "opts": ["It moves northwards during summer", "It supplies energy to the circulation of surface storms", "Its location roughly coincides with the polar front", "Its velocity is greater during summer"], "ans": "D", "ansHi": "गर्मियों में इसकी वेग अधिक होता है", "optsHi": ["यह गर्मियों में उत्तर की ओर खिसकती है", "यह सतही तूफानों के परिसंचरण को ऊर्जा प्रदान करती है", "इसका स्थान लगभग ध्रुवीय वाताग्र के साथ मिलता है", "गर्मियों में इसका वेग अधिक होता है"]}, {"n": 9, "en": "The percentage of water vapour in tropical regions may be as high as:", "hi": "उष्णकटिबंधीय क्षेत्रों में जलवाष्प का प्रतिशत अधिकतम लगभग कितना हो सकता है?", "opts": ["4 percent", "10 percent", "30 percent", "50 percent"], "ans": "A", "ansHi": "4 प्रतिशत", "optsHi": ["4 प्रतिशत", "10 प्रतिशत", "30 प्रतिशत", "50 प्रतिशत"]}, {"n": 10, "en": "The vertical air flow in an anticyclone is:", "hi": "प्रतिचक्रवात (Anticyclone) में ऊर्ध्वाधर वायु प्रवाह कैसा होता है?", "opts": ["Divergence aloft", "Convergence aloft", "Divergence both aloft and at the surface", "Convergence at the surface and aloft"], "ans": "B", "ansHi": "ऊपरी वायुमंडल में अभिसरण", "optsHi": ["ऊपर की ओर अपसरण", "ऊपर की ओर अभिसरण", "ऊपर और सतह दोनों पर अपसरण", "सतह और ऊपर दोनों पर अभिसरण"]}, {"n": 11, "en": "The most common salt in the ocean is:", "hi": "महासागर में सबसे सामान्य लवण कौन-सा है?", "opts": ["Calcium chloride", "Magnesium sulphate", "Sodium chloride", "Potassium chloride"], "ans": "C", "ansHi": "सोडियम क्लोराइड", "optsHi": ["कैल्शियम क्लोराइड", "मैग्नीशियम सल्फेट", "सोडियम क्लोराइड", "पोटैशियम क्लोराइड"]}, {"n": 12, "en": "In the hydrological cycle, evaporation is preceded mainly by:", "hi": "जलचक्र में वाष्पीकरण मुख्यतः किससे ऊर्जा प्राप्त करता है?", "opts": ["Clouds", "Precipitation", "Heat", "Condensation"], "ans": "C", "ansHi": "ऊष्मा", "optsHi": ["बादल", "वर्षण", "ऊष्मा", "संघनन"]}, {"n": 13, "en": "Which of the following occupies Trophic Level I in a food chain?", "hi": "खाद्य शृंखला में ट्रॉफिक स्तर I पर कौन होता है?", "opts": ["Bacteria", "Carnivores", "Primary consumers", "Plants"], "ans": "D", "ansHi": "पौधे", "optsHi": ["बैक्टीरिया", "मांसाहारी", "प्राथमिक उपभोक्ता", "पौधे"]}, {"n": 14, "en": "Which region is known as a major carbon sink of the globe?", "hi": "निम्न में से कौन-सा क्षेत्र विश्व के प्रमुख कार्बन सिंक के रूप में जाना जाता है?", "opts": ["Antarctica", "Savanna", "North-West Europe", "Tropical rainforest"], "ans": "D", "ansHi": "उष्णकटिबंधीय वर्षावन", "optsHi": ["अंटार्कटिका", "सवाना", "उत्तर-पश्चिमी यूरोप", "उष्णकटिबंधीय वर्षावन"]}, {"n": 15, "en": "Ecological niche refers to:", "hi": "पारिस्थितिक niche से क्या तात्पर्य है?", "opts": ["Interaction between man and environment", "The functional role of an organism in an ecosystem", "Interdependence of man and plants", "None of the above"], "ans": "B", "ansHi": "पारितंत्र में किसी जीव की कार्यात्मक भूमिका", "optsHi": ["मनुष्य और पर्यावरण के बीच अंतःक्रिया", "पारिस्थितिकी तंत्र में किसी जीव की कार्यात्मक भूमिका", "मनुष्य और पौधों की परस्पर निर्भरता", "इनमें से कोई नहीं"]}, {"n": 16, "en": "Who expounded the concept that 'the present is the key to the past'?", "hi": "'वर्तमान अतीत की कुंजी है' की अवधारणा किसने प्रतिपादित की?", "opts": ["Buffon", "Lyell", "Hutton", "Playfair"], "ans": "C", "ansHi": "हटन (Hutton)", "optsHi": ["बुफॉन (Buffon)", "लायल (Lyell)", "हटन (Hutton)", "प्लेफेयर (Playfair)"]}, {"n": 17, "en": "The approach that some of Ritter's facts could not be explained scientifically is termed:", "hi": "रिटर के कुछ तथ्यों को वैज्ञानिक रूप से न समझ पाने वाली दार्शनिक दृष्टि को क्या कहा गया?", "opts": ["Ecological", "Regional", "Teleological", "Locational"], "ans": "C", "ansHi": "टेलीओलॉजिकल / प्रयोजनवादी दृष्टिकोण", "optsHi": ["पारिस्थितिक", "प्रादेशिक", "टेलीओलॉजिकल/प्रयोजनवादी", "स्थानिक"]}, {"n": 18, "en": "Whose pioneer statement, according to Hartshorne, set the direction of modern geographical thought?", "hi": "हार्टशोर्न के अनुसार किसके अग्रणी कथन ने आधुनिक भौगोलिक विचार की दिशा निर्धारित की?", "opts": ["Vidal de la Blache", "Schlüter", "Ratzel", "Richthofen"], "ans": "D", "ansHi": "रिख्थोफेन (Richthofen)", "optsHi": ["विडाल डी ला ब्लाश", "श्ल्यूटर", "रैट्ज़ेल", "रिचथोफेन"]}, {"n": 19, "en": "Who emphasized the predominant role of climate in human life?", "hi": "मानव जीवन में जलवायु की प्रमुख भूमिका पर किसने जोर दिया?", "opts": ["Geddes", "Jefferson", "Huntington", "Brunhes"], "ans": "C", "ansHi": "हंटिंगटन (Huntington)", "optsHi": ["गैड्स", "जेफरसन", "हंटिंगटन", "ब्रून्स"]}, {"n": 20, "en": "Who is usually given credit for establishing the validity of the idea of an Ice Age covering northern Europe?", "hi": "उत्तरी यूरोप को हिमचादरों से ढकने वाले हिमयुग की अवधारणा को स्थापित करने का श्रेय सामान्यतः किसे दिया जाता है?", "opts": ["Agassiz", "Ramsay", "Jukes", "Penck"], "ans": "A", "ansHi": "अगासिज़ (Agassiz)", "optsHi": ["अगासिज़", "रैम्ज़े", "ज्यूक्स", "पेंक"]}, {"n": 21, "en": "The metropolitan population is numerically dominated by which group according to the source assertion-reason question?", "hi": "स्रोत के कथन-कारण प्रश्न के अनुसार महानगरीय जनसंख्या में संख्यात्मक रूप से कौन-सा समूह प्रमुख था?", "opts": ["Male adult population", "Female adult population", "Children", "Elderly population"], "ans": "A", "ansHi": "वयस्क पुरुष जनसंख्या", "optsHi": ["वयस्क पुरुष जनसंख्या", "वयस्क महिला जनसंख्या", "बच्चे", "वृद्ध जनसंख्या"]}, {"n": 22, "en": "The percentage of aged population (60+) in India's total population lies between:", "hi": "भारत की कुल जनसंख्या में 60+ आयु की जनसंख्या का प्रतिशत किस सीमा में है?", "opts": ["2–5", "5–10", "10–12", "12–15"], "ans": "B", "ansHi": "5–10 प्रतिशत", "optsHi": ["2–5 प्रतिशत", "5–10 प्रतिशत", "10–12 प्रतिशत", "12–15 प्रतिशत"]}, {"n": 23, "en": "Which migration stream experiences the maximum migration in India?", "hi": "भारत में निम्न में से किस प्रवासन धारा का परिमाण सबसे अधिक है?", "opts": ["Rural to rural", "Rural to urban", "Urban to urban", "Urban to rural"], "ans": "A", "ansHi": "ग्रामीण से ग्रामीण", "optsHi": ["ग्रामीण से ग्रामीण", "ग्रामीण से नगरीय", "नगरीय से नगरीय", "नगरीय से ग्रामीण"]}, {"n": 24, "en": "Which term denotes the projected urbanised world as a single continuous world city by the end of the 21st century?", "hi": "21वीं सदी के अंत तक एक सतत विश्व-नगर के रूप में अनुमानित शहरीकृत विश्व के लिए कौन-सा शब्द प्रयुक्त है?", "opts": ["Conurbation", "Urban sprawl", "Megalopolis", "Ecumenopolis"], "ans": "D", "ansHi": "इक्यूमेनोपोलिस (Ecumenopolis)", "optsHi": ["कनर्बेशन/सन्नगर", "नगरीय फैलाव", "मेगालोपोलिस/महानगर-पुंज", "इक्यूमेनोपोलिस/विश्व-नगर"]}, {"n": 25, "en": "Which nearest-neighbour index value indicates a random settlement distribution?", "hi": "Nearest Neighbour Index का कौन-सा मान यादृच्छिक बस्ती वितरण को दर्शाता है?", "opts": ["0.49", "1.00", "1.59", "2.15"], "ans": "B", "ansHi": "1.00", "optsHi": ["0.49", "1.00", "1.59", "2.15"]}, {"n": 26, "en": "The 'stretchability' of a resource refers to:", "hi": "संसाधन की 'stretchability' से क्या तात्पर्य है?", "opts": ["Ability to find adequate substitutes", "Susceptibility to destruction", "Ability to produce greater yield", "Non-exhaustibility"], "ans": "C", "ansHi": "अधिक उपज पैदा करने की क्षमता", "optsHi": ["पर्याप्त विकल्प/प्रतिस्थापन खोजने की क्षमता", "विनाश के प्रति संवेदनशीलता", "अधिक उपज देने की क्षमता", "अक्षयता/समाप्त न होने की क्षमता"]}, {"n": 27, "en": "Resource creation is the result of:", "hi": "संसाधन का निर्माण किसका परिणाम है?", "opts": ["Interaction of natural and cultural factors", "Interaction of different natural factors only", "Interaction of different social factors only", "Interaction of different economic factors only"], "ans": "A", "ansHi": "प्राकृतिक और सांस्कृतिक कारकों की अंतःक्रिया", "optsHi": ["प्राकृतिक और सांस्कृतिक कारकों की अंतःक्रिया", "केवल विभिन्न प्राकृतिक कारकों की अंतःक्रिया", "केवल विभिन्न सामाजिक कारकों की अंतःक्रिया", "केवल विभिन्न आर्थिक कारकों की अंतःक्रिया"]}, {"n": 28, "en": "The final stage in the process of resource utilization is:", "hi": "संसाधन उपयोग की प्रक्रिया का अंतिम चरण क्या है?", "opts": ["Transport", "Storage", "Disposal of waste material", "Conversion"], "ans": "C", "ansHi": "अपशिष्ट पदार्थ का निपटान", "optsHi": ["परिवहन", "भंडारण", "अपशिष्ट पदार्थ का निपटान", "रूपांतरण"]}, {"n": 29, "en": "Who proposed the sequential expansion transport model?", "hi": "Sequential Expansion Transport Model किसने प्रस्तावित किया?", "opts": ["De Souza and Porter", "Brown and Bracey", "Myrdal, Seers and Rostow", "Taaffe, Morrill and Gould"], "ans": "D", "ansHi": "टैफी, मॉरिल और गोल्ड", "optsHi": ["डी सूजा और पोर्टर", "ब्राउन और ब्रेसी", "मिर्डल, सीयर्स और रोस्टो", "टाफे, मॉरिल और गोल्ड"]}, {"n": 30, "en": "The concept of the Geographical Pivot of History was proposed by:", "hi": "Geographical Pivot of History की अवधारणा किसने दी?", "opts": ["Mackinder", "Spykman", "Kropotkin", "Ratzel"], "ans": "A", "ansHi": "मैकिंडर (Mackinder)", "optsHi": ["मैकिंडर", "स्पाइकमैन", "क्रोपोटकिन", "रैट्ज़ेल"]}, {"n": 31, "en": "Which category of state belongs to the shape 'fragmented cum elongated'?", "hi": "आकृति के आधार पर निम्न में से कौन-सी श्रेणी 'fragmented cum elongated' है?", "opts": ["Fragmented", "Fragmented cum elongated", "Elongated", "Compact cum elongated"], "ans": "B", "ansHi": "खंडित-सह-लंबाकार", "optsHi": ["खंडित", "खंडित एवं लंबा", "लंबा", "सघन एवं लंबा"]}, {"n": 32, "en": "The number of children dying before their first birthday per thousand live births is called:", "hi": "प्रति हजार जीवित जन्मों पर पहले जन्मदिन से पहले मरने वाले बच्चों की संख्या को क्या कहा जाता है?", "opts": ["Death rate", "Standardized mortality rate", "Infant mortality rate", "Life expectancy rate"], "ans": "C", "ansHi": "शिशु मृत्यु दर", "optsHi": ["मृत्यु दर", "मानकीकृत मृत्यु दर", "शिशु मृत्यु दर", "जीवन प्रत्याशा दर"]}, {"n": 33, "en": "Which state sequence in descending order according to 2011 Census is correct for the source question?", "hi": "2011 जनगणना के अनुसार स्रोत प्रश्न में राज्यों का सही अवरोही क्रम कौन-सा है?", "opts": ["Kerala, Mizoram, Tripura, Goa", "Kerala, Goa, Mizoram, Tripura", "Goa, Kerala, Tripura, Mizoram", "Mizoram, Tripura, Kerala, Goa"], "ans": "A", "ansHi": "केरल, मिजोरम, त्रिपुरा, गोवा", "optsHi": ["केरल, मिजोरम, त्रिपुरा, गोवा", "केरल, गोवा, मिजोरम, त्रिपुरा", "गोवा, केरल, त्रिपुरा, मिजोरम", "मिजोरम, त्रिपुरा, केरल, गोवा"]}, {"n": 34, "en": "Which of the following is NOT characteristic of a primary economy?", "hi": "निम्न में से कौन-सा प्राथमिक अर्थव्यवस्था की विशेषता नहीं है?", "opts": ["Intensive cultivation", "Footloose industry", "Mining and quarrying", "Shifting cultivation"], "ans": "B", "ansHi": "फुटलूज़ उद्योग", "optsHi": ["गहन कृषि", "स्थान-निर्भरता से मुक्त उद्योग", "खनन और उत्खनन", "स्थानांतरी कृषि"]}, {"n": 35, "en": "What were the bases of agro-climatic regionalization proposed by the Planning Commission of India?", "hi": "भारत के योजना आयोग द्वारा प्रस्तावित कृषि-जलवायु क्षेत्रीयकरण के आधार क्या थे?", "opts": ["Relief, soil and drainage", "Rainfall, temperature and cropping pattern", "Vegetation, soil and land use", "Relief, land use and net sown area"], "ans": "B", "ansHi": "वर्षा, तापमान और फसल प्रतिरूप", "optsHi": ["उच्चावच, मिट्टी और जल-निकास", "वर्षा, तापमान और फसल प्रतिरूप", "वनस्पति, मिट्टी और भूमि उपयोग", "उच्चावच, भूमि उपयोग और शुद्ध बोया गया क्षेत्र"]}, {"n": 36, "en": "A metropolitan region belongs to which category of region?", "hi": "महानगरीय क्षेत्र किस प्रकार के क्षेत्र में आता है?", "opts": ["Formal region", "Functional region", "Single-purpose region", "Natural region"], "ans": "B", "ansHi": "कार्यात्मक क्षेत्र", "optsHi": ["औपचारिक क्षेत्र", "कार्यात्मक क्षेत्र", "एकल-उद्देश्यीय क्षेत्र", "प्राकृतिक क्षेत्र"]}, {"n": 37, "en": "Who attempted the division of India into planning regions?", "hi": "भारत को नियोजन क्षेत्रों में विभाजित करने का प्रयास किसने किया?", "opts": ["O. H. K. Spate", "L. D. Stamp", "R. L. Singh", "R. P. Misra"], "ans": "D", "ansHi": "आर. पी. मिश्रा", "optsHi": ["ओ. एच. के. स्पेट", "एल. डी. स्टैम्प", "आर. एल. सिंह", "आर. पी. मिश्रा"]}, {"n": 38, "en": "In which Five Year Plan was regional imbalance given prominence for the first time?", "hi": "किस पंचवर्षीय योजना में पहली बार क्षेत्रीय असंतुलन को प्रमुखता दी गई?", "opts": ["First", "Second", "Third", "Fourth"], "ans": "C", "ansHi": "तीसरी पंचवर्षीय योजना", "optsHi": ["प्रथम", "द्वितीय", "तृतीय", "चतुर्थ"]}, {"n": 39, "en": "Which is NOT an ingredient of sustainable development?", "hi": "निम्न में से कौन सतत विकास का घटक नहीं है?", "opts": ["Intergenerational transferability", "Social justice", "Inter-regional transferability", "Non-optimal resource utilization"], "ans": "D", "ansHi": "गैर-इष्टतम संसाधन उपयोग", "optsHi": ["पीढ़ियों के बीच हस्तांतरणीयता", "सामाजिक न्याय", "अंतर-क्षेत्रीय हस्तांतरणीयता", "संसाधनों का गैर-इष्टतम उपयोग"]}, {"n": 40, "en": "The main species of Himalayan coniferous forests between 1600 m and 3300 m are:", "hi": "1600 से 3300 मीटर ऊंचाई के बीच हिमालयी शंकुधारी वनों की प्रमुख प्रजातियाँ कौन-सी हैं?", "opts": ["Cedar, Pine, Silver fir, Spruce", "Sagon and Sakhu", "Sandalwood and Rosewood", "Oak, Chestnut, Chir and Chil"], "ans": "A", "ansHi": "देवदार, चीड़, सिल्वर फर और स्प्रूस", "optsHi": ["देवदार, चीड़, सिल्वर फर, स्प्रूस", "सागौन और साखू", "चंदन और शीशम", "ओक, चेस्टनट, चीर और चिल"]}, {"n": 41, "en": "The Bundelkhand Plateau covers parts of which two states?", "hi": "बुंदेलखंड पठार किन दो राज्यों के भागों में फैला है?", "opts": ["Chhattisgarh and Jharkhand", "Uttar Pradesh and Madhya Pradesh", "Chhattisgarh and Uttar Pradesh", "Madhya Pradesh and Chhattisgarh"], "ans": "B", "ansHi": "उत्तर प्रदेश और मध्य प्रदेश", "optsHi": ["छत्तीसगढ़ और झारखंड", "उत्तर प्रदेश और मध्य प्रदेश", "छत्तीसगढ़ और उत्तर प्रदेश", "मध्य प्रदेश और छत्तीसगढ़"]}, {"n": 42, "en": "Which place in India ranks second among the coldest inhabited places in the world in the source?", "hi": "स्रोत के अनुसार भारत में विश्व के दूसरे सबसे ठंडे आबाद स्थान के रूप में कौन-सा स्थान है?", "opts": ["Dras", "Itanagar", "Manali", "Mana"], "ans": "A", "ansHi": "द्रास (Dras)", "optsHi": ["द्रास", "ईटानगर", "मनाली", "माणा"]}, {"n": 43, "en": "Which state has the highest percentage of its agricultural area under canal irrigation?", "hi": "किस राज्य के कृषि क्षेत्र का सर्वाधिक प्रतिशत नहर सिंचाई के अंतर्गत है?", "opts": ["Madhya Pradesh", "Jammu & Kashmir", "Uttarakhand", "Uttar Pradesh"], "ans": "D", "ansHi": "उत्तर प्रदेश", "optsHi": ["मध्य प्रदेश", "जम्मू और कश्मीर", "उत्तराखंड", "उत्तर प्रदेश"]}, {"n": 44, "en": "Which range separates the Kashmir Valley from the Indus River Valley?", "hi": "कौन-सी पर्वत श्रेणी कश्मीर घाटी को सिंधु नदी घाटी से अलग करती है?", "opts": ["Pir Panjal Range", "Dhauladhar Range", "Great Himalayan Range", "Siwalik Range"], "ans": "C", "ansHi": "वृहद हिमालयी श्रेणी", "optsHi": ["पीर पंजाल पर्वतमाला", "धौलाधार पर्वतमाला", "महान हिमालय पर्वतमाला", "शिवालिक पर्वतमाला"]}, {"n": 45, "en": "Which method is suitable to represent the proportions of different land uses in a region?", "hi": "किसी क्षेत्र में विभिन्न भूमि उपयोगों के अनुपात को दर्शाने के लिए कौन-सी विधि उपयुक्त है?", "opts": ["Line graph", "Pie diagram", "Hyther graph", "Triangular diagram"], "ans": "B", "ansHi": "पाई आरेख", "optsHi": ["रेखा आलेख", "वृत्त-चित्र (पाई आरेख)", "हाइथर ग्राफ", "त्रिकोणीय आरेख"]}, {"n": 46, "en": "The dot method of distribution refers to which model?", "hi": "Dot method of distribution किस मॉडल को संदर्भित करता है?", "opts": ["Iconic model", "Analogue model", "Symbolic model", "Graphical model"], "ans": "B", "ansHi": "एनालॉग मॉडल", "optsHi": ["प्रतिमानात्मक मॉडल (Iconic model)", "सादृश्य मॉडल (Analogue model)", "प्रतीकात्मक मॉडल (Symbolic model)", "ग्राफिकल मॉडल (Graphical model)"]}, {"n": 47, "en": "Which is a relative measure of dispersion?", "hi": "निम्न में से कौन प्रसरण का सापेक्ष माप है?", "opts": ["Standard deviation", "Quartile deviation", "Coefficient of variation", "Range"], "ans": "C", "ansHi": "परिवर्तन गुणांक", "optsHi": ["मानक विचलन", "चतुर्थक विचलन", "परिवर्तन का गुणांक", "परास"]}, {"n": 48, "en": "If a map is drawn at RF 1/5500, what RF is correct if the map is reduced to half?", "hi": "यदि मानचित्र RF 1/5500 पर बना है, तो मानचित्र को आधा करने पर सही RF क्या होगा?", "opts": ["1/2750", "1/11,000", "1/5,000", "1/33,000"], "ans": "B", "ansHi": "1/11,000", "optsHi": ["1/2750", "1/11,000", "1/5,000", "1/33,000"]}, {"n": 49, "en": "Consider: (1) NASA is the national acquisition and distribution agency for all satellite data in India. (2) NASA sends decoded data to NNRMS. Which is correct?", "hi": "विचार करें: (1) भारत में सभी उपग्रह डेटा के अधिग्रहण-वितरण की राष्ट्रीय एजेंसी NASA है। (2) NASA डिकोडेड डेटा NNRMS को भेजता है। सही विकल्प चुनें।", "opts": ["Only (1) is correct", "Only (2) is correct", "Both are correct", "Neither is correct"], "ans": "D", "ansHi": "दोनों कथन गलत हैं", "optsHi": ["केवल (1) सही है", "केवल (2) सही है", "दोनों सही हैं", "दोनों गलत हैं"]}, {"n": 50, "en": "Von Thunen's Agricultural Locational Theory is based on which approach?", "hi": "वॉन थ्यूनन का कृषि अवस्थिति सिद्धांत किस दृष्टिकोण पर आधारित है?", "opts": ["Empirical approach", "Normative approach", "Deductive approach", "Behavioral approach"], "ans": "B", "ansHi": "नॉर्मेटिव / मानकात्मक दृष्टिकोण", "optsHi": ["अनुभवजन्य उपागम", "मानकात्मक उपागम", "निगमनात्मक उपागम", "व्यवहारवादी उपागम"]}];
+const letters = ["A","B","C","D"];
+const form = document.getElementById("quiz");
+let attempted = 0;
+let correct = 0;
 
-    // Oceanography (51-100)
-    {q: "Q51. महासागरों की औसत लवणता?", pyq: true, opts: ["30‰", "35‰", "40‰", "20‰"], ans: 1, exp: "35 प्रति हजार।"},
-    {q: "Q52. सबसे गहरी महासागरीय गर्त?", pyq: false, opts: ["प्यूर्टो रिको", "मेरियाना गर्त", "सुंडा", "टोंगा"], ans: 1, exp: "Mariana Trench (~11034m)."},
-    {q: "Q53. गल्फ स्ट्रीम कैसी जलधारा है?", pyq: true, opts: ["गरम", "ठंडी", "समान", "कोई नहीं"], ans: 0, exp: "Warm current in Atlantic."},
-    {q: "Q54. लैब्राडोर धारा किस महासागर में है?", pyq: false, opts: ["प्रशांत", "अटलांटिक", "हिंद", "आर्कटिक"], ans: 1, exp: "Cold current in N. Atlantic."},
-    {q: "Q55. सरगासो सागर कहाँ स्थित है?", pyq: true, opts: ["उत्तरी प्रशांत", "उत्तरी अटलांटिक", "हिंद", "दक्षिण अटलांटिक"], ans: 1, exp: "North Atlantic Ocean."},
-    {q: "Q56. प्रवाल भित्ति के लिए उपयुक्त तापमान?", pyq: false, opts: ["10-15°C", "20-21°C", "35-40°C", "0°C"], ans: 1, exp: "Tropical warm waters."},
-    {q: "Q57. द ग्रेट बैरियर रीफ कहाँ स्थित है?", pyq: true, opts: ["ऑस्ट्रेलिया तट", "भारत तट", "जापान", "अफ्रीका"], ans: 0, exp: "Queensland, Australia."},
-    {q: "Q58. सबमरीन कैनियन कहाँ पाए जाते हैं?", pyq: false, opts: ["मग्नढाल (Continental Slope)", "मैदान", "गर्त", "कटक"], ans: 0, exp: "Continental Slopes."},
-    {q: "Q59. वृहत् ज्वार कब आता है?", pyq: true, opts: ["अमावस्या", "पूर्णिमा", "अमावस्या और पूर्णिमा", "अष्टमी"], ans: 2, exp: "Syzygy position."},
-    {q: "Q60. प्रवाल हेतु 'स्थिर स्थल सिद्धांत' किसने दिया?", pyq: false, opts: ["डार्विन", "मरे (Murray)", "डेली", "डाना"], ans: 1, exp: "John Murray."},
-    {q: "Q61. प्रवाल हेतु 'हिमानी नियंत्रण सिद्धांत' किसने दिया?", pyq: true, opts: ["डेली (Daly)", "डार्विन", "मरे", "डाविस"], ans: 0, exp: "R.A. Daly."},
-    {q: "Q62. 'गुयोट' (Guyot) क्या है?", pyq: false, opts: ["सपाट शिखर जलमग्न पर्वत", "द्वीप", "गर्त", "प्रवाल"], ans: 0, exp: "Flat-topped seamount."},
-    {q: "Q63. अल-नीनो (El-Nino) कहाँ उत्पन्न होता है?", pyq: true, opts: ["पेरू तट", "भारत तट", "जापान", "ऑस्ट्रेलिया"], ans: 0, exp: "Peru Coast, Pacific."},
-    {q: "Q64. हैलोक्लाइन (Halocline) क्या दर्शाता है?", pyq: false, opts: ["लवणता परिवर्तन गहराई के साथ", "तापमान", "घनत्व", "दाब"], ans: 0, exp: "Salinity gradient."},
-    {q: "Q65. थर्मोक्लाइन (Thermocline) क्या दर्शाता है?", pyq: false, opts: ["तापमान में तीव्र गिरावट", "लवणता", "धारा", "ज्वार"], ans: 0, exp: "Temperature change zone."},
-    {q: "Q66. डॉल्फिन तथा चैलेन्जर कटक कहाँ हैं?", pyq: true, opts: ["अटलांटिक महासागर", "प्रशांत", "हिंद", "आर्कटिक"], ans: 0, exp: "Mid-Atlantic Ridge."},
-    {q: "Q67. टर्बिडिटी करंट किससे संबंधित है?", pyq: false, opts: ["महासागरीय निक्षेप/कैनियन", "वायु", "ग्लेशियर", "नदी"], ans: 0, exp: "Density current in ocean."},
-    {q: "Q68. पेलाजिक निक्षेप कहाँ मिलते हैं?", pyq: false, opts: ["गहरे महासागरीय मैदान", "तट", "नदी मुहाना", "पर्वत"], ans: 0, exp: "Deep sea deposits."},
-    {q: "Q69. क्यूरोशियो धारा कैसी धारा है?", pyq: true, opts: ["गरम (प्रशांत)", "ठंडी", "हिंद धारा", "अटलांटिक"], ans: 0, exp: "Warm current near Japan."},
-    {q: "Q70. ओयाशियो धारा कैसी धारा है?", pyq: false, opts: ["ठंडी (प्रशांत)", "गरम", "हिंद धारा", "कोई नहीं"], ans: 0, exp: "Cold Oyashio current."},
-    {q: "Q71. पेरू/हंबोल्ट धारा कैसी जलधारा है?", pyq: true, opts: ["ठंडी धारा", "गरम धारा", "विषुवतीय", "कोई नहीं"], ans: 0, exp: "Cold current along South America."},
-    {q: "Q72. कैनरी धारा कहाँ बहती है?", pyq: false, opts: ["उत्तरी अटलांटिक (ठंडी)", "प्रशांत", "हिंद", "आर्कटिक"], ans: 0, exp: "Cold current near W. Africa."},
-    {q: "Q73. बेगुएला धारा कैसी है?", pyq: true, opts: ["ठंडी (दक्षिण अटलांटिक)", "गरम", "प्रशांत", "हिंद"], ans: 0, exp: "Benguela cold current."},
-    {q: "Q74. अगुलहास धारा किस महासागर में है?", pyq: true, opts: ["हिंद महासागर (गरम)", "अटलांटिक", "प्रशांत", "आर्कटिक"], ans: 0, exp: "Warm current in Indian Ocean."},
-    {q: "Q75. महासागरीय नितल का सबसे विस्तृत भाग?", pyq: true, opts: ["गहरे समुद्री मैदान", "मग्नतट", "मग्नढाल", "गर्त"], ans: 0, exp: "Abyssal Plains (~75.9%)."},
-    {q: "Q76. सर्वाधिक लवणता वाली झील/सागर?", pyq: false, opts: ["वान झील (तुर्की)", "मृत सागर", "ग्रेट साल्ट लेक", "कैस्पियन"], ans: 0, exp: "Lake Van (~330‰)."},
-    {q: "Q77. ग्रैंड बैंक मत्स्य क्षेत्र कहाँ है?", pyq: true, opts: ["न्यूफाउंडलैंड (अटलांटिक)", "जापान", "भारत", "यूरोप"], ans: 0, exp: "Meeting of Gulfstream & Labrador."},
-    {q: "Q78. टेलीग्राफ पठार कहाँ स्थित है?", pyq: true, opts: ["उत्तरी अटलांटिक कटक", "प्रशांत", "हिंद", "दक्षिण अटलांटिक"], ans: 0, exp: "Telegraphic Plateau."},
-    {q: "Q79. सूंडा गर्त किस महासागर में है?", pyq: false, opts: ["हिंद महासागर", "प्रशांत", "अटलांटिक", "आर्कटिक"], ans: 0, exp: "Java / Sunda Trench."},
-    {q: "Q80. प्यूर्टो रिको गर्त कहाँ है?", pyq: false, opts: ["अटलांटिक महासागर", "प्रशांत", "हिंद", "आर्कटिक"], ans: 0, exp: "Deepest in Atlantic."},
-    {q: "Q81. लाल सागर की लवणता अधिक क्यों है?", pyq: false, opts: ["उच्च वाष्पीकरण व कम वर्षा", "नदी आवक", "बर्फ पिघलना", "गहराई"], ans: 0, exp: "High evaporation."},
-    {q: "Q82. प्रवाल (Coral Polyps) क्या हैं?", pyq: false, opts: ["समुद्री सूक्ष्म जीव", "पौधे", "चट्टान", "जलधारा"], ans: 0, exp: "Marine invertebrates."},
-    {q: "Q83. अवतलन सिद्धांत (Subsidence Theory) प्रवाल हेतु किसने दिया?", pyq: true, opts: ["डार्विन (1837)", "मरे", "डेली", "डाना"], ans: 0, exp: "Charles Darwin."},
-    {q: "Q84. ऐटॉल (Atoll) का आकार कैसा होता है?", pyq: false, opts: ["घोड़े की नाल या वलयाकार", "सीधा", "त्रिकोण", "चौकोर"], ans: 0, exp: "Circular / Horseshoe reef."},
-    {q: "Q85. दैनिक ज्वार में कितना समय अंतर होता है?", pyq: false, opts: ["24 घंटे 52 मिनट", "12 घंटे 26 मिनट", "6 घंटे", "12 घंटे"], ans: 0, exp: "Daily Tide interval."},
-    {q: "Q86. अर्ध-दैनिक ज्वार (Semi-diurnal) का समय अंतर?", pyq: false, opts: ["12 घंटे 26 मिनट", "24 घंटे", "6 घंटे", "18 घंटे"], ans: 0, exp: "Twice a day."},
-    {q: "Q87. लघु ज्वार (Neap Tide) कब आता है?", pyq: true, opts: ["सप्तमी या अष्टमी (समकोण)", "अमावस्या", "पूर्णिमा", "सिज़िगी"], ans: 0, exp: "Right angle position."},
-    {q: "Q88. विश्व में सबसे ऊँचा ज्वार कहाँ आता है?", pyq: true, opts: ["फंडी की खाड़ी (कनाडा)", "कच्छ खाड़ी", "लंदन", "सिडनी"], ans: 0, exp: "Bay of Fundy."},
-    {q: "Q89. ज्वार-भाटा हेतु 'स्थैतिक तरंग सिद्धांत' किसने दिया?", pyq: true, opts: ["आर. ए. हैरिस", "न्यूटन", "लाप्लास", "व्हीवेल"], ans: 0, exp: "R.A. Harris (Progressive wave vs Stationary)."},
-    {q: "Q90. ज्वार का 'संतुलन सिद्धांत' किसने प्रस्तुत किया?", pyq: true, opts: ["सर आइज़ैक न्यूटन", "लाप्लास", "हैरिस", "एयरी"], ans: 0, exp: "Newton (1687)."},
-    {q: "Q91. ज्वार का 'गतिज सिद्धांत' (Dynamic Theory) किसका है?", pyq: false, opts: ["लाप्लास", "न्यूटन", "हैरिस", "डार्विन"], ans: 0, exp: "Laplace (1755)."},
-    {q: "Q92. ज्वार का 'नहर सिद्धांत' (Canal Theory) किसका है?", pyq: false, opts: ["एयरी (Airy)", "न्यूटन", "हैरिस", "लाप्लास"], ans: 0, exp: "Airy (1842)."},
-    {q: "Q93. महासागरीय जल का सर्वाधिक क्षैतिज संचलन?", pyq: false, opts: ["धाराएँ (Currents)", "ज्वार", "तरंग", "उद्वेलन"], ans: 0, exp: "Ocean Currents."},
-    {q: "Q94. कोरियोलिस बल का धाराओं पर प्रभाव?", pyq: false, opts: ["उत्तरी गोलार्ध में दाईं ओर मुड़ना", "बाईं ओर", "कोई प्रभाव नहीं", "सीधी रेखा"], ans: 0, exp: "Coriolis Force effect."},
-    {q: "Q95. ड्रिफ्ट (Drift) की गति कैसी होती है?", pyq: false, opts: ["मंद एवं अनिश्चित", "तीव्र", "गहरी", "कोई नहीं"], ans: 0, exp: "Slow wind-driven water movement."},
-    {q: "Q96. ब्राजील की धारा कैसी जलधारा है?", pyq: false, opts: ["गरम धारा (दक्षिण अटलांटिक)", "ठंडी", "प्रशांत", "हिंद"], ans: 0, exp: "Warm Brazil Current."},
-    {q: "Q97. फ़ॉकलैंड धारा कैसी धारा है?", pyq: false, opts: ["ठंडी धारा", "गरम धारा", "विषुवतीय", "कोई नहीं"], ans: 0, exp: "Cold Falkland Current."},
-    {q: "Q98. अल्युशियन धारा किस महासागर में है?", pyq: false, opts: ["उत्तर प्रशांत महासागर", "अटलांटिक", "हिंद", "आर्कटिक"], ans: 0, exp: "North Pacific."},
-    {q: "Q99. नीरिटिक निक्षेप (Neritic Deposits) कहाँ मिलते हैं?", pyq: false, opts: ["महाद्वीपीय मग्नतट पर", "गहरे सागर", "गर्त", "कटक"], ans: 0, exp: "Shallow continental shelf."},
-    {q: "Q100. डायटम (Diatom) किस प्रकार का निक्षेप है?", pyq: false, opts: ["सिलिकामय जैविक निक्षेप", "चूनामय", "अजैविक", "ज्वालामुखी"], ans: 0, exp: "Siliceous Ooze."}
-];
-
-let currentPage = 0;
-const pageSize = 10;
-let userAnswers = new Array(quizData.length).fill(null);
-
-function renderPage() {
-    const container = document.getElementById('questions-container');
-    container.innerHTML = '';
-    
-    const start = currentPage * pageSize;
-    const end = Math.min(start + pageSize, quizData.length);
-    
-    for (let i = start; i < end; i++) {
-        const item = quizData[i];
-        const card = document.createElement('div');
-        card.className = 'question-card';
-        
-        let pyqHtml = item.pyq ? '<span class="pyq-tag">NET PYQ</span>' : '';
-        
-        let optionsHtml = '';
-        item.opts.forEach((opt, optIdx) => {
-            let btnClass = 'opt-btn';
-            let disabled = '';
-            
-            if (userAnswers[i] !== null) {
-                disabled = 'disabled';
-                if (optIdx === item.ans) {
-                    btnClass += ' correct';
-                } else if (userAnswers[i] === optIdx) {
-                    btnClass += ' wrong';
-                }
-            }
-            
-            optionsHtml += `<button class="${btnClass}" ${disabled} onclick="selectOption(${i}, ${optIdx})">${String.fromCharCode(65+optIdx)}) ${opt}</button>`;
-        });
-        
-        let expStyle = userAnswers[i] !== null ? 'style="display:block;"' : '';
-
-        card.innerHTML = `
-            <div class="q-text">${item.q} ${pyqHtml}</div>
-            <div class="options">${optionsHtml}</div>
-            <div class="exp-box" ${expStyle}><b>व्याख्या:</b> ${item.exp}</div>
-        `;
-        container.appendChild(card);
-    }
-
-    // Update Pagination UI
-    document.getElementById('page-num').innerText = `Page ${currentPage + 1} / ${Math.ceil(quizData.length / pageSize)}`;
-    document.getElementById('prev-btn').disabled = currentPage === 0;
-    
-    if (currentPage === Math.ceil(quizData.length / pageSize) - 1) {
-        document.getElementById('next-btn').innerText = 'Submit';
-    } else {
-        document.getElementById('next-btn').innerText = 'अगला';
-    }
+function esc(s) {
+  return s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 }
 
-function selectOption(qIdx, optIdx) {
-    userAnswers[qIdx] = optIdx;
-    renderPage();
+questions.forEach(q => {
+  const card = document.createElement("section");
+  card.className = "card";
+  let opts = "";
+  q.opts.forEach((o,i) => {
+    opts += `<label class="option" id="opt-${q.n}-${letters[i]}">
+      <input type="radio" name="q${q.n}" value="${letters[i]}">
+      <b>${letters[i]}.</b> <span class="hiOpt">${esc(q.optsHi[i])}</span><span class="enOpt">${esc(o)}</span>
+    </label>`;
+  });
+
+  card.innerHTML = `
+    <div class="qno">December 2012 — Question ${q.n}</div>
+    <div class="q">${esc(q.en)}</div>
+    <div class="hi">${esc(q.hi)}</div>
+    ${opts}
+    <div class="feedback" id="fb-${q.n}"></div>
+  `;
+  form.appendChild(card);
+
+  card.querySelectorAll('input[type="radio"]').forEach(input => {
+    input.addEventListener("change", () => reveal(q.n, input.value));
+  });
+});
+
+function reveal(n, selected) {
+  const q = questions[n-1];
+  const card = form.querySelectorAll(".card")[n-1];
+  if (card.dataset.answered === "1") return;
+  card.dataset.answered = "1";
+
+  attempted++;
+  const isCorrect = selected === q.ans;
+  if (isCorrect) correct++;
+
+  card.classList.add(isCorrect ? "correct" : "wrong");
+
+  card.querySelectorAll(".option").forEach(x => {
+    x.style.pointerEvents = "none";
+  });
+
+  document.getElementById(`opt-${n}-${q.ans}`).classList.add("correctOpt");
+  if (!isCorrect) {
+    document.getElementById(`opt-${n}-${selected}`).classList.add("wrongOpt");
+  }
+
+  const fb = document.getElementById(`fb-${n}`);
+  fb.classList.add("show");
+  fb.innerHTML = isCorrect
+    ? `<b>✓ Correct / सही!</b><br>आपका उत्तर / Your answer: <b>${q.ans}</b><br>सही उत्तर / Correct answer: <b>${q.ans}. ${esc(q.ansHi)}</b><br><span class="enAns">English: ${esc(q.opts[letters.indexOf(q.ans)])}</span>`
+    : `<b>✗ Wrong / गलत!</b><br>आपका उत्तर / Your answer: <b>${selected}</b><br>सही उत्तर / Correct answer: <b>${q.ans}. ${esc(q.ansHi)}</b><br><span class="enAns">English: ${esc(q.opts[letters.indexOf(q.ans)])}</span>`;
+
+  updateScore();
 }
 
-function changePage(dir) {
-    const maxPage = Math.ceil(quizData.length / pageSize) - 1;
-    
-    if (currentPage === maxPage && dir === 1) {
-        showResults();
-        return;
-    }
-    
-    currentPage += dir;
-    if (currentPage < 0) currentPage = 0;
-    if (currentPage > maxPage) currentPage = maxPage;
-    
-    renderPage();
-    window.scrollTo({top: 0, behavior: 'smooth'});
+function updateScore() {
+  document.getElementById("score").textContent =
+    `Attempted: ${attempted}/50 • Correct: ${correct}`;
 }
 
-function showResults() {
-    document.getElementById('quiz-screen').style.display = 'none';
-    document.getElementById('result-screen').style.display = 'block';
-    
-    let score = 0;
-    userAnswers.forEach((ans, idx) => {
-        if (ans === quizData[idx].ans) score++;
-    });
-    
-    document.getElementById('score-text').innerText = `${score} / ${quizData.length}`;
-    document.getElementById('percent-text').innerText = `आपका कुल प्रतिशत: ${((score / quizData.length) * 100).toFixed(1)}%`;
+function submitQuiz() {
+  updateScore();
+  const pct = (correct / 50 * 100).toFixed(1);
+  alert(`Final Score: ${correct}/50\nPercentage: ${pct}%\nAttempted: ${attempted}/50`);
 }
-
-// Initial Render
-renderPage();
 </script>
-
 </body>
 </html>
